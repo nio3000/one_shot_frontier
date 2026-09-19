@@ -1,0 +1,2 @@
+# Optional dataset download helper only
+wilds==2.0.0

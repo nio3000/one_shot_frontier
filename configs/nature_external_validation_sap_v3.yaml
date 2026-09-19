@@ -1,0 +1,117 @@
+plan_name: NATURE_TARGET_EXTERNAL_VALIDATION_SAP_V3
+version: 1.0.0-FROZEN
+status: FROZEN_BEFORE_TIER1_OUTCOME_ACCESS
+freeze_date: 2026-09-10
+
+authorities:
+  nature_direction: docs/governance/nature/NATURE_TARGET_MANUSCRIPT_DIRECTION_FREEZE_V1.md
+  external_v2: docs/governance/nature/NATURE_TARGET_EXTERNAL_VALIDATION_PLAN_V2_IDENTIFIABILITY.md
+  phase3_theory: docs/phases/phase3/PHASE3_THEORY_EXPERIMENT_FREEZE.md
+  phase4_evidence: evidence/phase4/evidence_manifest.json
+
+tier1:
+  datasets:
+    camelyon17:
+      version: "1.0"
+      context_field: hospital
+      group_field: slide
+      min_shared_classes: 2
+      min_fit_per_class: 40
+      min_eval_per_class: 40
+      max_shared_classes: 2
+    rxrx1:
+      version: "1.0"
+      context_field: cell_type
+      group_field: experiment
+      recorded_batch_field: experiment
+      min_shared_classes: 32
+      min_fit_per_class: 2
+      min_eval_per_class: 2
+      max_shared_classes: 64
+    iwildcam:
+      version: "2.0"
+      context_field: location
+      group_field: sequence
+      min_shared_classes: 3
+      min_fit_per_class: 5
+      min_eval_per_class: 5
+      max_shared_classes: 64
+
+representations:
+  encoders:
+    - resnet18_imagenet1k_v1
+    - vit_b_16_imagenet1k_v1
+  projection_dims: [64, 128]
+  projection_seed: 20260908
+  classification_note: custom_frozen_representation_route_not_wilds_leaderboard_claim
+
+split:
+  method: deterministic_group_hash
+  fit_fraction: 0.50
+  seed: 20260910
+  no_group_leakage: true
+
+pair_selection:
+  uses_only_fit_second_order_summary: true
+  near_fraction: 0.20
+  min_selected_if_eligible: 1
+  max_selected_per_condition: 10
+  tie_break: canonical_pair_id
+  forbidden_inputs:
+    - evaluation_risk
+    - optimal_tau
+    - minimax_regret
+    - m3_distance
+    - m4_distance
+
+summary_distance:
+  type: dimensionless_second_order_pair_distance
+  components_equal_weight: [log_prior, mean, covariance]
+  epsilon: 1.0e-12
+
+action_family:
+  alpha0: 0.10
+  tau_grid: [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
+  primary_metric: balanced_accuracy
+
+robust_pair:
+  minimax_regret_min: 0.005
+  bootstrap_ci95_low_min: 0.0025
+  require_disjoint_optimal_tau_sets: true
+  bootstrap_replicates: 1000
+  bootstrap_seed: 20260910
+
+m3_diagnostic:
+  type: rademacher_centered_standardized_third_moment
+  k: 16
+  seed: 20260910
+  permutation_replicates: 5000
+  permutation_seed: 20260910
+
+gates:
+  E1:
+    required_datasets: 3
+    required_feature_banks: 6
+    required_structural_conditions: 12
+  E2:
+    min_qualifying_conditions: 6
+    require_all_datasets: true
+    require_both_encoders: true
+    require_both_dims: true
+  E3:
+    robust_pair_fraction_min: 0.15
+    cluster_bootstrap_ci95_low_min: 0.05
+    cluster_bootstrap_replicates: 5000
+    seed: 20260910
+  E4:
+    pooled_spearman_min: 0.30
+    blocked_permutation_p_max: 0.01
+    min_datasets_positive_direction: 2
+  E5:
+    max_m3_augmented_upload_ratio_vs_t2: 1.01
+
+decisions:
+  A: NATURAL_DOMAIN_DECISION_IDENTIFIABILITY_SUPPORTED_WITH_HIGHER_ORDER_CORROBORATION
+  B: NATURAL_DOMAIN_DECISION_IDENTIFIABILITY_SUPPORTED
+  C: NATURAL_DECISION_GAPS_PRESENT_BUT_NOT_BROAD
+  D: NATURAL_DOMAIN_IDENTIFIABILITY_NOT_SUPPORTED

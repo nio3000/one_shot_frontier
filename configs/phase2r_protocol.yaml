@@ -1,0 +1,91 @@
+protocol_name: ONE_SHOT_ESTIMABILITY_FRONTIER_PHASE2R
+version: 1.0.0-FROZEN
+status: FROZEN
+phase: Phase 2-R
+purpose: restricted classification-aligned selector objective repair on development datasets
+
+nature_external_plan:
+  path: NATURE_TARGET_EXTERNAL_VALIDATION_PLAN_V1.md
+  yaml_path: configs/nature_external_validation_v1.yaml
+  required_status: FROZEN_BEFORE_PHASE2R_REPAIR
+  external_outcome_access_during_phase2r: forbidden
+
+fixed:
+  alpha0: 0.10
+  tau: [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
+  projection_dims: [64,128]
+  projection_seed: 20260908
+  n_clients: 20
+  client_dirichlet_alpha: 0.10
+  client_partition_seed: 20260908
+  selector_folds: 2
+  selector_fold_seed: 20260909
+  bootstrap_replicates: 5000
+  bootstrap_seed: 20260909
+
+development_authority:
+  manifest_path: configs/phase1_feature_manifest.json
+  required_bank_ids:
+    - cifar100__resnet18_imagenet1k_v1
+    - cifar100__vit_b_16_imagenet1k_v1
+    - eurosat__resnet18_imagenet1k_v1
+    - eurosat__vit_b_16_imagenet1k_v1
+    - pathmnist__resnet18_imagenet1k_v1
+    - pathmnist__vit_b_16_imagenet1k_v1
+    - dermamnist__resnet18_imagenet1k_v1
+    - dermamnist__vit_b_16_imagenet1k_v1
+
+candidate_objectives:
+  - nll_control
+  - mean_pairwise_expected_margin
+  - hard_competitor_expected_margin
+
+winner_eligible_objectives:
+  - mean_pairwise_expected_margin
+  - hard_competitor_expected_margin
+
+objective_direction:
+  nll_control: minimize
+  mean_pairwise_expected_margin: maximize
+  hard_competitor_expected_margin: maximize
+
+primary_evaluation:
+  endpoint_candidates: [0.0,1.0]
+  oracle_interior_candidates: [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+  oracle_opportunity_min_gain: 0.005
+  qualifying_min_gain: 0.005
+
+formal_counts:
+  banks: 8
+  projection_dims: 2
+  structural_conditions: 16
+  objective_condition_rows: 48
+  objective_curve_rows: 528
+
+gates:
+  R1:
+    require_integrity: true
+  R2:
+    min_qualifying_conditions: 8
+    min_datasets: 3
+    require_medical: true
+    require_nonmedical: true
+    require_both_encoders: true
+    require_both_projection_dims: true
+  R3:
+    median_recovery_min: 0.50
+    fraction_recovery_ge_half_min: 0.50
+  R4:
+    max_fraction_loss_gt_0_02: 0.10
+    p10_gain_min: -0.005
+  R5:
+    max_upload_ratio_vs_class_specific_object: 2.10
+
+winner_tie_order:
+  - hard_competitor_expected_margin
+  - mean_pairwise_expected_margin
+
+decisions:
+  A: SELECTOR_OBJECTIVE_REPAIR_SUPPORTED
+  B: MARGIN_SIGNAL_PRESENT_BUT_NOT_QUALIFIED
+  C: SELECTOR_REPAIR_FAILED

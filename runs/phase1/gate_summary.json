@@ -1,0 +1,57 @@
+{
+  "P1": {
+    "pass": true,
+    "n_qualifying_conditions": 13,
+    "datasets": [
+      "cifar100",
+      "dermamnist",
+      "eurosat",
+      "pathmnist"
+    ],
+    "modalities": [
+      "medical",
+      "nonmedical"
+    ],
+    "encoders": [
+      "resnet18_imagenet1k_v1",
+      "vit_b_16_imagenet1k_v1"
+    ],
+    "projection_dims": [
+      64,
+      128
+    ]
+  },
+  "P2": {
+    "pass": true,
+    "n_datasets_with_any_qualifying_condition": 4,
+    "datasets": [
+      {
+        "dataset_id": "cifar100",
+        "modality": "nonmedical"
+      },
+      {
+        "dataset_id": "dermamnist",
+        "modality": "medical"
+      },
+      {
+        "dataset_id": "eurosat",
+        "modality": "nonmedical"
+      },
+      {
+        "dataset_id": "pathmnist",
+        "modality": "medical"
+      }
+    ]
+  },
+  "P3": {
+    "pass": true,
+    "endpoint_tau_0_5_fraction": 0.0625,
+    "threshold": 0.75
+  },
+  "P4": {
+    "pass": true,
+    "all_object_recovery_pass": true,
+    "all_finite": true
+  },
+  "decision": "REAL_REPRESENTATION_INTERIOR_COMPLEXITY_SUPPORTED"
+}

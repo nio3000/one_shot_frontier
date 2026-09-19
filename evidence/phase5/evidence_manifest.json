@@ -1,0 +1,20 @@
+{
+  "freeze_type": "PHASE5_TIER1_FORMAL_EVIDENCE",
+  "status": "FROZEN",
+  "scientific_decision": "NATURAL_DECISION_GAPS_PRESENT_BUT_NOT_BROAD",
+  "code_git_head": "9fb6289e685bc715be775861bb6eace6d402e493",
+  "protocol_sha256": "f2383dfd3a5160c2b51e7790e1cc3589936f69b12953eaf670276bace3133fc7",
+  "feature_manifest_sha256": "6fb31ca3faabd93ba7d5db118aceacfce85ece1acd8d58e423f080552b1ef26e",
+  "pair_manifest_sha256": "cdee7563140f3bf910c75f562092b64ba0483a852b74f95fcc3d8cf7ed5598c0",
+  "authorization_sha256": "b5239677d1754c746654d6cb86bacf703db5db486f0da2743257447f2313f4ac",
+  "files": {
+    "environment_manifest.json": "b2b9e5bdc00904b7f95e8a61f31a950772e98e428c0c82a972eb2f6087361911",
+    "formal_experiment_report.md": "03197421c668ef0b9a31a8d5a382b904eed29619e4bd853b21aaf6ddec9b02a6",
+    "gate_summary.json": "c3443ba4f87ecb7f385dd79d651611fa014e8f628aa1c498003c2555bb10197c",
+    "pair_results.csv": "324a16aaa3dbca81f4f13e232997f63e8f2e272c7affaa0bf7d5bd6cc7226f9d",
+    "protocol_snapshot.yaml": "0ddb3fb58b8a09e5df7b9d4f548854cbcab20f0afc7467273215840300251c79",
+    "risk_curves.csv": "2a7d694f4c652843ecd7e3df6954e65b30a98cf21a803ae2c4333baa382eb076",
+    "run_summary.json": "d6233632be198c0498b45a7a34e19866e9fae5de6640de3a28b79ddce6605c17"
+  },
+  "payload_sha256": "edc27980e61d4a746cee6afc977c0d0ebb7d8c9b0ac12fe38085e280980a30a7"
+}

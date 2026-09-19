@@ -1,0 +1,92 @@
+{
+  "decision": "SELECTOR_REPAIR_FAILED",
+  "winner_objective_id": null,
+  "objective_metrics": {
+    "nll_control": {
+      "objective_id": "nll_control",
+      "R1": true,
+      "R2": false,
+      "R3": false,
+      "R4": false,
+      "R5": true,
+      "pass_all": false,
+      "n_qualifying_conditions": 7,
+      "qualifying_datasets": [
+        "cifar100",
+        "dermamnist"
+      ],
+      "qualifying_modalities": [
+        "medical",
+        "nonmedical"
+      ],
+      "qualifying_encoders": [
+        "resnet18_imagenet1k_v1",
+        "vit_b_16_imagenet1k_v1"
+      ],
+      "qualifying_dims": [
+        64,
+        128
+      ],
+      "n_oracle_opportunities": 14,
+      "median_recovery_fraction": 0.39336864181674275,
+      "fraction_recovery_ge_0_50": 0.42857142857142855,
+      "fraction_conditions_loss_gt_0_02": 0.1875,
+      "p10_adaptive_gain": -0.042099580116540414,
+      "mean_adaptive_gain": 0.0027592389807922293,
+      "max_upload_ratio_vs_class_specific_object": 1.9375
+    },
+    "mean_pairwise_expected_margin": {
+      "objective_id": "mean_pairwise_expected_margin",
+      "R1": true,
+      "R2": false,
+      "R3": false,
+      "R4": false,
+      "R5": true,
+      "pass_all": false,
+      "n_qualifying_conditions": 0,
+      "qualifying_datasets": [],
+      "qualifying_modalities": [],
+      "qualifying_encoders": [],
+      "qualifying_dims": [],
+      "n_oracle_opportunities": 14,
+      "median_recovery_fraction": 0.0,
+      "fraction_recovery_ge_0_50": 0.0,
+      "fraction_conditions_loss_gt_0_02": 0.1875,
+      "p10_adaptive_gain": -0.042099580116540414,
+      "mean_adaptive_gain": -0.010543606861196288,
+      "max_upload_ratio_vs_class_specific_object": 1.9375
+    },
+    "hard_competitor_expected_margin": {
+      "objective_id": "hard_competitor_expected_margin",
+      "R1": true,
+      "R2": false,
+      "R3": false,
+      "R4": false,
+      "R5": true,
+      "pass_all": false,
+      "n_qualifying_conditions": 3,
+      "qualifying_datasets": [
+        "dermamnist"
+      ],
+      "qualifying_modalities": [
+        "medical"
+      ],
+      "qualifying_encoders": [
+        "resnet18_imagenet1k_v1",
+        "vit_b_16_imagenet1k_v1"
+      ],
+      "qualifying_dims": [
+        64,
+        128
+      ],
+      "n_oracle_opportunities": 14,
+      "median_recovery_fraction": 0.0,
+      "fraction_recovery_ge_0_50": 0.21428571428571427,
+      "fraction_conditions_loss_gt_0_02": 0.1875,
+      "p10_adaptive_gain": -0.042099580116540414,
+      "mean_adaptive_gain": -0.0008503954444322101,
+      "max_upload_ratio_vs_class_specific_object": 1.9375
+    }
+  },
+  "winner_rule": "safety-first frozen lexicographic rule"
+}

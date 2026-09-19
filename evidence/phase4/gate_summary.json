@@ -1,0 +1,51 @@
+{
+  "D1_second_order_invariance": {
+    "pass": true,
+    "max_t2_comm_norm_diff": 2.589479262718489e-14,
+    "max_t2_model_norm_diff": 6.453171330633722e-14
+  },
+  "D2_gaussian_head_family_invariance": {
+    "pass": true,
+    "max_head_parameter_norm_diff": 6.455946888195285e-14
+  },
+  "D3_real_representation_decision_gap": {
+    "pass": false,
+    "n_qualifying_conditions": 5,
+    "datasets": [
+      "dermamnist",
+      "eurosat",
+      "pathmnist"
+    ],
+    "modalities": [
+      "medical",
+      "nonmedical"
+    ],
+    "encoders": [
+      "resnet18_imagenet1k_v1",
+      "vit_b_16_imagenet1k_v1"
+    ],
+    "projection_dims": [
+      64,
+      128
+    ],
+    "median_max_pair_gap": 0.0016568201866929977,
+    "median_max_curve_shift": 0.23076531985718196
+  },
+  "D4_escape_summary_specificity": {
+    "pass": true,
+    "diag_m3_separation_fraction_all_pairs": 1.0,
+    "sketch_m3_separation_fraction_all_pairs": 1.0,
+    "diag_m3_separation_fraction_on_conflicts": 1.0,
+    "sketch_m3_separation_fraction_on_conflicts": 1.0,
+    "max_sketch_m4_negative_control_distance": 6.1286481061631045e-12
+  },
+  "D5_aggregation_and_communication": {
+    "pass": true,
+    "max_diag_m3_aggregation_norm_error": 6.298225224879518e-15,
+    "max_sketch_m3_aggregation_norm_error": 7.869488998622839e-15,
+    "max_diag_m3_upload_ratio_vs_t2": 1.0298229263746506,
+    "max_sketch_m3_upload_ratio_vs_t2": 1.0074557315936625
+  },
+  "escape_candidate_promotion": null,
+  "decision": "HIGHER_ORDER_COUNTERFACTUAL_EFFECT_PRESENT_BUT_DECISION_GAP_LIMITED"
+}

@@ -1,0 +1,43 @@
+{
+  "freeze_type": "PHASE2_EXTERNAL_BASELINE_MANIFEST",
+  "status": "PRE-FROZEN",
+  "schema_version": "phase2-external-baseline-v1",
+  "adapters": [
+    {
+      "method_id": "FedFisher",
+      "execution_track": "model_level_external",
+      "official_repo": "https://github.com/Divyansh03/FedFisher",
+      "paper": "FedFisher: Leveraging Fisher Information for One-Shot Federated Learning, AISTATS 2024",
+      "pinned_commit": null,
+      "license_verified": false,
+      "strict_one_shot_verified": false,
+      "environment_verified": false,
+      "wrapper_command": null,
+      "qualified": false
+    },
+    {
+      "method_id": "FedLPA",
+      "execution_track": "model_level_external",
+      "official_repo": "https://github.com/lebronlambert/FedLPA_NeurIPS2024",
+      "paper": "FedLPA: One-shot Federated Learning with Layer-Wise Posterior Aggregation, NeurIPS 2024",
+      "pinned_commit": null,
+      "license_verified": false,
+      "strict_one_shot_verified": false,
+      "environment_verified": false,
+      "wrapper_command": null,
+      "qualified": false
+    },
+    {
+      "method_id": "DENSE",
+      "execution_track": "model_level_external",
+      "official_repo": "https://github.com/zj-jayzhang/DENSE",
+      "paper": "DENSE: Data-Free One-Shot Federated Learning, NeurIPS 2022",
+      "pinned_commit": null,
+      "license_verified": false,
+      "strict_one_shot_verified": false,
+      "environment_verified": false,
+      "wrapper_command": null,
+      "qualified": false
+    }
+  ]
+}

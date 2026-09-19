@@ -1,0 +1,137 @@
+protocol_name: ONE_SHOT_ESTIMABILITY_FRONTIER_PHASE0R
+version: 1.0.0-FROZEN
+status: FROZEN
+phase: Phase 0-R
+purpose: regularization-aware continuous-complexity falsification
+
+scientific_governance:
+  post_falsification_protocol: true
+  phase0a_simple_monotone_frontier_status: FALSIFIED
+  phase0a_runs_confirmatory_reuse: false
+  negative_results_must_be_retained: true
+
+estimation_convention:
+  class_covariance: unbiased_with_denominator_n_c_minus_1
+  pooled_within_class_covariance: unbiased_with_denominator_N_minus_C
+  priors: empirical_balanced
+  note: >-
+    These estimator definitions are implementation-complete mathematical conventions
+    frozen before the first Phase 0-R formal run.
+
+numerical:
+  lw_eigenvalue_floor_relative: 1.0e-8
+  spd_tolerance: 0.0
+  tau0_identity_tolerance: 1.0e-10
+  heterogeneity_calibration_abs_tolerance: 0.01
+  ci_level: 0.95
+  ci_method: paired_t
+
+implementation_constants:
+  discovery_geometry_seed: 314159
+  discovery_perturbation_seed: 161803
+  discovery_test_seed_base: 9200000
+  holdout_a_geometry_seed: 314159
+  holdout_a_perturbation_seed: 161803
+  holdout_a_test_seed_base: 9300000
+  holdout_b_geometry_seed: 314160
+  holdout_b_perturbation_seed: 161804
+  holdout_b_test_seed_base: 9400000
+  endpoint_regime_tau_threshold: 0.5
+
+discovery:
+  C: 5
+  d: 64
+  target_effective_rank: 16
+  mean_scale: 0.44735304405912757
+  generator: shared_eigenvectors_class_specific_eigenvalues
+  geometry_seed: 314159
+  perturbation_seed: 161803
+  test_seed_base: 9200000
+  H_sigma: [0.0, 0.10, 0.20, 0.40, 0.80]
+  effective_support: [0.25, 0.5, 1, 2, 4, 8, 16, 32]
+  tau: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  alpha: [0.01, 0.03, 0.10, 0.30, 1.00]
+  seeds: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
+          2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
+          2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029]
+  test_n: 50000
+  paired_evaluation: true
+
+adaptive_lw_reference:
+  enabled: true
+  tau: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  purpose: independent replication of Phase 0-A endpoint/re-entry mechanism
+
+primary_targets:
+  near_optimal_tolerance_abs_accuracy: 0.005
+  tau_target: minimum_tau_within_0.5pp_of_best_mean_accuracy
+  interior_gain_threshold: 0.005
+
+predictor:
+  type: clipped_ols
+  features: [H_sigma, log2_effective_support, log10_alpha]
+  interactions:
+    - H_sigma*log2_effective_support
+    - H_sigma*log10_alpha
+    - log2_effective_support*log10_alpha
+  clip: [0.0, 1.0]
+  reduced_features: [H_sigma, log2_effective_support]
+
+gates:
+  R1:
+    min_qualifying_cells: 8
+    min_interior_gain: 0.005
+    ci_must_exclude_zero: true
+    min_nonzero_H_levels: 2
+    min_support_levels: 3
+  R2:
+    grouped_cv_folds: 5
+    full_mae_relative_to_reduced_max: 0.80
+    min_R2_gain: 0.10
+  R3:
+    min_phase0A_delta_pearson_r: 0.90
+    min_endpoint_sign_agreement: 0.85
+
+holdout_A:
+  run_only_if: R1_PASS_AND_R2_PASS
+  C: 5
+  d: 128
+  target_effective_rank: 32
+  generator: shared_eigenvectors_class_specific_eigenvalues
+  geometry_seed: 314159
+  perturbation_seed: 161803
+  test_seed_base: 9300000
+  H_sigma: [0.0, 0.10, 0.20, 0.40, 0.80]
+  effective_support: [0.25, 0.5, 1, 2, 4, 8, 16, 32]
+  tau: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  alpha: [0.01, 0.03, 0.10, 0.30, 1.00]
+  seeds: [3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009,
+          3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019,
+          3020, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029]
+  test_n: 50000
+
+holdout_B:
+  run_only_if: R1_PASS_AND_R2_PASS
+  C: 5
+  d: 64
+  target_effective_rank: 16
+  generator: class_specific_eigenvector_rotation
+  geometry_seed: 314160
+  perturbation_seed: 161804
+  test_seed_base: 9400000
+  H_sigma: [0.0, 0.10, 0.20, 0.40, 0.80]
+  effective_support: [0.25, 0.5, 1, 2, 4, 8, 16, 32]
+  tau: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  alpha: [0.01, 0.03, 0.10, 0.30, 1.00]
+  seeds: [4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009,
+          4010, 4011, 4012, 4013, 4014, 4015, 4016, 4017, 4018, 4019,
+          4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027, 4028, 4029]
+  test_n: 50000
+
+confirmation_gates:
+  C1_tau_mae_max: 0.20
+  C2_median_regret_max: 0.005
+  C2_p90_regret_max: 0.020
+  C3_endpoint_sign_accuracy_min: 0.75
+  C3_endpoint_effect_min: 0.020
+  endpoint_regime_tau_threshold: 0.5

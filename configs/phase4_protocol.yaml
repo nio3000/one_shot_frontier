@@ -1,0 +1,94 @@
+protocol_name: ONE_SHOT_ESTIMABILITY_FRONTIER_PHASE4
+version: 1.0.0-FROZEN
+status: FROZEN
+phase: Phase 4
+purpose: real-representation second-order decision-identifiability diagnostics and compact higher-order escape-summary qualification
+
+authorities:
+  nature_direction_freeze: docs/governance/nature/NATURE_TARGET_MANUSCRIPT_DIRECTION_FREEZE_V1.md
+  external_validation_v2: docs/governance/nature/NATURE_TARGET_EXTERNAL_VALIDATION_PLAN_V2_IDENTIFIABILITY.md
+  phase3_theory_authority: docs/phases/phase3/PHASE3_THEORY_EXPERIMENT_FREEZE.md
+
+external_outcome_blackout: ACTIVE
+
+fixed:
+  alpha0: 0.10
+  tau_grid: [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
+  projection_dims: [64,128]
+  projection_seed: 20260908
+  n_clients: 20
+  client_dirichlet_alpha: 0.10
+  client_partition_seed: 20260908
+  reflection_seed: 20260910
+
+interventions:
+  patterns:
+    - all_reflect
+    - hash_half_reflect
+  interpretation: class-centered reflections preserve classwise training first/second moments but alter odd and higher-order geometry
+
+escape_candidates:
+  diag_m3:
+    order: 3
+    directions: coordinate_axes
+    extra_scalars_per_present_client_class: projection_dim
+    status: prespecified_reference_candidate
+  rademacher_m3_k16:
+    order: 3
+    directions: fixed_rademacher
+    k: 16
+    seed: 20260910
+    extra_scalars_per_present_client_class: 16
+    status: prespecified_compact_candidate
+  rademacher_m4_k16_negative_control:
+    order: 4
+    directions: fixed_rademacher
+    k: 16
+    seed: 20260910
+    status: prespecified_even_moment_negative_control
+
+development_authority:
+  manifest_path: configs/phase1_feature_manifest.json
+  required_bank_ids:
+    - cifar100__resnet18_imagenet1k_v1
+    - cifar100__vit_b_16_imagenet1k_v1
+    - eurosat__resnet18_imagenet1k_v1
+    - eurosat__vit_b_16_imagenet1k_v1
+    - pathmnist__resnet18_imagenet1k_v1
+    - pathmnist__vit_b_16_imagenet1k_v1
+    - dermamnist__resnet18_imagenet1k_v1
+    - dermamnist__vit_b_16_imagenet1k_v1
+
+formal_counts:
+  structural_conditions: 16
+  interventions_per_condition: 2
+  pair_rows: 32
+  curve_rows: 704
+
+gates:
+  D1:
+    max_t2_norm_diff: 1.0e-10
+  D2:
+    max_head_parameter_norm_diff: 1.0e-10
+  D3:
+    min_pair_gap: 0.005
+    min_qualifying_conditions: 6
+    min_datasets: 3
+    require_medical: true
+    require_nonmedical: true
+    require_both_encoders: true
+    require_both_dims: true
+  D4:
+    min_third_summary_distance: 1.0e-6
+    min_diag_separation_fraction: 0.95
+    min_sketch_separation_fraction: 0.90
+    max_fourth_control_distance: 1.0e-8
+  D5:
+    max_aggregation_norm_error: 1.0e-10
+    max_diag_upload_ratio_vs_t2: 1.05
+    max_sketch_upload_ratio_vs_t2: 1.01
+
+decisions:
+  A: REAL_REPRESENTATION_IDENTIFIABILITY_MECHANISM_AND_COMPACT_ESCAPE_SUPPORTED
+  B: HIGHER_ORDER_COUNTERFACTUAL_EFFECT_PRESENT_BUT_DECISION_GAP_LIMITED
+  C: PHASE4_MECHANISM_NOT_SUPPORTED

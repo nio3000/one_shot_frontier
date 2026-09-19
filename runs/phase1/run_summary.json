@@ -1,0 +1,14 @@
+{
+  "mode": "formal",
+  "formal": true,
+  "n_conditions": 16,
+  "expected_conditions": 16,
+  "n_curve_rows": 176,
+  "expected_curve_rows": 176,
+  "complete": true,
+  "git_head": "88e7c9123eaee5916d851004c92aa86fb707eb62",
+  "protocol_sha256": "9c4674fadd80f5212b9fa946163ab52e7f04c30cc16213e94f90b5aec47079c2",
+  "manifest_sha256": "70978377cd34a24cf609a3679c0bbb3e7d54efe35aa57bade831c08eada8cd3b",
+  "protocol_status": "FROZEN",
+  "protocol_version": "1.0.0-FROZEN"
+}

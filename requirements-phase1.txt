@@ -1,0 +1,6 @@
+# Core Phase 1 runner uses the existing NumPy/Pandas/SciPy/scikit-learn environment.
+# Feature-bank extraction additionally requires:
+torch
+torchvision
+medmnist
+Pillow

@@ -1,0 +1,105 @@
+project:
+  name: ONE-SHOT ESTIMABILITY FRONTIER
+  phase: phase0_falsification
+  protocol_version: 1.0.0
+  purpose: >-
+    Falsify or support the hypothesis that finite-sample one-shot reconstruction
+    exhibits a stable and predictable shared-to-class-specific covariance crossover.
+
+scientific_hypothesis:
+  null: >-
+    No stable low-dimensional estimability frontier predicts whether a shared-covariance
+    or class-specific-covariance plug-in reconstruction is preferable.
+  alternative: >-
+    The crossover is systematically governed by covariance heterogeneity H_sigma and
+    effective support S_eff=(N_min-1)/r_eff, and generalizes to a held-out dimension
+    and covariance generator.
+
+primary_endpoint:
+  name: delta_estimated_accuracy_o5_minus_o4
+  definition: estimated_o5_acc - estimated_o4_acc
+  interpretation:
+    positive: O5_class_specific_wins
+    negative: O4_shared_wins
+
+object_definitions:
+  o4: "class counts + class sums + pooled full second moment -> full shared-covariance LDA"
+  o5: "class counts + class sums + class-wise full second moments -> pure class-specific QDA"
+  o5_rda_in_primary: false
+
+regularization:
+  estimator: ledoit_wolf
+  eigenvalue_floor_relative: 1.0e-8
+  same_rule_for_o4_and_o5: true
+
+discovery:
+  generator_family: shared_eigenvectors_class_specific_eigenvalues
+  C: 5
+  d: 64
+  target_reff: 16.0
+  target_population_o4_accuracy_at_H0: 0.75
+  geometry_seed: 314159
+  perturbation_seed: 161803
+  calibration_seed: 271828
+  calibration_n_total: 50000
+  test_seed_base: 900000
+  test_n_total: 100000
+  training_seeds:
+    start: 1000
+    count: 50
+  effective_support_grid: [0.25, 0.5, 1, 2, 4, 8, 16, 32]
+  H_sigma_grid: [0.0, 0.05, 0.10, 0.20, 0.40, 0.80]
+
+holdout:
+  generator_family: class_specific_eigenvector_rotations
+  C: 5
+  d: 128
+  target_reff: 16.0
+  target_population_o4_accuracy_at_H0: 0.75
+  geometry_seed: 314160
+  perturbation_seed: 161804
+  calibration_seed: 271829
+  calibration_n_total: 50000
+  test_seed_base: 910000
+  test_n_total: 100000
+  training_seeds:
+    start: 2000
+    count: 50
+  effective_support_grid: [0.25, 0.5, 1, 2, 4, 8, 16, 32]
+  H_sigma_grid: [0.0, 0.05, 0.10, 0.20, 0.40, 0.80]
+
+sanity_checks:
+  oracle_equal_H0_max_abs_pp: 0.50
+  object_recovery_max_abs: 1.0e-10
+  high_support_positive_control:
+    enabled: true
+    effective_support: 64
+    H_sigma: 0.80
+    max_o5_oracle_gap_pp: 1.00
+
+falsification_gates:
+  F1:
+    name: stable_crossover
+    min_effect_pp: 2.0
+    ci_level: 0.95
+    low_support_max: 1.0
+    high_support_min: 8.0
+    min_consecutive_nonzero_H_levels: 2
+  F2:
+    name: directional_frontier_shift
+    crossover_definition: first_zero_crossing_by_linear_interpolation
+    min_finite_crossovers: 3
+    max_spearman_rho_H_vs_log2_Sstar: -0.70
+  F3:
+    name: locked_holdout_prediction
+    predictor: logistic_regression
+    predictor_features: [log2_effective_support, log1p_10x_H_sigma, interaction]
+    min_auroc: 0.80
+    min_sign_accuracy: 0.75
+
+reporting:
+  confidence_interval: paired_t
+  save_every_run_row: true
+  auto_report_after_run: true
+  retain_negative_results: true
+  retain_failed_cells: true

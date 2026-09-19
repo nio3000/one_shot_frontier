@@ -1,0 +1,23 @@
+{
+  "freeze_type": "PHASE4_FORMAL_DEVELOPMENT_EVIDENCE",
+  "status": "FROZEN",
+  "scientific_decision": "HIGHER_ORDER_COUNTERFACTUAL_EFFECT_PRESENT_BUT_DECISION_GAP_LIMITED",
+  "code_git_head": "e75ddc998d280f7b1f93d3ee4bbecb2ba7cc3af8",
+  "protocol_sha256": "c4630074f329081f6e10d2e372de07a41336ad86463b31cea14699adadef5eb8",
+  "phase1_manifest_sha256": "70978377cd34a24cf609a3679c0bbb3e7d54efe35aa57bade831c08eada8cd3b",
+  "authority_sha256": {
+    "nature_direction_freeze": "b510a7dbb44dd6195a9b4f5b63451bc165b79b1835694d27085fd17d70113d52",
+    "external_validation_v2": "61dbb0ff37564186387651b4ef57467c3c1fb4293578e91c7c1869d1aaacbc40",
+    "phase3_theory_authority": "544f712c3d03387fe7e9c7df4692c8ca69582a8971ba2483541c2000038122c2"
+  },
+  "files": {
+    "run_summary.json": "2f2b1f121490464e6ec15fc869e29a47684ac6fd0b696dbabff55bb6519e0b60",
+    "gate_summary.json": "a49ee9479533b2a01c04061858a08ee5fb59aa8889187a4ef66bc4c9ebca2a62",
+    "pair_diagnostics.csv": "cd84753176c032609ceda064b9222acb441aa7b7b8ecd0b901d5652a57b2c50d",
+    "risk_curves.csv": "097c8f4616849acdca1426656c0fc6b87951a278d25406b5f18821d2280d3c83",
+    "environment_manifest.json": "b2b9e5bdc00904b7f95e8a61f31a950772e98e428c0c82a972eb2f6087361911",
+    "protocol_snapshot.yaml": "92407deee6f828c4fa9980b43263d728bfd26bedcf358fc3ac951c303e5e680b",
+    "formal_experiment_report.md": "b213eb09b659f11be6013ff8eae8054eca709d3eaf649ccec1feef9fa18d46d6"
+  },
+  "payload_sha256": "dae78e56c3c0de6846b608f262223378b213d2edc249ece873e9673ddbe9f596"
+}

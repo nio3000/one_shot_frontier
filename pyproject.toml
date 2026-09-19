@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "one-shot-estimability-frontier"
+version = "0.1.0"
+description = "Phase 0 falsification environment for the one-shot estimability frontier hypothesis"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "numpy==2.3.5",
+  "scipy==1.17.0",
+  "scikit-learn==1.8.0",
+  "pandas==2.2.3",
+  "PyYAML==6.0.2",
+  "matplotlib==3.10.6",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

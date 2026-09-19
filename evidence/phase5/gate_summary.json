@@ -1,0 +1,48 @@
+{
+  "E1_provenance_integrity": {
+    "pass": true
+  },
+  "E2_natural_gap_breadth": {
+    "pass": false,
+    "n_qualifying_conditions": 7,
+    "datasets": [
+      "camelyon17",
+      "iwildcam"
+    ],
+    "encoders": [
+      "resnet18_imagenet1k_v1",
+      "vit_b_16_imagenet1k_v1"
+    ],
+    "projection_dims": [
+      64,
+      128
+    ]
+  },
+  "E3_prevalence": {
+    "pass": true,
+    "robust_pair_fraction": 0.19642857142857142,
+    "cluster_bootstrap_ci95": [
+      0.10416666666666667,
+      0.325
+    ],
+    "n_selected_pairs": 56,
+    "n_robust_pairs": 11
+  },
+  "E4_higher_order_corroboration": {
+    "pass": false,
+    "pooled_spearman": -0.07529999960500017,
+    "blocked_permutation_p": 0.6632673465306939,
+    "within_dataset_spearman": {
+      "camelyon17": -0.8742671711966791,
+      "iwildcam": 0.07051977698779896,
+      "rxrx1": -0.6260614855788015
+    },
+    "n_datasets_positive_direction": 1
+  },
+  "E5_communication": {
+    "pass": true,
+    "max_m3_upload_ratio_vs_t2": 1.0074592074592075
+  },
+  "decision": "NATURAL_DECISION_GAPS_PRESENT_BUT_NOT_BROAD",
+  "m3_escape_phase_authorized": false
+}

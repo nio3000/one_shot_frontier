@@ -1,0 +1,15 @@
+{
+  "mode": "development",
+  "formal_development": true,
+  "n_objective_condition_rows": 48,
+  "expected_objective_condition_rows": 48,
+  "n_objective_curve_rows": 528,
+  "expected_objective_curve_rows": 528,
+  "complete": true,
+  "git_head": "9ba05efa3bd29579c9bc5a226a65202a2ffec884",
+  "protocol_sha256": "f23364653faf7b9260d6546ba397805c7a7b35e297251a5566a9954bfd2fb41b",
+  "manifest_sha256": "70978377cd34a24cf609a3679c0bbb3e7d54efe35aa57bade831c08eada8cd3b",
+  "external_plan_sha256": "73bcf2dae8f3dbd5588c33e9255d85cbb20ad4b56052e8768348ec46f7681a5c",
+  "protocol_status": "FROZEN",
+  "protocol_version": "1.0.0-FROZEN"
+}

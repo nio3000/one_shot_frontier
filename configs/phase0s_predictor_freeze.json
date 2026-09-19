@@ -1,0 +1,50 @@
+{
+  "freeze_type": "PHASE0S_PREDICTOR_FREEZE",
+  "primary_model": "M_old",
+  "source_mode": "phase0h_predictor_fit_json",
+  "source_phase0h_git_head": "fb7370e4e291cc3481d8ad23e2810ee69aa37eca",
+  "source_phase0h_protocol_sha256": "82f0dde3227eae8e5c196d6fd8f360b484c293086482e2a6dbef9cf4f1f8894f",
+  "source_phase0h_cells_sha256": "7431316e6f3f26a15fea4403e87b1ed976c3ff78e77bb9dc0d5a8e6f25175df2",
+  "source_phase0h_predictor_fit_sha256": "fbaf042021c9a3a05c04565695533cec8e54558b363d04aa8328d328a594ccd0",
+  "source_row_count": 315,
+  "fitting_git_head": "fb7370e4e291cc3481d8ad23e2810ee69aa37eca",
+  "models": {
+    "M_old": {
+      "features": [
+        "H",
+        "log2_Seff",
+        "H_x_log2_Seff"
+      ],
+      "intercept": -0.090599875880183,
+      "coefficients": {
+        "H": 0.9422282074861417,
+        "log2_Seff": 0.01784132535963729,
+        "H_x_log2_Seff": -0.059479473218060255
+      }
+    },
+    "B0_constant": {
+      "features": [],
+      "intercept": 0.19206349206349208,
+      "coefficients": {}
+    },
+    "B1_H_only": {
+      "features": [
+        "H"
+      ],
+      "intercept": -0.054484126984126996,
+      "coefficients": {
+        "H": 0.8218253968253969
+      }
+    },
+    "B2_Seff_only": {
+      "features": [
+        "log2_Seff"
+      ],
+      "intercept": 0.19206858636565952,
+      "coefficients": {
+        "log2_Seff": -2.5166057807915527e-06
+      }
+    }
+  },
+  "predictor_payload_sha256": "95457ad9e56eaf071fc8f8ef92b2cea5c304c4874239f00fcd8423970ecd0ee5"
+}

@@ -1,0 +1,41 @@
+{
+  "A1": {
+    "pass": true
+  },
+  "A2": {
+    "pass": false,
+    "n_qualifying_conditions": 7,
+    "datasets": [
+      "cifar100",
+      "dermamnist"
+    ],
+    "modalities": [
+      "medical",
+      "nonmedical"
+    ],
+    "encoders": [
+      "resnet18_imagenet1k_v1",
+      "vit_b_16_imagenet1k_v1"
+    ],
+    "projection_dims": [
+      64,
+      128
+    ]
+  },
+  "A3": {
+    "pass": false,
+    "n_oracle_opportunity_conditions": 14,
+    "median_recovery_fraction": 0.39336864181674275,
+    "fraction_recovery_ge_0_50": 0.42857142857142855
+  },
+  "A4": {
+    "pass": false,
+    "fraction_conditions_loss_gt_0_02": 0.1875,
+    "p10_adaptive_gain": -0.042099580116540414
+  },
+  "A5": {
+    "pass": true,
+    "max_upload_ratio_vs_class_specific_object": 1.9375
+  },
+  "decision": "ADAPTIVE_SELECTOR_NOT_USEFUL"
+}

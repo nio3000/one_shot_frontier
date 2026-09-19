@@ -1,0 +1,79 @@
+plan_name: NATURE_TARGET_EXTERNAL_VALIDATION_V1
+version: 1.0.0-FROZEN
+status: FROZEN_BEFORE_PHASE2R_REPAIR
+freeze_date: 2026-09-09
+
+development_datasets:
+  - cifar100
+  - eurosat
+  - pathmnist
+  - dermamnist
+
+external_blackout:
+  outcome_access_before_phase2r_winner_freeze: forbidden
+  schema_mocking_and_access_setup: allowed
+  replacement_after_unfavorable_result: forbidden
+  prior_exposure_requires_disclosure_and_downgrade: true
+
+tier1_wilds:
+  datasets:
+    - camelyon17
+    - rxrx1
+    - iwildcam
+  primary_projection_dims: [64, 128]
+  primary_metric: balanced_accuracy
+  require_official_splits: true
+  report_dataset_authoritative_metrics: true
+  gates:
+    min_qualifying_conditions: 6
+    total_primary_conditions: 12
+    min_gain: 0.005
+    require_ci_low_gt_zero: true
+    require_all_three_datasets: true
+    require_both_representation_families: true
+    require_both_projection_dims: true
+    median_oracle_recovery_min: 0.50
+    fraction_opportunity_recovery_ge_half_min: 0.50
+    max_fraction_loss_gt_0_02: 0.10
+    p10_gain_min: -0.005
+    benchmark_compliant_direction_replication_min_datasets: 2
+
+tier2_clinical:
+  datasets:
+    chexpert: v1.0
+    mimic_cxr_jpg: v2.1.0
+  primary_pathology: Pleural_Effusion
+  pathology_family:
+    - Atelectasis
+    - Cardiomegaly
+    - Consolidation
+    - Edema
+    - Pleural_Effusion
+  views: frontal_AP_PA_only
+  uncertain_handling_primary: exclude
+  missing_handling_primary: exclude
+  split_unit: patient
+  directions:
+    - chexpert_to_mimic
+    - mimic_to_chexpert
+  primary_metric: balanced_accuracy
+  secondary_metrics: [auroc, sensitivity, specificity, macro_f1]
+  multiplicity: Holm
+  gates:
+    primary_gain_both_directions_min: 0.005
+    primary_ci_low_gt_zero_both_directions: true
+    min_pathologies_nonnegative_both_directions: 3
+    min_pathologies_gain_0_005_ci_positive_both_directions: 2
+    median_oracle_recovery_min: 0.50
+    primary_max_loss: 0.02
+    all_cells_max_fraction_loss_gt_0_02: 0.10
+
+global_gate:
+  requires_phase2r_qualified: true
+  requires_tier1_pass: true
+  requires_tier2_pass: true
+  requires_modern_one_shot_baselines: true
+  requires_communication_accounting: true
+  requires_missing_class_quantity_skew: true
+  requires_privacy_stress: true
+  strongest_decision: NATURE_TARGET_EXTERNAL_VALIDATION_SUPPORTED

@@ -1,0 +1,40 @@
+protocol_name: ONE_SHOT_ESTIMABILITY_FRONTIER_PHASE3
+version: 1.0.0-FROZEN
+status: FROZEN
+phase: Phase 3
+purpose: second-order summary-object decision-identifiability theorem witness and finite exact collision
+
+nature_direction_freeze:
+  path: docs/governance/nature/NATURE_TARGET_MANUSCRIPT_DIRECTION_FREEZE_V1.md
+  required_status: FROZEN_BEFORE_PHASE3
+
+external_validation_addendum:
+  path: docs/governance/nature/NATURE_TARGET_EXTERNAL_VALIDATION_PLAN_V2_IDENTIFIABILITY.md
+  required_status: FROZEN_DIRECTION_ADDENDUM_BEFORE_PHASE3
+
+construction:
+  primary_epsilon: 0.08
+  alpha0: 0.10
+  tau_grid: [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
+  n_per_class_exact_witness: 100
+  epsilon_sensitivity: [0.02,0.04,0.06,0.08]
+  dimension_extension: [1,8,32,128]
+
+gates:
+  T1:
+    max_summary_abs_diff: 1.0e-12
+  T2:
+    deterministic_minimax_regret_min: 0.15
+    randomized_minimax_regret_min: 0.075
+  T3:
+    expected_slope: 2.0
+    slope_tolerance: 1.0e-10
+    max_abs_deviation_from_2epsilon: 1.0e-12
+  T4:
+    expected_extra_scalars: 2
+  T5:
+    max_summary_abs_diff: 1.0e-12
+
+decisions:
+  A: SECOND_ORDER_DECISION_IDENTIFIABILITY_LIMIT_ESTABLISHED
+  B: PHASE3_THEORETICAL_WITNESS_FAILED

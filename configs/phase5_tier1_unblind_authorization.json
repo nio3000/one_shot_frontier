@@ -1,0 +1,31 @@
+{
+  "freeze_type": "PHASE5_TIER1_OUTCOME_UNBLIND_AUTHORIZATION",
+  "status": "AUTHORIZED_AFTER_PHASE5_FREEZE",
+  "code_authority_git_head": "fa1020d91a376711cf1f3e4b37d0dad2ba8d0832",
+  "tier1_datasets": [
+    "camelyon17_v1.0",
+    "rxrx1_v1.0",
+    "iwildcam_v2.0"
+  ],
+  "authority_sha256": {
+    "configs/phase5_protocol.yaml": "f2383dfd3a5160c2b51e7790e1cc3589936f69b12953eaf670276bace3133fc7",
+    "configs/nature_external_validation_sap_v3.yaml": "a312e3caa35a830d5e8891b3185514b52bd0424cfe58f3f196faf21fcd5e6aa6",
+    "docs/governance/nature/NATURE_TARGET_EXTERNAL_VALIDATION_SAP_V3.md": "11fdbfeb42cb4332b3445dd5d734352173f90bae2e53499f67202a25a449d63b",
+    "docs/phases/phase5/PHASE5_SCIENTIFIC_FREEZE.md": "b65baaf97b69f7145d4b50090fe20cc4d386e3fc2c633c6627599013d67a1bb4",
+    "docs/phases/phase5/PHASE5_TIER1_DATASET_ADAPTER_CONTRACT.md": "d83852996ec140c87ad8849e6891e251eeb38cfdaa94e7dbe27fbb059a34640b",
+    "docs/phases/phase5/PHASE5_RUNNER_DESIGN_CONTRACT.md": "12f8fd44cd6c5b77e59837aea4f1bffeb856b6d43f474d3b2fdc44afbaddb9c4",
+    "src/frontier/phase5_featurebank.py": "12dba03e586fd4d9fbbf9ac7a5e980f1c6748d26c1ec43a71fe2e7f65aaaa15a",
+    "src/frontier/phase5_wilds_adapters.py": "1fb0c3bf108ca7fddf07c9e64e478e8e653b89426c45dfab845f8a90195f8ec8",
+    "src/frontier/phase5_domain_tools.py": "899aad6335140970ba1ee9c5547ad81a8f727578e7ab8bca48268bbc8508a369",
+    "src/frontier/phase5_summary_geometry.py": "db8cbb5f54e2d90d85e8ad476e75115183c531f538c03d4c81e7dc252237605a",
+    "src/frontier/phase5_pairing.py": "422cc4d3dec54f6fe6d611ed1d6e2102ceb71a9300d2a3c1ec94902df13ded43",
+    "src/frontier/phase5_eval.py": "34ca5b15613d9fd5e156489b9a4dd9acedfa59a53bdf79c56ba0c63f897dc688",
+    "src/frontier/phase5_gates.py": "eae2c9b2af52e5c717235664db1294698e3b1b49609bce23eb82a180bf2adabe",
+    "src/frontier/phase5_reporting.py": "03c6e39d50a841a0d7279471bfaf908198aa197920ca51cc71c09bf5680ecd1d",
+    "tools/run_phase5.py": "198ef705c065cc3440c0ca20a675454d43bfa958b93c7a6e86fd8e9ca07713b6",
+    "tests/test_phase5_core.py": "5db72c7ab34711feb0aea51f436245c9c7042ac09dcc248c3aeaecfd35cab7ee"
+  },
+  "external_outcome_access_now_authorized": true,
+  "note": "Authorization is prospective and must be committed before loading Tier-1 labels/images.",
+  "payload_sha256": "5dc8651b3dc825f76b3e2680a5f7077d03fd772a238774eafa95434887e649d5"
+}

@@ -1,0 +1,120 @@
+protocol_name: ONE_SHOT_ESTIMABILITY_FRONTIER_PHASE0H
+version: 1.0.0-FROZEN
+status: FROZEN
+phase: Phase 0-H
+purpose: high-dimensional covariance-complexity transition falsification
+
+fixed:
+  C: 5
+  alpha0: 0.10
+  mean_scale_whitened_simplex: 1.85
+  tau: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  test_n: 50000
+
+discovery:
+  dimensions: [32, 64, 128]
+  q_effective_rank_over_d: [0.125, 0.25, 0.50]
+  H_sigma: [0.0, 0.10, 0.20, 0.40, 0.80]
+  rho_nminus1_over_d: [0.25, 0.50, 0.75, 1.00, 1.50, 2.00, 4.00]
+  seeds: [5000,5001,5002,5003,5004,5005,5006,5007,5008,5009,
+          5010,5011,5012,5013,5014,5015,5016,5017,5018,5019,
+          5020,5021,5022,5023,5024,5025,5026,5027,5028,5029]
+  generator: mean_preserving_shared_eigenvector_eigenvalue_heterogeneity
+  nested_support_path: true
+  paired_tau_evaluation: true
+  expected_structural_cells: 315
+  expected_replicate_cells: 9450
+  expected_curve_rows: 103950
+
+spectrum:
+  family: exponential
+  formula: exp(-kappa*(j-1)/(d-1))
+  effective_rank_tolerance: 1.0e-6
+
+heterogeneity:
+  pooled_covariance_preserved: true
+  H_tolerance: 1.0e-3
+
+primary_targets:
+  tau_near_optimal_tolerance_accuracy: 0.005
+  interior_gain_threshold: 0.005
+
+predictors:
+  M_old:
+    features: [H, log2_Seff, H_x_log2_Seff]
+  M_ratio:
+    features: [H, log2_rho, log2_q, H_x_log2_rho, H_x_log2_q, log2_rho_x_log2_q]
+  M_hinge:
+    hinge_rho: 1.0
+    features: [H, u_minus, u_plus, log2_q, H_x_u_minus, H_x_u_plus, H_x_log2_q]
+  M_hinge_plus_d:
+    base: M_hinge
+    extra_features: [log2_d_over_64]
+  estimator: ordinary_least_squares
+  prediction_clip: [0.0, 1.0]
+  cross_validation: leave_one_dimension_out
+
+discovery_gates:
+  H1:
+    min_qualifying_cells: 30
+    min_interior_gain: 0.005
+    ci_excludes_zero: true
+    min_dimensions: 2
+    min_q_levels: 2
+    min_rho_levels: 3
+    min_nonzero_H_levels: 3
+  H2:
+    model: M_ratio_vs_M_old
+    mae_ratio_max: 0.80
+    r2_gain_min: 0.10
+  H3:
+    model: M_hinge_vs_M_ratio
+    mae_ratio_max: 0.90
+    r2_gain_min: 0.05
+  H4:
+    M_hinge_mae_max: 0.15
+    M_hinge_r2_min: 0.70
+    explicit_d_mae_improvement_max_fraction: 0.05
+    explicit_d_r2_gain_max: 0.03
+
+holdout_authorization:
+  requires: [H1_PASS, H2_PASS, H3_PASS, H4_PASS]
+
+holdout_A:
+  dimension: 256
+  q_effective_rank_over_d: [0.125, 0.25, 0.50]
+  H_sigma: [0.0, 0.10, 0.20, 0.40, 0.80]
+  rho_nminus1_over_d: [0.25, 0.50, 0.75, 1.00, 1.50, 2.00, 4.00]
+  seeds: [6000,6001,6002,6003,6004,6005,6006,6007,6008,6009,
+          6010,6011,6012,6013,6014,6015,6016,6017,6018,6019,
+          6020,6021,6022,6023,6024,6025,6026,6027,6028,6029]
+  generator: mean_preserving_shared_eigenvector_eigenvalue_heterogeneity
+  test_n: 50000
+
+holdout_B:
+  dimension: 96
+  q_effective_rank_over_d: [0.1875, 0.375, 0.625]
+  H_sigma: [0.0, 0.10, 0.20, 0.40, 0.80]
+  rho_nminus1_over_d: [0.25, 0.50, 0.75, 1.00, 1.50, 2.00, 4.00]
+  seeds: [7000,7001,7002,7003,7004,7005,7006,7007,7008,7009,
+          7010,7011,7012,7013,7014,7015,7016,7017,7018,7019,
+          7020,7021,7022,7023,7024,7025,7026,7027,7028,7029]
+  generator: mean_preserving_noncommuting_covariance_perturbation
+  test_n: 50000
+
+confirmation_gates:
+  C1_tau_mae_max: 0.15
+  C2_median_regret_max: 0.005
+  C2_p90_regret_max: 0.020
+  C3_complexity_regime_accuracy_min: 0.70
+  C4_min_interior_cells: 20
+  C4_min_nonzero_H_levels: 2
+  C4_min_rho_levels: 3
+
+sanity:
+  effective_rank_abs_tolerance: 1.0e-6
+  H_sigma_abs_tolerance: 1.0e-3
+  pooled_cov_relative_fro_error_max: 1.0e-10
+  tau0_class_cov_identity_abs_max: 1.0e-10
+  H0_tau_0_5_max: 0.10
+  H0_fraction_cells_required: 0.90

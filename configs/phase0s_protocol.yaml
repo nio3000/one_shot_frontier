@@ -1,0 +1,93 @@
+protocol_name: ONE_SHOT_ESTIMABILITY_FRONTIER_PHASE0S
+version: 0.9.0-PRE-FROZEN
+status: PRE-FROZEN_BEFORE_IMPLEMENTATION
+phase: Phase 0-S
+purpose: smooth estimability surface locked confirmation
+
+fixed:
+  C: 5
+  alpha0: 0.10
+  mean_scale_whitened_simplex: 1.85
+  tau: [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
+  test_n: 50000
+  H_sigma: [0.05,0.15,0.30,0.60]
+  effective_support: [0.35,0.70,1.40,2.80,5.60,11.20]
+  seeds_per_cell: 30
+
+predictor_freeze:
+  primary_model: M_old
+  formula: clipped_ols_intercept_plus_H_plus_log2Seff_plus_interaction
+  source_preferred: runs/phase0h/discovery/predictor_fit.json
+  source_fallback: deterministic_refit_from_runs/phase0h/discovery/cells.csv
+  no_phase0s_refit: true
+  baselines: [B0_constant,B1_H_only,B2_Seff_only]
+
+panel_A:
+  name: unseen_scale_spectral_ratios
+  distribution: gaussian
+  covariance_geometry: mean_preserving_shared_eigenvector_eigenvalue
+  dimensions: [48,96,192]
+  q: [0.1875,0.375,0.625]
+  seeds: [8000,8001,8002,8003,8004,8005,8006,8007,8008,8009,
+          8010,8011,8012,8013,8014,8015,8016,8017,8018,8019,
+          8020,8021,8022,8023,8024,8025,8026,8027,8028,8029]
+  expected_structural_cells: 216
+  expected_replicates: 6480
+  expected_curve_rows: 71280
+
+panel_B:
+  name: noncommuting_covariance_geometry
+  distribution: gaussian
+  dimension: 96
+  q: [0.1875,0.375,0.625]
+  covariance_geometry: exp_congruence_mean_preserving_noncommuting
+  seeds: [9000,9001,9002,9003,9004,9005,9006,9007,9008,9009,
+          9010,9011,9012,9013,9014,9015,9016,9017,9018,9019,
+          9020,9021,9022,9023,9024,9025,9026,9027,9028,9029]
+  expected_structural_cells: 72
+  expected_replicates: 2160
+  expected_curve_rows: 23760
+
+panel_C:
+  name: student_t_heavy_tail
+  distribution: multivariate_student_t
+  degrees_of_freedom: 5
+  covariance_preserving_sampling: x=mu+sqrt((nu-2)/chi2_nu)*z
+  dimension: 96
+  q: [0.1875,0.375,0.625]
+  covariance_geometry: mean_preserving_shared_eigenvector_eigenvalue
+  seeds: [10000,10001,10002,10003,10004,10005,10006,10007,10008,10009,
+          10010,10011,10012,10013,10014,10015,10016,10017,10018,10019,
+          10020,10021,10022,10023,10024,10025,10026,10027,10028,10029]
+  expected_structural_cells: 72
+  expected_replicates: 2160
+  expected_curve_rows: 23760
+
+total:
+  expected_structural_cells: 360
+  expected_replicates: 10800
+  expected_curve_rows: 118800
+
+bootstrap:
+  structural_cell_replicates: 10000
+  seed: 20260907
+
+panel_gates:
+  S1:
+    tau_mae_max: 0.12
+    tau_mae_ci95_upper_max: 0.15
+    r2_min: 0.60
+  S2:
+    median_regret_max: 0.005
+    p90_regret_max: 0.020
+  S3:
+    low_mid_high_accuracy_min: 0.75
+  S4:
+    Mold_mae_relative_to_best_single_axis_max: 0.90
+    must_beat_constant: true
+
+global_decisions:
+  A: SMOOTH_ESTIMABILITY_SURFACE_TRANSFER_SUPPORTED
+  B: GAUSSIAN_GEOMETRY_TRANSFER_SUPPORTED_NON_GAUSSIAN_FAIL
+  C: SCALE_TRANSFER_SUPPORTED_GEOMETRY_NOT_GENERAL
+  D: SMOOTH_SURFACE_NOT_TRANSFERABLE

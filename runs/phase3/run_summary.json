@@ -1,0 +1,11 @@
+{
+  "mode": "formal",
+  "formal": true,
+  "complete": true,
+  "git_head": "57ccfe7366c3eccf1094abb741cc56ab3acf6f1a",
+  "protocol_sha256": "e9d79c230d3e19f2bdb8a201bf551cc3f3d456b998d8640af6817c4cc71dd225",
+  "protocol_status": "FROZEN",
+  "protocol_version": "1.0.0-FROZEN",
+  "nature_direction_freeze_sha256": "b510a7dbb44dd6195a9b4f5b63451bc165b79b1835694d27085fd17d70113d52",
+  "external_v2_addendum_sha256": "61dbb0ff37564186387651b4ef57467c3c1fb4293578e91c7c1869d1aaacbc40"
+}

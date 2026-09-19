@@ -1,0 +1,86 @@
+protocol_name: ONE_SHOT_ESTIMABILITY_FRONTIER_PHASE5
+version: 1.0.0-FROZEN
+status: FROZEN_BEFORE_TIER1_OUTCOME_ACCESS
+phase: Phase 5
+purpose: natural-domain approximate-summary-collision and decision-identifiability external validation
+
+authorities:
+  nature_direction: docs/governance/nature/NATURE_TARGET_MANUSCRIPT_DIRECTION_FREEZE_V1.md
+  external_v2: docs/governance/nature/NATURE_TARGET_EXTERNAL_VALIDATION_PLAN_V2_IDENTIFIABILITY.md
+  sap_v3: docs/governance/nature/NATURE_TARGET_EXTERNAL_VALIDATION_SAP_V3.md
+  sap_v3_yaml: configs/nature_external_validation_sap_v3.yaml
+  phase3_theory: docs/phases/phase3/PHASE3_THEORY_EXPERIMENT_FREEZE.md
+  phase4_evidence: evidence/phase4/evidence_manifest.json
+
+external_outcome_blackout: ACTIVE_UNTIL_AUTHORIZATION_ARTIFACT_COMMITTED
+
+representations:
+  encoders: [resnet18_imagenet1k_v1, vit_b_16_imagenet1k_v1]
+  projection_dims: [64,128]
+  projection_seed: 20260908
+
+fixed:
+  alpha0: 0.10
+  tau_grid: [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
+  group_split_seed: 20260910
+  group_fit_fraction: 0.50
+  class_subset_seed: 20260910
+  m3_k: 16
+  m3_seed: 20260910
+  pair_near_fraction: 0.20
+  pair_max_selected: 10
+  pair_min_selected: 1
+  bootstrap_replicates: 1000
+  bootstrap_seed: 20260910
+  gate_bootstrap_replicates: 5000
+  permutation_replicates: 5000
+  gate_seed: 20260910
+
+tier1:
+  raw_root: data/phase5_tier1_raw
+  feature_root: data/phase5_tier1/features
+  datasets:
+    camelyon17:
+      version: "1.0"
+      context_field: hospital
+      group_field: slide
+      min_shared_classes: 2
+      min_fit_per_class: 40
+      min_eval_per_class: 40
+      max_shared_classes: 2
+    rxrx1:
+      version: "1.0"
+      context_field: cell_type
+      group_field: experiment
+      min_shared_classes: 32
+      min_fit_per_class: 2
+      min_eval_per_class: 2
+      max_shared_classes: 64
+    iwildcam:
+      version: "2.0"
+      context_field: location
+      group_field: sequence
+      min_shared_classes: 3
+      min_fit_per_class: 5
+      min_eval_per_class: 5
+      max_shared_classes: 64
+
+paths:
+  authorization: configs/phase5_tier1_unblind_authorization.json
+  feature_manifest: configs/phase5_tier1_feature_manifest.json
+  pair_manifest: configs/phase5_tier1_pair_manifest.json
+
+gates:
+  E2_min_qualifying_conditions: 6
+  E3_robust_fraction_min: 0.15
+  E3_cluster_ci_low_min: 0.05
+  E4_spearman_min: 0.30
+  E4_p_max: 0.01
+  E4_min_positive_datasets: 2
+  E5_max_upload_ratio: 1.01
+
+decisions:
+  A: NATURAL_DOMAIN_DECISION_IDENTIFIABILITY_SUPPORTED_WITH_HIGHER_ORDER_CORROBORATION
+  B: NATURAL_DOMAIN_DECISION_IDENTIFIABILITY_SUPPORTED
+  C: NATURAL_DECISION_GAPS_PRESENT_BUT_NOT_BROAD
+  D: NATURAL_DOMAIN_IDENTIFIABILITY_NOT_SUPPORTED

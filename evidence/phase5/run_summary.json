@@ -1,0 +1,23 @@
+{
+  "mode": "tier1-formal",
+  "formal": true,
+  "n_selected_pair_rows": 56,
+  "expected_selected_pair_rows": 56,
+  "n_risk_curve_rows": 1232,
+  "expected_risk_curve_rows": 1232,
+  "complete": true,
+  "git_head": "9fb6289e685bc715be775861bb6eace6d402e493",
+  "protocol_sha256": "f2383dfd3a5160c2b51e7790e1cc3589936f69b12953eaf670276bace3133fc7",
+  "feature_manifest_sha256": "6fb31ca3faabd93ba7d5db118aceacfce85ece1acd8d58e423f080552b1ef26e",
+  "pair_manifest_sha256": "cdee7563140f3bf910c75f562092b64ba0483a852b74f95fcc3d8cf7ed5598c0",
+  "authorization_sha256": "b5239677d1754c746654d6cb86bacf703db5db486f0da2743257447f2313f4ac",
+  "authority_sha256": {
+    "nature_direction": "b510a7dbb44dd6195a9b4f5b63451bc165b79b1835694d27085fd17d70113d52",
+    "external_v2": "61dbb0ff37564186387651b4ef57467c3c1fb4293578e91c7c1869d1aaacbc40",
+    "sap_v3": "11fdbfeb42cb4332b3445dd5d734352173f90bae2e53499f67202a25a449d63b",
+    "sap_v3_yaml": "a312e3caa35a830d5e8891b3185514b52bd0424cfe58f3f196faf21fcd5e6aa6",
+    "phase3_theory": "544f712c3d03387fe7e9c7df4692c8ca69582a8971ba2483541c2000038122c2",
+    "phase4_evidence": "7481a521d10e111f4cea309bd96565b360ce13700b427331ee0109e052e31cbb"
+  },
+  "external_outcome_blackout": "OPENED_BY_COMMITTED_AUTHORIZATION"
+}
