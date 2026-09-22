@@ -1,0 +1,158 @@
+protocol_id: NATURE-UPGRADE-N1
+name: Support-Matched Estimability Falsification
+scientific_protocol_version: 1.0.0-FROZEN
+implementation_version: 1.1.0
+status: FROZEN_REPRODUCTION_BINDING
+frozen_on: '2026-09-21'
+
+scientific_question: >-
+  Does the excess heterogeneity observed across frozen natural institution-by-age
+  deployment contexts remain after matching finite-sample support exactly while
+  destroying age-structured deployment-unit membership within institution?
+
+authoritative_input:
+  filename: N1_authoritative_development_rows.csv
+  sha256: 5913d81c66754c9e0b56351796ac338eb3a16f1ebc2a016ed7c237179672ea34
+  rows: 76959
+  required_columns:
+    - record_id
+    - institution
+    - age
+    - age_band
+    - y_true
+    - prob_seed42
+    - prob_seed52
+    - prob_seed62
+    - prob_mean
+    - y_pred
+  record_id_unique: true
+
+context_construction:
+  institutions:
+    - PTB-XL
+    - Chapman-Shaoxing
+    - Ningbo
+    - CPSC-family
+  age_bands:
+    - '<40'
+    - '40-59'
+    - '60-74'
+    - '75+'
+  age_rules:
+    '<40': 'age < 40'
+    '40-59': '40 <= age < 60'
+    '60-74': '60 <= age < 75'
+    '75+': 'age >= 75'
+  context_id: institution|age_band
+  context_construction_uses_labels: false
+  eligibility:
+    min_N: 1024
+    min_positive: 40
+    min_negative: 40
+  expected_all_contexts: 16
+  expected_eligible_contexts: 13
+  expected_support:
+    - {institution: PTB-XL, age_band: '<40', N: 2849, n_positive: 29, n_negative: 2820, eligible: false}
+    - {institution: PTB-XL, age_band: '40-59', N: 6918, n_positive: 101, n_negative: 6817, eligible: true}
+    - {institution: PTB-XL, age_band: '60-74', N: 7471, n_positive: 315, n_negative: 7156, eligible: true}
+    - {institution: PTB-XL, age_band: '75+', N: 4306, n_positive: 327, n_negative: 3979, eligible: true}
+    - {institution: Chapman-Shaoxing, age_band: '<40', N: 1262, n_positive: 6, n_negative: 1256, eligible: false}
+    - {institution: Chapman-Shaoxing, age_band: '40-59', N: 3227, n_positive: 47, n_negative: 3180, eligible: true}
+    - {institution: Chapman-Shaoxing, age_band: '60-74', N: 3619, n_positive: 100, n_negative: 3519, eligible: true}
+    - {institution: Chapman-Shaoxing, age_band: '75+', N: 2139, n_positive: 94, n_negative: 2045, eligible: true}
+    - {institution: Ningbo, age_band: '<40', N: 5970, n_positive: 36, n_negative: 5934, eligible: false}
+    - {institution: Ningbo, age_band: '40-59', N: 10112, n_positive: 135, n_negative: 9977, eligible: true}
+    - {institution: Ningbo, age_band: '60-74', N: 11379, n_positive: 342, n_negative: 11037, eligible: true}
+    - {institution: Ningbo, age_band: '75+', N: 7389, n_positive: 380, n_negative: 7009, eligible: true}
+    - {institution: CPSC-family, age_band: '<40', N: 1444, n_positive: 47, n_negative: 1397, eligible: true}
+    - {institution: CPSC-family, age_band: '40-59', N: 2500, n_positive: 161, n_negative: 2339, eligible: true}
+    - {institution: CPSC-family, age_band: '60-74', N: 3640, n_positive: 299, n_negative: 3341, eligible: true}
+    - {institution: CPSC-family, age_band: '75+', N: 2734, n_positive: 321, n_negative: 2413, eligible: true}
+
+prediction_rule:
+  seed_columns: [prob_seed42, prob_seed52, prob_seed62]
+  aggregation: arithmetic_mean
+  threshold: 0.3475392659505208
+  decision_rule: 'y_pred = 1(mean(seed probabilities) >= threshold)'
+  forbid_majority_vote_substitution: true
+  verify_existing_prob_mean: true
+  verify_existing_y_pred: true
+  probability_tolerance: 1.0e-12
+
+source_reference:
+  cohort: Georgia
+  source_test_bacc: 0.921114990521441
+  primary_failure_margin: 0.075
+
+arms:
+  A:
+    name: historical_512_ecg_random_units
+    inferential_role: descriptive_legacy_reference_only
+    unit_size: 512
+    construction_seed: 20260901
+    required_for_primary_gate: false
+  B:
+    name: n_matched_random_partition
+    inferential_role: sensitivity_control
+    partition_scope: pooled_eligible_analysis_population
+    matching: exact_context_N_only
+    replicates: 20000
+    rng_seed: 20260921
+    required_for_primary_gate: false
+  C:
+    name: exact_support_matched_random_partition
+    inferential_role: primary_falsification_control
+    partition_scope: within_institution
+    matching:
+      - exact_context_N
+      - exact_context_n_positive
+      - exact_context_n_negative
+    randomization: separate_positive_negative_reallocation_within_institution
+    destroys: natural_age_structure
+    preserves: finite_sample_class_support
+    replicates: 20000
+    rng_seed: 20260921
+  D:
+    name: frozen_natural_institution_by_age_contexts
+    inferential_role: observed_statistic
+    expected_contexts: 13
+
+risk:
+  metric: balanced_accuracy
+  risk_definition: R_c = 1 - BACC_c
+  require_both_classes_in_every_eligible_context: true
+
+primary_statistic:
+  symbol: T_HET
+  definition: 'mean_j Var({R_c : c in institution j})'
+  variance_ddof: 0
+  institution_weighting: equal_across_institutions
+
+primary_test:
+  null_source: Arm_C
+  tail: one_sided_upper
+  monte_carlo_p: '(1 + count(T_HET_null >= T_HET_natural)) / (B + 1)'
+  alpha: 0.05
+  secondary_required_condition: T_HET_natural > median(T_HET_Arm_C_null)
+
+frozen_decisions:
+  pass: N1_PASS_STRUCTURE_BEYOND_SUPPORT
+  fail: N1_SUPPORT_DOMINATED
+  rule: >-
+    PASS if and only if p_HET <= 0.05 and natural T_HET exceeds the Arm-C null
+    median; otherwise FAIL. No result-dependent changes to matching, statistic,
+    replicate count, seed, tail, threshold, context boundaries, support thresholds,
+    or alpha are permitted.
+
+outputs:
+  run_dir: runs/nature_upgrade_n1
+  files:
+    - all_context_support.csv
+    - natural_contexts.csv
+    - arm_b_null.csv
+    - arm_c_null.csv
+    - support_audit.json
+    - gate_summary.json
+    - run_summary.json
+    - protocol_snapshot.yaml
+    - input_manifest_snapshot.json
