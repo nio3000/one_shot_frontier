@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Iterable
+import re
 
 import numpy as np
 import pandas as pd
@@ -57,6 +58,61 @@ def _binary_series(s: pd.Series, name: str) -> np.ndarray:
     return x.astype(np.int8)
 
 
+def _institution_token(value: str) -> str:
+    """Normalize representation only; scientific institution identity remains protocol-defined."""
+    token = re.sub(r"[^a-z0-9]+", "_", str(value).strip().lower()).strip("_")
+    if not token:
+        raise ValueError(f"Empty institution identifier after normalization: {value!r}")
+    return token
+
+
+def canonicalize_institutions(values: pd.Series, expected: Iterable[str]) -> tuple[np.ndarray, dict[str, str]]:
+    expected = [str(x) for x in expected]
+    expected_by_token: dict[str, str] = {}
+    for name in expected:
+        token = _institution_token(name)
+        if token in expected_by_token and expected_by_token[token] != name:
+            raise ValueError(
+                f"Frozen institution labels collide under representation normalization: "
+                f"{expected_by_token[token]!r} and {name!r}"
+            )
+        expected_by_token[token] = name
+
+    raw = values.astype(str)
+    raw_unique = sorted(raw.unique().tolist())
+    raw_to_canonical: dict[str, str] = {}
+    unknown: list[str] = []
+    reverse: dict[str, list[str]] = {name: [] for name in expected}
+    for name in raw_unique:
+        token = _institution_token(name)
+        canonical = expected_by_token.get(token)
+        if canonical is None:
+            unknown.append(name)
+            continue
+        raw_to_canonical[name] = canonical
+        reverse[canonical].append(name)
+    if unknown:
+        raise ValueError(
+            f"Institution set mismatch after representation normalization; "
+            f"unknown_actual={unknown} expected={sorted(expected)}"
+        )
+    missing = [name for name in expected if not reverse[name]]
+    if missing:
+        raise ValueError(f"Missing frozen institutions after representation normalization: {missing}")
+    ambiguous = {name: raws for name, raws in reverse.items() if len(raws) != 1}
+    if ambiguous:
+        raise ValueError(
+            f"Multiple raw institution aliases map to one frozen institution; refusing merge: {ambiguous}"
+        )
+    mapped = raw.map(raw_to_canonical).to_numpy(dtype=str)
+    if set(mapped) != set(expected):
+        raise ValueError(
+            f"Institution set mismatch after representation normalization "
+            f"expected={sorted(expected)} actual={sorted(set(mapped))}"
+        )
+    return mapped, raw_to_canonical
+
+
 def prepare_authoritative_rows(df: pd.DataFrame, protocol: dict, columns: N1Columns = CANONICAL_COLUMNS) -> tuple[pd.DataFrame, dict]:
     required = list(protocol["authoritative_input"]["required_columns"])
     missing = [c for c in required if c not in df.columns]
@@ -70,11 +126,10 @@ def prepare_authoritative_rows(df: pd.DataFrame, protocol: dict, columns: N1Colu
     if protocol["authoritative_input"].get("record_id_unique", True) and not df[columns.record_id].is_unique:
         raise ValueError("record_id must be unique")
 
-    institutions = df[columns.institution].astype(str).to_numpy()
-    expected_inst = set(map(str, protocol["context_construction"]["institutions"]))
+    raw_institutions = df[columns.institution].astype(str)
+    expected_institutions = list(map(str, protocol["context_construction"]["institutions"]))
+    institutions, institution_mapping = canonicalize_institutions(raw_institutions, expected_institutions)
     actual_inst = set(institutions)
-    if actual_inst != expected_inst:
-        raise ValueError(f"Institution set mismatch expected={sorted(expected_inst)} actual={sorted(actual_inst)}")
 
     derived_band = derive_age_band(df[columns.age])
     supplied_band = df[columns.age_band].astype(str).to_numpy()
@@ -117,6 +172,8 @@ def prepare_authoritative_rows(df: pd.DataFrame, protocol: dict, columns: N1Colu
         "n_rows": int(len(out)),
         "record_id_unique": bool(out["sample_id"].is_unique),
         "institution_set": sorted(actual_inst),
+        "institution_raw_to_canonical": institution_mapping,
+        "institution_normalization": "case_and_separator_only__scientific_identity_protocol_defined",
         "age_band_recomputed_exact": True,
         "prob_mean_recomputed_exact_within_tolerance": True,
         "y_pred_recomputed_exact": True,

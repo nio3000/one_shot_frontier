@@ -6,6 +6,7 @@ import pandas as pd
 from frontier.n1_support_matched import (
     _sequential_binary_partition_correct_counts,
     balanced_accuracy_binary,
+    canonicalize_institutions,
     context_support_table,
     derive_age_band,
     evaluate_n1_gate,
@@ -127,3 +128,33 @@ def test_gate_rule_is_exact_conjunction():
     null2=np.linspace(0.0,0.09,100)
     g2=evaluate_n1_gate(natural_t_het=1.0,arm_c_null=null2,alpha=0.05)
     assert g2["decision"]=="N1_PASS_STRUCTURE_BEYOND_SUPPORT"
+
+
+def test_authoritative_institution_representation_normalization_exact():
+    raw = pd.Series(["ptb_xl", "chapman_shaoxing", "ningbo", "cpsc_family"])
+    expected = ["PTB-XL", "Chapman-Shaoxing", "Ningbo", "CPSC-family"]
+    mapped, audit = canonicalize_institutions(raw, expected)
+    assert mapped.tolist() == expected
+    assert audit == {
+        "ptb_xl": "PTB-XL",
+        "chapman_shaoxing": "Chapman-Shaoxing",
+        "ningbo": "Ningbo",
+        "cpsc_family": "CPSC-family",
+    }
+
+
+def test_institution_normalization_rejects_unknown_or_ambiguous_aliases():
+    expected = ["PTB-XL", "Chapman-Shaoxing"]
+    try:
+        canonicalize_institutions(pd.Series(["ptb_xl", "other_site"]), expected)
+    except ValueError as e:
+        assert "unknown_actual" in str(e)
+    else:
+        raise AssertionError("unknown institution was not rejected")
+
+    try:
+        canonicalize_institutions(pd.Series(["ptb_xl", "PTB XL", "chapman_shaoxing"]), expected)
+    except ValueError as e:
+        assert "refusing merge" in str(e)
+    else:
+        raise AssertionError("ambiguous raw aliases were silently merged")
