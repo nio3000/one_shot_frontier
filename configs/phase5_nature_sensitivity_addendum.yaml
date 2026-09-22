@@ -1,0 +1,39 @@
+protocol_name: ONE_SHOT_FRONTIER_PHASE5_NATURE_SENSITIVITY_ADDENDUM
+version: 1.0.0-FROZEN
+status: POST_PRIMARY_FROZEN_BEFORE_SENSITIVITY_EXECUTION
+primary_pair_manifest: configs/phase5_tier1_pair_manifest.json
+pair_manifest_mutable: false
+
+dense_tau_grid:
+  start: 0.0
+  stop: 1.0
+  step: 0.02
+
+alpha0_values: [0.03, 0.10, 0.30]
+projection_seeds: [20260908, 20260921, 20260922]
+group_split_seeds: [20260910, 20260921, 20260922]
+
+primary_robust_pair_count: 11
+robust_pair:
+  deterministic_regret_min: 0.005
+  require_disjoint_optimal_actions: true
+
+gates:
+  C1_dense_grid:
+    retained_primary_robust_min: 9
+  C2_regularization:
+    min_settings_passing: 2
+    retained_primary_robust_min_per_setting: 7
+  C3_projection:
+    median_retained_primary_robust_min: 7
+  C4_group_split:
+    median_retained_primary_robust_min: 7
+
+reporting:
+  unsupported_alternative_split_pairs: retain_and_report
+  effect_size_summary:
+    - deterministic_regret
+    - randomized_regret
+    - curve_linf_shift
+  by_dataset: true
+  by_condition: true

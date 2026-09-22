@@ -1,0 +1,61 @@
+{
+  "status": "PHASE5_TIER1_COMPUTATIONAL_AUTHORITY_RESTORATION_CLOSED_PASS",
+  "all_6_banks_pass": true,
+  "n_banks": 6,
+  "banks": [
+    {
+      "bank_id": "camelyon17__resnet18_imagenet1k_v1",
+      "path": "data\\phase5_tier1\\features\\camelyon17__resnet18_imagenet1k_v1.npz",
+      "expected_sha256": "016bbd0e0b5aa4ff1e09313fb82cde15a6fdece08136449398ff583bd65af061",
+      "observed_sha256": "016bbd0e0b5aa4ff1e09313fb82cde15a6fdece08136449398ff583bd65af061",
+      "exact_match": true,
+      "metadata_sha256": "a6e3528cf47b59396817749cf40c664730814bbf107fa42ed37951280484ab58",
+      "encoder_state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080"
+    },
+    {
+      "bank_id": "camelyon17__vit_b_16_imagenet1k_v1",
+      "path": "data\\phase5_tier1\\features\\camelyon17__vit_b_16_imagenet1k_v1.npz",
+      "expected_sha256": "b798bcfc43f6a32fbd933bb70efddfa0240ded6064aa34d515833c4eca14e6bc",
+      "observed_sha256": "b798bcfc43f6a32fbd933bb70efddfa0240ded6064aa34d515833c4eca14e6bc",
+      "exact_match": true,
+      "metadata_sha256": "a6e3528cf47b59396817749cf40c664730814bbf107fa42ed37951280484ab58",
+      "encoder_state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa"
+    },
+    {
+      "bank_id": "rxrx1__resnet18_imagenet1k_v1",
+      "path": "data\\phase5_tier1\\features\\rxrx1__resnet18_imagenet1k_v1.npz",
+      "expected_sha256": "3e5b90bcc6bc1323f376c7d0506f871dc27091ca5d7254ef9bc2db932298aa42",
+      "observed_sha256": "3e5b90bcc6bc1323f376c7d0506f871dc27091ca5d7254ef9bc2db932298aa42",
+      "exact_match": true,
+      "metadata_sha256": "a232776cc4e5c52409c2354999db29e094dc88a7d5651d6d2b23950a1a5ccc35",
+      "encoder_state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080"
+    },
+    {
+      "bank_id": "rxrx1__vit_b_16_imagenet1k_v1",
+      "path": "data\\phase5_tier1\\features\\rxrx1__vit_b_16_imagenet1k_v1.npz",
+      "expected_sha256": "dc5bc0bd4cf56418d9c41243c15132faa244939edd26ad0e1c38d6efc60f3338",
+      "observed_sha256": "dc5bc0bd4cf56418d9c41243c15132faa244939edd26ad0e1c38d6efc60f3338",
+      "exact_match": true,
+      "metadata_sha256": "a232776cc4e5c52409c2354999db29e094dc88a7d5651d6d2b23950a1a5ccc35",
+      "encoder_state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa"
+    },
+    {
+      "bank_id": "iwildcam__resnet18_imagenet1k_v1",
+      "path": "data\\phase5_tier1\\features\\iwildcam__resnet18_imagenet1k_v1.npz",
+      "expected_sha256": "a4934702ba580490f5208643a680e8f2253b374c1be052c8aae95291d4f2d343",
+      "observed_sha256": "a4934702ba580490f5208643a680e8f2253b374c1be052c8aae95291d4f2d343",
+      "exact_match": true,
+      "metadata_sha256": "1886a57eddee108aeaabc9d4b79562374baee1b79d37dd782aa1a26a6d4706b6",
+      "encoder_state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080"
+    },
+    {
+      "bank_id": "iwildcam__vit_b_16_imagenet1k_v1",
+      "path": "data\\phase5_tier1\\features\\iwildcam__vit_b_16_imagenet1k_v1.npz",
+      "expected_sha256": "77c5d4f233257fc4c37b51c512632c50f77fc938fdf2ce2862ce333b5bbfc385",
+      "observed_sha256": "77c5d4f233257fc4c37b51c512632c50f77fc938fdf2ce2862ce333b5bbfc385",
+      "exact_match": true,
+      "metadata_sha256": "1886a57eddee108aeaabc9d4b79562374baee1b79d37dd782aa1a26a6d4706b6",
+      "encoder_state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa"
+    }
+  ]
+}
