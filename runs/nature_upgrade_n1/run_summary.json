@@ -1,0 +1,27 @@
+{
+  "protocol_id": "NATURE-UPGRADE-N1",
+  "scientific_protocol_version": "1.0.0-FROZEN",
+  "implementation_version": "1.1.0",
+  "formal": true,
+  "complete": true,
+  "git_head": "7c3cb16d4dbe19b035b4047e37f1ae414857c131",
+  "protocol_sha256": "1ca03bd8327cc2b42c6ebbbb536b966889f938bb4a0c5f08c7bcc529d8c663b4",
+  "input_manifest_sha256": "50714595cea1326ddd1906ea74153a6945cff55947756feabe597624998d79cd",
+  "input_sha256": "5913d81c66754c9e0b56351796ac338eb3a16f1ebc2a016ed7c237179672ea34",
+  "n_authoritative_rows": 76959,
+  "n_eligible_rows": 66878,
+  "n_natural_contexts": 13,
+  "n_institutions": 4,
+  "arm_b_replicates": 20000,
+  "arm_c_replicates": 20000,
+  "decision": "N1_PASS_STRUCTURE_BEYOND_SUPPORT",
+  "T_HET_natural": 0.0015197960526809541,
+  "p_HET": 4.999750012499375e-05,
+  "arm_c_null_median": 0.00010669532627250204,
+  "environment": {
+    "python": "3.11.16 | packaged by Anaconda, Inc. | (main, Aug 27 2026, 14:36:16) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  }
+}

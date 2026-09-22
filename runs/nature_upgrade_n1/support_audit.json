@@ -1,0 +1,52 @@
+{
+  "n_rows": 76959,
+  "record_id_unique": true,
+  "institution_set": [
+    "CPSC-family",
+    "Chapman-Shaoxing",
+    "Ningbo",
+    "PTB-XL"
+  ],
+  "institution_raw_to_canonical": {
+    "chapman_shaoxing": "Chapman-Shaoxing",
+    "cpsc_family": "CPSC-family",
+    "ningbo": "Ningbo",
+    "ptb_xl": "PTB-XL"
+  },
+  "institution_normalization": "case_and_separator_only__scientific_identity_protocol_defined",
+  "age_band_recomputed_exact": true,
+  "prob_mean_recomputed_exact_within_tolerance": true,
+  "y_pred_recomputed_exact": true,
+  "prediction_threshold": 0.3475392659505208,
+  "all_context_support_fingerprint_match": true,
+  "n_all_contexts": 16,
+  "n_eligible_contexts": 13,
+  "eligible_context_ids": [
+    "PTB-XL|40-59",
+    "PTB-XL|60-74",
+    "PTB-XL|75+",
+    "Chapman-Shaoxing|40-59",
+    "Chapman-Shaoxing|60-74",
+    "Chapman-Shaoxing|75+",
+    "Ningbo|40-59",
+    "Ningbo|60-74",
+    "Ningbo|75+",
+    "CPSC-family|<40",
+    "CPSC-family|40-59",
+    "CPSC-family|60-74",
+    "CPSC-family|75+"
+  ],
+  "authoritative_input_sha256_match": true,
+  "authoritative_input_rows_match": true,
+  "arm_c_exact_support_matching": true,
+  "arm_c_matching_fields": [
+    "N",
+    "n_positive",
+    "n_negative"
+  ],
+  "arm_c_partition_scope": "within_institution",
+  "arm_c_age_structure_destroyed": true,
+  "arm_c_support_preserved_by_construction": true,
+  "arm_b_partition_scope": "pooled_eligible_analysis_population",
+  "arm_b_valid_fraction": 1.0
+}

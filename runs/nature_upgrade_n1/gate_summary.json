@@ -1,0 +1,15 @@
+{
+  "primary_statistic": "T_HET",
+  "T_HET_natural": 0.0015197960526809541,
+  "arm_c_replicates": 20000,
+  "arm_c_null_median": 0.00010669532627250204,
+  "arm_c_null_mean": 0.00011883868127757143,
+  "arm_c_null_q025": 3.1302145531736475e-05,
+  "arm_c_null_q975": 0.00027919426376723074,
+  "p_HET": 4.999750012499375e-05,
+  "alpha": 0.05,
+  "p_condition_pass": true,
+  "median_condition_pass": true,
+  "pass": true,
+  "decision": "N1_PASS_STRUCTURE_BEYOND_SUPPORT"
+}

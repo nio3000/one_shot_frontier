@@ -1,0 +1,306 @@
+{
+  "manifest_type": "NATURE_UPGRADE_N1_INPUT_MANIFEST",
+  "status": "FROZEN_N1_REPRODUCTION_INPUT_AUTHORITY",
+  "input_filename": "N1_authoritative_development_rows.csv",
+  "input_sha256": "5913d81c66754c9e0b56351796ac338eb3a16f1ebc2a016ed7c237179672ea34",
+  "input_rows": 76959,
+  "protocol_path": "configs/nature_upgrade_n1_protocol.yaml",
+  "protocol_sha256": "1ca03bd8327cc2b42c6ebbbb536b966889f938bb4a0c5f08c7bcc529d8c663b4",
+  "git_head_at_freeze": "a897292450ea2b5005f9835de7603e39d4346e32",
+  "row_audit": {
+    "n_rows": 76959,
+    "record_id_unique": true,
+    "institution_set": [
+      "CPSC-family",
+      "Chapman-Shaoxing",
+      "Ningbo",
+      "PTB-XL"
+    ],
+    "institution_raw_to_canonical": {
+      "chapman_shaoxing": "Chapman-Shaoxing",
+      "cpsc_family": "CPSC-family",
+      "ningbo": "Ningbo",
+      "ptb_xl": "PTB-XL"
+    },
+    "institution_normalization": "case_and_separator_only__scientific_identity_protocol_defined",
+    "age_band_recomputed_exact": true,
+    "prob_mean_recomputed_exact_within_tolerance": true,
+    "y_pred_recomputed_exact": true,
+    "prediction_threshold": 0.3475392659505208
+  },
+  "support_audit": {
+    "all_context_support_fingerprint_match": true,
+    "n_all_contexts": 16,
+    "n_eligible_contexts": 13,
+    "eligible_context_ids": [
+      "PTB-XL|40-59",
+      "PTB-XL|60-74",
+      "PTB-XL|75+",
+      "Chapman-Shaoxing|40-59",
+      "Chapman-Shaoxing|60-74",
+      "Chapman-Shaoxing|75+",
+      "Ningbo|40-59",
+      "Ningbo|60-74",
+      "Ningbo|75+",
+      "CPSC-family|<40",
+      "CPSC-family|40-59",
+      "CPSC-family|60-74",
+      "CPSC-family|75+"
+    ]
+  },
+  "all_context_support": [
+    {
+      "institution_id": "PTB-XL",
+      "age_band": "<40",
+      "context_id": "PTB-XL|<40",
+      "N": 2849,
+      "n_positive": 29,
+      "n_negative": 2820,
+      "eligible": false
+    },
+    {
+      "institution_id": "PTB-XL",
+      "age_band": "40-59",
+      "context_id": "PTB-XL|40-59",
+      "N": 6918,
+      "n_positive": 101,
+      "n_negative": 6817,
+      "eligible": true
+    },
+    {
+      "institution_id": "PTB-XL",
+      "age_band": "60-74",
+      "context_id": "PTB-XL|60-74",
+      "N": 7471,
+      "n_positive": 315,
+      "n_negative": 7156,
+      "eligible": true
+    },
+    {
+      "institution_id": "PTB-XL",
+      "age_band": "75+",
+      "context_id": "PTB-XL|75+",
+      "N": 4306,
+      "n_positive": 327,
+      "n_negative": 3979,
+      "eligible": true
+    },
+    {
+      "institution_id": "Chapman-Shaoxing",
+      "age_band": "<40",
+      "context_id": "Chapman-Shaoxing|<40",
+      "N": 1262,
+      "n_positive": 6,
+      "n_negative": 1256,
+      "eligible": false
+    },
+    {
+      "institution_id": "Chapman-Shaoxing",
+      "age_band": "40-59",
+      "context_id": "Chapman-Shaoxing|40-59",
+      "N": 3227,
+      "n_positive": 47,
+      "n_negative": 3180,
+      "eligible": true
+    },
+    {
+      "institution_id": "Chapman-Shaoxing",
+      "age_band": "60-74",
+      "context_id": "Chapman-Shaoxing|60-74",
+      "N": 3619,
+      "n_positive": 100,
+      "n_negative": 3519,
+      "eligible": true
+    },
+    {
+      "institution_id": "Chapman-Shaoxing",
+      "age_band": "75+",
+      "context_id": "Chapman-Shaoxing|75+",
+      "N": 2139,
+      "n_positive": 94,
+      "n_negative": 2045,
+      "eligible": true
+    },
+    {
+      "institution_id": "Ningbo",
+      "age_band": "<40",
+      "context_id": "Ningbo|<40",
+      "N": 5970,
+      "n_positive": 36,
+      "n_negative": 5934,
+      "eligible": false
+    },
+    {
+      "institution_id": "Ningbo",
+      "age_band": "40-59",
+      "context_id": "Ningbo|40-59",
+      "N": 10112,
+      "n_positive": 135,
+      "n_negative": 9977,
+      "eligible": true
+    },
+    {
+      "institution_id": "Ningbo",
+      "age_band": "60-74",
+      "context_id": "Ningbo|60-74",
+      "N": 11379,
+      "n_positive": 342,
+      "n_negative": 11037,
+      "eligible": true
+    },
+    {
+      "institution_id": "Ningbo",
+      "age_band": "75+",
+      "context_id": "Ningbo|75+",
+      "N": 7389,
+      "n_positive": 380,
+      "n_negative": 7009,
+      "eligible": true
+    },
+    {
+      "institution_id": "CPSC-family",
+      "age_band": "<40",
+      "context_id": "CPSC-family|<40",
+      "N": 1444,
+      "n_positive": 47,
+      "n_negative": 1397,
+      "eligible": true
+    },
+    {
+      "institution_id": "CPSC-family",
+      "age_band": "40-59",
+      "context_id": "CPSC-family|40-59",
+      "N": 2500,
+      "n_positive": 161,
+      "n_negative": 2339,
+      "eligible": true
+    },
+    {
+      "institution_id": "CPSC-family",
+      "age_band": "60-74",
+      "context_id": "CPSC-family|60-74",
+      "N": 3640,
+      "n_positive": 299,
+      "n_negative": 3341,
+      "eligible": true
+    },
+    {
+      "institution_id": "CPSC-family",
+      "age_band": "75+",
+      "context_id": "CPSC-family|75+",
+      "N": 2734,
+      "n_positive": 321,
+      "n_negative": 2413,
+      "eligible": true
+    }
+  ],
+  "natural_context_support": [
+    {
+      "institution_id": "CPSC-family",
+      "age_band": "40-59",
+      "context_id": "CPSC-family|40-59",
+      "N": 2500,
+      "n_positive": 161,
+      "n_negative": 2339
+    },
+    {
+      "institution_id": "CPSC-family",
+      "age_band": "60-74",
+      "context_id": "CPSC-family|60-74",
+      "N": 3640,
+      "n_positive": 299,
+      "n_negative": 3341
+    },
+    {
+      "institution_id": "CPSC-family",
+      "age_band": "75+",
+      "context_id": "CPSC-family|75+",
+      "N": 2734,
+      "n_positive": 321,
+      "n_negative": 2413
+    },
+    {
+      "institution_id": "CPSC-family",
+      "age_band": "<40",
+      "context_id": "CPSC-family|<40",
+      "N": 1444,
+      "n_positive": 47,
+      "n_negative": 1397
+    },
+    {
+      "institution_id": "Chapman-Shaoxing",
+      "age_band": "40-59",
+      "context_id": "Chapman-Shaoxing|40-59",
+      "N": 3227,
+      "n_positive": 47,
+      "n_negative": 3180
+    },
+    {
+      "institution_id": "Chapman-Shaoxing",
+      "age_band": "60-74",
+      "context_id": "Chapman-Shaoxing|60-74",
+      "N": 3619,
+      "n_positive": 100,
+      "n_negative": 3519
+    },
+    {
+      "institution_id": "Chapman-Shaoxing",
+      "age_band": "75+",
+      "context_id": "Chapman-Shaoxing|75+",
+      "N": 2139,
+      "n_positive": 94,
+      "n_negative": 2045
+    },
+    {
+      "institution_id": "Ningbo",
+      "age_band": "40-59",
+      "context_id": "Ningbo|40-59",
+      "N": 10112,
+      "n_positive": 135,
+      "n_negative": 9977
+    },
+    {
+      "institution_id": "Ningbo",
+      "age_band": "60-74",
+      "context_id": "Ningbo|60-74",
+      "N": 11379,
+      "n_positive": 342,
+      "n_negative": 11037
+    },
+    {
+      "institution_id": "Ningbo",
+      "age_band": "75+",
+      "context_id": "Ningbo|75+",
+      "N": 7389,
+      "n_positive": 380,
+      "n_negative": 7009
+    },
+    {
+      "institution_id": "PTB-XL",
+      "age_band": "40-59",
+      "context_id": "PTB-XL|40-59",
+      "N": 6918,
+      "n_positive": 101,
+      "n_negative": 6817
+    },
+    {
+      "institution_id": "PTB-XL",
+      "age_band": "60-74",
+      "context_id": "PTB-XL|60-74",
+      "N": 7471,
+      "n_positive": 315,
+      "n_negative": 7156
+    },
+    {
+      "institution_id": "PTB-XL",
+      "age_band": "75+",
+      "context_id": "PTB-XL|75+",
+      "N": 4306,
+      "n_positive": 327,
+      "n_negative": 3979
+    }
+  ],
+  "natural_T_HET_precomputed_for_integrity": 0.0015197960526809541,
+  "arm_c_monte_carlo_generated": false,
+  "payload_sha256": "15059b75c2a6a41a2e781d4028f9a65ab971d1ce4ae3d3434ac2570e73bca30b"
+}
