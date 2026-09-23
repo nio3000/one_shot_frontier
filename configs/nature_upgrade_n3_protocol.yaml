@@ -1,0 +1,107 @@
+protocol_id: NATURE-UPGRADE-N3
+name: Patient-Level Dependence Robustness
+scientific_protocol_version: V1.0-FROZEN
+implementation_version: 1.0.0
+status: RECONSTRUCTED_EXECUTABLE_FROM_FROZEN_HISTORICAL_PROTOCOL
+historical_outcome_known: true
+scope: Known and auditable repeated-patient dependence in PTB-XL only
+
+inputs:
+  n1_authoritative_rows:
+    filename: N1_authoritative_development_rows.csv
+    sha256: 5913d81c66754c9e0b56351796ac338eb3a16f1ebc2a016ed7c237179672ea34
+    rows: 76959
+    required_columns:
+      - record_id
+      - institution
+      - age
+      - age_band
+      - y_true
+      - prob_seed42
+      - prob_seed52
+      - prob_seed62
+      - prob_mean
+      - y_pred
+  ptbxl_metadata:
+    filename: ptbxl_database.csv
+    sha256: cd9bf4e6445c5e022605857c4d6f90c90ff0e62df847da52efaebe94de786156
+    rows: 21837
+    unique_ecg_id: 21837
+    unique_patient_id: 18885
+    required_columns: [ecg_id, patient_id]
+
+identity_fingerprint:
+  bound_ptbxl_rows: 21544
+  unique_patients: 18628
+  repeated_patients: 2101
+  repeated_patient_records: 5017
+  max_ecgs_per_patient: 10
+  cross_age_patients: 36
+
+context:
+  institutions: [PTB-XL, Chapman-Shaoxing, Ningbo, CPSC-family]
+  age_bands: ['<40', '40-59', '60-74', '75+']
+  ptb_primary_age_bands: ['40-59', '60-74', '75+']
+  support:
+    min_N: 1024
+    min_positive: 40
+    min_negative: 40
+  expected_eligible_contexts: 13
+  expected_eligible_ptb_contexts: 3
+
+prediction:
+  seed_columns: [prob_seed42, prob_seed52, prob_seed62]
+  aggregation: arithmetic_mean
+  threshold: 0.3475392659505208
+  probability_tolerance: 1.0e-12
+  forbid_majority_vote_substitution: true
+  source_bacc: 0.921114990521441
+  primary_margin: 0.075
+
+record_level_wilson:
+  z: 1.959963984540054
+
+cluster_bootstrap:
+  replicates_per_context: 20000
+  master_seed: 20260922
+  ci_lower_quantile: 0.025
+  ci_upper_quantile: 0.975
+
+one_ecg_per_patient:
+  hash_seed: 20260922
+  rule: sha256_utf8_20260922_patient_id_record_id_lexicographic_minimum
+  global_across_age_bands: true
+  label_blind: true
+  prediction_blind: true
+
+class_support_replay:
+  replicates: 20000
+  rng_seed: 20260922
+  variance_ddof: 0
+  alpha: 0.05
+  tail: one_sided_upper
+  partition_scope: within_institution
+  matching: [N, n_positive, n_negative]
+
+primary_gate:
+  pass_label: N3_PASS_PATIENT_DEPENDENCE_ROBUST
+  fail_label: N3_PATIENT_DEPENDENCE_SENSITIVITY_DETECTED
+  require_linkage_fraction: 1.0
+  require_identity_fingerprint_match: true
+  require_same_13_eligible_contexts: true
+  require_cluster_status_concordance: 3
+  require_dedup_status_concordance: 3
+  require_zero_polarity_reversals: true
+  require_replay_p_le_alpha: true
+  require_natural_above_null_median: true
+
+interpretation:
+  pass: >-
+    The frozen context-level conclusions were robust to the known and auditable repeated-patient
+    dependence in PTB-XL: patient-cluster uncertainty preserved the three PTB-XL context-status calls,
+    and removing repeated PTB-XL records did not eliminate the excess heterogeneity beyond an exact
+    class-support-matched random-partition null.
+  boundaries:
+    - A PASS does not establish that every CinC source contains one ECG per patient.
+    - A PASS does not resolve unavailable CPSC-family patient identity.
+    - record_id must not be treated as patient_id.
