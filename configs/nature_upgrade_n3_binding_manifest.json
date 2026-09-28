@@ -2,7 +2,7 @@
   "manifest_type": "NATURE_UPGRADE_N3_BINDING_MANIFEST",
   "status": "FROZEN_N3_REPRODUCTION_INPUT_AUTHORITY",
   "historical_outcome_known": true,
-  "git_head_at_binding_freeze": "91ba02255ca85f75aae085585ad562886095ef9f",
+  "git_head_at_binding_freeze": "a6fa7d9965ee070a9a2260a3c6b1966bc9955390",
   "n1_input_filename": "N1_authoritative_development_rows.csv",
   "n1_input_sha256": "5913d81c66754c9e0b56351796ac338eb3a16f1ebc2a016ed7c237179672ea34",
   "n1_input_rows": 76959,
@@ -32,7 +32,8 @@
   "metadata_audit": {
     "rows": 21837,
     "unique_ecg_id": 21837,
-    "unique_patient_id": 18885
+    "unique_patient_id": 18885,
+    "patient_id_hash_representation": "raw_pandas_string_from_frozen_ptbxl_metadata"
   },
   "linkage_audit": {
     "bound_rows": 21544,
@@ -51,11 +52,11 @@
     "cross_age_patients": 36
   },
   "identity_fingerprint_match": true,
-  "binding_sha256": "0ec2815411a1f54741a2ff12eeae0a1d0d54f0b33124a1c03756e38c5d0c4c76",
+  "binding_sha256": "ba8860b16ba351c8a4739bffa820dc69d3b677ecd33dcb595243b3e3cd3aa12d",
   "implementation_authority": {
     "protocol": {
       "path": "configs/nature_upgrade_n3_protocol.yaml",
-      "sha256": "bfcb05fcece41c195f6de12d5a6df50b67b49959dc618c9569783c993178cc99"
+      "sha256": "d8eb3a4e944f4f2c92aa33d23a59d1b3a4582a780bb50fb2ec64b4d4567f9810"
     },
     "frozen_protocol_source": {
       "path": "protocols/NATURE_UPGRADE_N3_PROTOCOL_V1_0_FROZEN.md",
@@ -63,7 +64,7 @@
     },
     "module": {
       "path": "src/frontier/n3_patient_dependence.py",
-      "sha256": "4744ddbc7e095fcf79179b6152cab4680ff9b8aac2c8f1443a9abb8386e36e35"
+      "sha256": "478928e57b5dc8ef898b6cddc00b6dcf1875a4878a32d3b734b12c809eac091c"
     },
     "runner": {
       "path": "tools/run_nature_upgrade_n3.py",
@@ -71,9 +72,9 @@
     },
     "tests": {
       "path": "tests/test_n3_patient_dependence.py",
-      "sha256": "a9825b4e44e73dc8c4178c3a7f019092abd02371d20713a117c8482f8f78ff9f"
+      "sha256": "faf4842da71694359c44e8ef41a86ea45a09e2e4d53c228fcd8c8ae2085c02aa"
     }
   },
   "formal_outcomes_generated": false,
-  "payload_sha256": "4950016c1b3514aabf496dd7e4bbf8734427ca8d282c9eddee0efceac3730a55"
+  "payload_sha256": "0357364de0fefa2a10f0c3842c1a0f160ff9248abac37a47887391208e928dfe"
 }
