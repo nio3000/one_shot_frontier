@@ -200,6 +200,12 @@ def prepare_ptbxl_metadata(meta: pd.DataFrame, protocol: dict) -> tuple[pd.DataF
         bad = meta[req].columns[meta[req].isna().any()].tolist()
         raise ValueError(f"Missing values in PTB-XL identity columns: {bad}")
     d = meta.copy()
+    # H1 reproduction fix: preserve the representation read from the frozen
+    # PTB-XL metadata for the deterministic SHA256 selection rule.
+    # Canonical patient_id remains the grouping / identity key.
+    d["patient_id_hash_repr"] = d["patient_id"].map(lambda x: str(x).strip())
+    if (d["patient_id_hash_repr"] == "").any():
+        raise ValueError("Empty raw patient_id representation in PTB-XL metadata")
     d["ecg_id_canon"] = d["ecg_id"].map(lambda x: _canonical_integer_string(x, "ecg_id"))
     d["patient_id_canon"] = d["patient_id"].map(lambda x: _canonical_integer_string(x, "patient_id"))
     if not d["ecg_id_canon"].is_unique:
@@ -208,6 +214,7 @@ def prepare_ptbxl_metadata(meta: pd.DataFrame, protocol: dict) -> tuple[pd.DataF
         "rows": int(len(d)),
         "unique_ecg_id": int(d["ecg_id_canon"].nunique()),
         "unique_patient_id": int(d["patient_id_canon"].nunique()),
+        "patient_id_hash_representation": "raw_pandas_string_from_frozen_ptbxl_metadata",
     }
     return d, audit
 
@@ -268,9 +275,13 @@ def bind_ptb_patients(rows: pd.DataFrame, meta: pd.DataFrame) -> tuple[pd.DataFr
         ex = ptb.loc[ptb.ecg_id.duplicated(keep=False), ["record_id", "ecg_id"]].head(20).to_dict(orient="records")
         raise ValueError(f"Multiple authoritative rows bind to the same PTB-XL ecg_id; examples={ex}")
     patient_map = meta_by_ecg["patient_id_canon"].to_dict()
+    patient_hash_repr_map = meta_by_ecg["patient_id_hash_repr"].to_dict()
     ptb["patient_id"] = ptb.ecg_id.map(patient_map)
+    ptb["patient_id_hash_repr"] = ptb.ecg_id.map(patient_hash_repr_map)
     if ptb.patient_id.isna().any():
         raise ValueError("Resolved PTB-XL ecg_id lacks patient_id")
+    if ptb.patient_id_hash_repr.isna().any() or (ptb.patient_id_hash_repr.astype(str).str.len() == 0).any():
+        raise ValueError("Resolved PTB-XL ecg_id lacks raw patient_id hash representation")
     audit = {
         "bound_rows": int(len(ptb)),
         "linked_rows": int(ptb.patient_id.notna().sum()),
@@ -306,7 +317,13 @@ def verify_identity_fingerprint(observed: dict, expected: dict) -> bool:
 
 
 def binding_digest(ptb: pd.DataFrame) -> str:
-    d = ptb[["record_id", "ecg_id", "patient_id", "age_band"]].astype(str).sort_values("record_id")
+    # H1 binds both canonical patient identity and the representation used by
+    # the frozen deterministic selection hash.
+    cols = ["record_id", "ecg_id", "patient_id"]
+    if "patient_id_hash_repr" in ptb.columns:
+        cols.append("patient_id_hash_repr")
+    cols.append("age_band")
+    d = ptb[cols].astype(str).sort_values("record_id")
     payload = "".join("\t".join(r) + "\n" for r in d.itertuples(index=False, name=None)).encode("utf-8")
     return hashlib.sha256(payload).hexdigest()
 
@@ -430,7 +447,10 @@ def patient_selection_hash(patient_id: str, record_id: str, seed: int) -> str:
 def select_one_ecg_per_patient(ptb: pd.DataFrame, seed: int, rule: str = "hash") -> pd.DataFrame:
     d = ptb.copy()
     if rule == "hash":
-        d["_sel"] = [patient_selection_hash(str(p), str(r), seed) for p, r in zip(d.patient_id, d.record_id)]
+        # H1: historical N3 used the PTB-XL metadata patient_id representation
+        # in the UTF-8 hash payload. Canonical patient_id is still the grouping key.
+        patient_repr = d["patient_id_hash_repr"] if "patient_id_hash_repr" in d.columns else d["patient_id"]
+        d["_sel"] = [patient_selection_hash(str(p), str(r), seed) for p, r in zip(patient_repr, d.record_id)]
         d = d.sort_values(["patient_id", "_sel", "record_id"], kind="mergesort")
     elif rule in {"min_ecg_id", "max_ecg_id"}:
         numeric = pd.to_numeric(d.ecg_id, errors="coerce")

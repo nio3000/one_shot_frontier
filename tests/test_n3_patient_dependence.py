@@ -79,6 +79,31 @@ def test_ptb_binding_accepts_filename_and_numeric_representations():
     assert ptb.patient_id.tolist() == ["10", "10", "11"]
 
 
+
+def test_ptb_metadata_preserves_raw_patient_id_hash_representation():
+    p = protocol()
+    meta = pd.DataFrame({
+        "ecg_id": [1, 2, 3],
+        "patient_id": [10.0, 10.0, 11.0],
+    })
+    d, audit = prepare_ptbxl_metadata(meta, p)
+    assert d["patient_id_canon"].tolist() == ["10", "10", "11"]
+    assert d["patient_id_hash_repr"].tolist() == ["10.0", "10.0", "11.0"]
+    assert audit["patient_id_hash_representation"] == "raw_pandas_string_from_frozen_ptbxl_metadata"
+
+
+def test_hash_selection_uses_raw_patient_id_representation_when_bound():
+    d = pd.DataFrame([
+        {"patient_id": "1", "patient_id_hash_repr": "1.0", "record_id": "a", "ecg_id": "1", "age_band": "40-59"},
+        {"patient_id": "1", "patient_id_hash_repr": "1.0", "record_id": "b", "ecg_id": "2", "age_band": "75+"},
+    ])
+    assert patient_selection_hash("1", "a", 20260922) < patient_selection_hash("1", "b", 20260922)
+    assert patient_selection_hash("1.0", "b", 20260922) < patient_selection_hash("1.0", "a", 20260922)
+    s = select_one_ecg_per_patient(d, 20260922, "hash")
+    assert len(s) == 1
+    assert s.iloc[0]["record_id"] == "b"
+
+
 def test_identity_fingerprint_counts_repeats_and_cross_age():
     d = pd.DataFrame({
         "patient_id":["a","a","b","c","c","c"],

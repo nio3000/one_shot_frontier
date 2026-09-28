@@ -1,7 +1,7 @@
 protocol_id: NATURE-UPGRADE-N3
 name: Patient-Level Dependence Robustness
 scientific_protocol_version: V1.0-FROZEN
-implementation_version: 1.0.0
+implementation_version: 1.0.1-H1
 status: RECONSTRUCTED_EXECUTABLE_FROM_FROZEN_HISTORICAL_PROTOCOL
 historical_outcome_known: true
 scope: Known and auditable repeated-patient dependence in PTB-XL only
