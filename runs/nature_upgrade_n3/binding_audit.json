@@ -1,0 +1,24 @@
+{
+  "manifest_status": "FROZEN_N3_REPRODUCTION_INPUT_AUTHORITY",
+  "binding_sha256": "ba8860b16ba351c8a4739bffa820dc69d3b677ecd33dcb595243b3e3cd3aa12d",
+  "linkage_audit": {
+    "bound_rows": 21544,
+    "linked_rows": 21544,
+    "linkage_fraction": 1.0,
+    "binding_method_counts": {
+      "metadata_alias": 21544
+    }
+  },
+  "identity_fingerprint": {
+    "bound_ptbxl_rows": 21544,
+    "unique_patients": 18628,
+    "repeated_patients": 2101,
+    "repeated_patient_records": 5017,
+    "max_ecgs_per_patient": 10,
+    "cross_age_patients": 36
+  },
+  "identity_fingerprint_match": true,
+  "cpsc_patient_identity": "unavailable__no_inferred_clustering",
+  "chapman_shaoxing_synthetic_patient_ids": false,
+  "ningbo_synthetic_patient_ids": false
+}

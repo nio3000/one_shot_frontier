@@ -1,0 +1,17 @@
+institution_id,age_band,N,n_positive,n_negative,context_id,eligible
+PTB-XL,<40,2605,23,2582,PTB-XL|<40,False
+PTB-XL,40-59,6019,72,5947,PTB-XL|40-59,True
+PTB-XL,60-74,6336,234,6102,PTB-XL|60-74,True
+PTB-XL,75+,3668,255,3413,PTB-XL|75+,True
+Chapman-Shaoxing,<40,1262,6,1256,Chapman-Shaoxing|<40,False
+Chapman-Shaoxing,40-59,3227,47,3180,Chapman-Shaoxing|40-59,True
+Chapman-Shaoxing,60-74,3619,100,3519,Chapman-Shaoxing|60-74,True
+Chapman-Shaoxing,75+,2139,94,2045,Chapman-Shaoxing|75+,True
+Ningbo,<40,5970,36,5934,Ningbo|<40,False
+Ningbo,40-59,10112,135,9977,Ningbo|40-59,True
+Ningbo,60-74,11379,342,11037,Ningbo|60-74,True
+Ningbo,75+,7389,380,7009,Ningbo|75+,True
+CPSC-family,<40,1444,47,1397,CPSC-family|<40,True
+CPSC-family,40-59,2500,161,2339,CPSC-family|40-59,True
+CPSC-family,60-74,3640,299,3341,CPSC-family|60-74,True
+CPSC-family,75+,2734,321,2413,CPSC-family|75+,True

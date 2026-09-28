@@ -1,0 +1,80 @@
+{
+  "manifest_type": "NATURE_UPGRADE_N3_BINDING_MANIFEST",
+  "status": "FROZEN_N3_REPRODUCTION_INPUT_AUTHORITY",
+  "historical_outcome_known": true,
+  "git_head_at_binding_freeze": "a6fa7d9965ee070a9a2260a3c6b1966bc9955390",
+  "n1_input_filename": "N1_authoritative_development_rows.csv",
+  "n1_input_sha256": "5913d81c66754c9e0b56351796ac338eb3a16f1ebc2a016ed7c237179672ea34",
+  "n1_input_rows": 76959,
+  "ptbxl_metadata_filename": "ptbxl_database.csv",
+  "ptbxl_metadata_sha256": "cd9bf4e6445c5e022605857c4d6f90c90ff0e62df847da52efaebe94de786156",
+  "ptbxl_metadata_rows": 21837,
+  "row_audit": {
+    "n_rows": 76959,
+    "record_id_unique": true,
+    "institution_set": [
+      "CPSC-family",
+      "Chapman-Shaoxing",
+      "Ningbo",
+      "PTB-XL"
+    ],
+    "institution_raw_to_canonical": {
+      "chapman_shaoxing": "Chapman-Shaoxing",
+      "cpsc_family": "CPSC-family",
+      "ningbo": "Ningbo",
+      "ptb_xl": "PTB-XL"
+    },
+    "age_band_recomputed_exact": true,
+    "prob_mean_recomputed_exact_within_tolerance": true,
+    "y_pred_recomputed_exact": true,
+    "prediction_threshold": 0.3475392659505208
+  },
+  "metadata_audit": {
+    "rows": 21837,
+    "unique_ecg_id": 21837,
+    "unique_patient_id": 18885,
+    "patient_id_hash_representation": "raw_pandas_string_from_frozen_ptbxl_metadata"
+  },
+  "linkage_audit": {
+    "bound_rows": 21544,
+    "linked_rows": 21544,
+    "linkage_fraction": 1.0,
+    "binding_method_counts": {
+      "metadata_alias": 21544
+    }
+  },
+  "identity_fingerprint": {
+    "bound_ptbxl_rows": 21544,
+    "unique_patients": 18628,
+    "repeated_patients": 2101,
+    "repeated_patient_records": 5017,
+    "max_ecgs_per_patient": 10,
+    "cross_age_patients": 36
+  },
+  "identity_fingerprint_match": true,
+  "binding_sha256": "ba8860b16ba351c8a4739bffa820dc69d3b677ecd33dcb595243b3e3cd3aa12d",
+  "implementation_authority": {
+    "protocol": {
+      "path": "configs/nature_upgrade_n3_protocol.yaml",
+      "sha256": "d8eb3a4e944f4f2c92aa33d23a59d1b3a4582a780bb50fb2ec64b4d4567f9810"
+    },
+    "frozen_protocol_source": {
+      "path": "protocols/NATURE_UPGRADE_N3_PROTOCOL_V1_0_FROZEN.md",
+      "sha256": "c83e9ee726678260462993d5ed1aa1825beb3e9fb36095c6d7d1ae89f6f5d518"
+    },
+    "module": {
+      "path": "src/frontier/n3_patient_dependence.py",
+      "sha256": "478928e57b5dc8ef898b6cddc00b6dcf1875a4878a32d3b734b12c809eac091c"
+    },
+    "runner": {
+      "path": "tools/run_nature_upgrade_n3.py",
+      "sha256": "855957177c74bdce560e3f203c64f402a5685c7e34490f753b780e96af9c3b76"
+    },
+    "tests": {
+      "path": "tests/test_n3_patient_dependence.py",
+      "sha256": "faf4842da71694359c44e8ef41a86ea45a09e2e4d53c228fcd8c8ae2085c02aa"
+    }
+  },
+  "formal_outcomes_generated": false,
+  "payload_sha256": "0357364de0fefa2a10f0c3842c1a0f160ff9248abac37a47887391208e928dfe"
+}

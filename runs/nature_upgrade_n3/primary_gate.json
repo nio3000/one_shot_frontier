@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "gate1_linkage_100pct": true,
+    "gate2_identity_fingerprint_match": true,
+    "gate3_same_13_eligible_contexts": true,
+    "gate4_cluster_status_concordance_3of3": true,
+    "gate5_dedup_status_concordance_3of3": true,
+    "gate6_zero_polarity_reversals": true,
+    "gate7_replay_p_and_median": true
+  },
+  "pass": true,
+  "decision": "N3_PASS_PATIENT_DEPENDENCE_ROBUST"
+}
