@@ -1,0 +1,73 @@
+{
+  "artifacts": [
+    {
+      "bytes": 2987,
+      "path": "evidence/cmr_v1/x1/gate_summary.json",
+      "role": "X1 gate summary (X1-G1..X1-G7)",
+      "sha256": "5c896abc6561f2e04008145e9179759b723832aa25be7182855ad5415b41dc18"
+    },
+    {
+      "bytes": 7394,
+      "path": "evidence/cmr_v1/x1/protocol_snapshot.yaml",
+      "role": "frozen protocol snapshot (byte-identical copy of the frozen yaml)",
+      "sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b"
+    },
+    {
+      "bytes": 15824,
+      "path": "runs/cmr_v1/x1/run_summary.json",
+      "role": "formal X1 run summary",
+      "sha256": "3053f2e2b0a3f3a75bb5dc3787308213b02f10df6d7718c825e90053c5e58ef9"
+    }
+  ],
+  "decision": "X1_PASS_EXACT_KERNEL_PROTOTYPE_LAYER_COLLISION",
+  "git_head_before_x1": "d409ee2e1009a876c773c48687c7d72ac6ed4102",
+  "manifest_type": "CMR_V1_X1_EVIDENCE_MANIFEST",
+  "notes": [
+    "X1-only implementation; no X2-X5 artifacts were generated or authorized.",
+    "run_summary.json is byte-stable across reruns; rerun_audit.json records execution history."
+  ],
+  "protocol_files": [
+    {
+      "path": "docs/governance/nature/CROSS_MECHANISM_REPLICATION_PROTOCOL_V1.md",
+      "sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a"
+    },
+    {
+      "path": "configs/cross_mechanism_replication_protocol_v1.yaml",
+      "sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b"
+    },
+    {
+      "path": "docs/phases/cmr_v1/CMR_V1_GATE_MATRIX.csv",
+      "sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001"
+    },
+    {
+      "path": "docs/phases/cmr_v1/CMR_V1_FREEZE_MANIFEST.json",
+      "sha256": "77ab2bad46aa8d25630ccc1cb38d8aba44bc3c45fd2b772cdd37f4e39afb1545"
+    },
+    {
+      "path": "docs/phases/cmr_v1/CMR_V1_CODEX_X1_IMPLEMENTATION_PROMPT.md",
+      "sha256": "264cf0f4ac31d66855e826d4ebcfd69b7e96c48db5847d47bdcdd4b49bfb0192"
+    }
+  ],
+  "protocol_id": "CMR-V1",
+  "protocol_status": "FROZEN_BEFORE_CMR_OUTCOME_ACCESS",
+  "protocol_version": "1.0.0-FROZEN",
+  "source_files": [
+    {
+      "path": "src/frontier/cmr_kernel_layer.py",
+      "sha256": "e58fa2bdfa607c1b9e33c3b4823d22ad13f3f1280b7a180e449cb43dcd01d86e"
+    },
+    {
+      "path": "tools/run_cmr_v1.py",
+      "sha256": "384f19c57210b2f2b6ea4ebf5afe934587aa38fd758f48a332e8e7d8e656d369"
+    },
+    {
+      "path": "tests/test_cmr_v1_x1.py",
+      "sha256": "ebf9f921dda42857fe55e11c4e015a30d9ed3f30bc31f2c3d88623aa430305a6"
+    },
+    {
+      "path": "tests/test_cmr_v1_protocol.py",
+      "sha256": "00410282f3bfb2e2b4418409f24f284584455196d2701713d541b3a78f5d69ae"
+    }
+  ],
+  "stage": "X1"
+}

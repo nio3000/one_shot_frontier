@@ -1,0 +1,10 @@
+{
+  "cross_run_payload_match": true,
+  "current_payload_sha256": "d5810d0e752920f5a1eab00f19c3f8c0966b7592862012ff4ca6be09fd537925",
+  "git_head_before_x1": "d409ee2e1009a876c773c48687c7d72ac6ed4102",
+  "in_process_rerun_identical": true,
+  "previous_payload_sha256": "d5810d0e752920f5a1eab00f19c3f8c0966b7592862012ff4ca6be09fd537925",
+  "previous_run_summary_present": true,
+  "run_type": "CMR_V1_X1_RERUN_AUDIT",
+  "stage": "X1"
+}

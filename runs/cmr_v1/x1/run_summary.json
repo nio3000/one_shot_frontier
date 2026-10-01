@@ -1,0 +1,605 @@
+{
+  "baseline_match": true,
+  "decision": "X1_PASS_EXACT_KERNEL_PROTOTYPE_LAYER_COLLISION",
+  "deterministic_payload_sha256": "d5810d0e752920f5a1eab00f19c3f8c0966b7592862012ff4ca6be09fd537925",
+  "environment": {
+    "float_dtype": "float64",
+    "numpy_version": "2.4.6",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python_version": "3.11.7"
+  },
+  "expected_baseline": "d409ee2e1009a876c773c48687c7d72ac6ed4102",
+  "gates": {
+    "X1-G1": {
+      "class_counts_equal": true,
+      "class_sums_symbolically_equal": true,
+      "max_abs_vector_sum_diff": 0.0,
+      "name": "message equality",
+      "numeric_tolerance": 1e-12,
+      "passed": true,
+      "protocol_ref": "protocol section 7.4 conditions 1-3; gate matrix X1-G1"
+    },
+    "X1-G2": {
+      "max_abs_prototype_diff": 0.0,
+      "name": "prototype equality",
+      "numeric_tolerance": 1e-12,
+      "passed": true,
+      "protocol_ref": "protocol section 7.4 condition 4"
+    },
+    "X1-G3": {
+      "intersection": [],
+      "name": "optimal-set conflict",
+      "optimal_sets": {
+        "A": [
+          "layer1"
+        ],
+        "B": [
+          "layer2"
+        ]
+      },
+      "passed": true,
+      "protocol_ref": "protocol section 7.4 condition 5; gate matrix X1-G2"
+    },
+    "X1-G4": {
+      "expected": 0.6666666666666666,
+      "name": "deterministic regret",
+      "numeric_tolerance": 1e-12,
+      "passed": true,
+      "protocol_ref": "protocol section 7.4 condition 6; gate matrix X1-G3",
+      "value": 0.6666666666666667
+    },
+    "X1-G5": {
+      "expected": 0.3333333333333333,
+      "name": "randomized regret",
+      "numeric_tolerance": 1e-12,
+      "passed": true,
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "protocol_ref": "protocol section 7.4 condition 7; gate matrix X1-G4",
+      "support": [
+        "layer1",
+        "layer2"
+      ],
+      "value": 0.33333333333333337
+    },
+    "X1-G6": {
+      "in_process_rerun_identical": true,
+      "name": "deterministic rerun",
+      "passed": true,
+      "protocol_ref": "execution requirement: repeated formal evaluation is identical"
+    },
+    "X1-G7": {
+      "name": "unit-test status",
+      "passed": true,
+      "protocol_ref": "protocol section 7.4 condition 8",
+      "returncode": 0,
+      "targets": [
+        "tests/test_cmr_v1_x1.py",
+        "tests/test_cmr_v1_protocol.py"
+      ],
+      "tests_failed": null,
+      "tests_passed": 16
+    }
+  },
+  "git_head_before_x1": "d409ee2e1009a876c773c48687c7d72ac6ed4102",
+  "protocol": {
+    "id": "CMR-V1",
+    "status": "FROZEN_BEFORE_CMR_OUTCOME_ACCESS",
+    "version": "1.0.0-FROZEN"
+  },
+  "provenance": {
+    "freeze_manifest_sha256": "77ab2bad46aa8d25630ccc1cb38d8aba44bc3c45fd2b772cdd37f4e39afb1545",
+    "freeze_manifest_verification": {
+      "manifest_path": "docs/phases/cmr_v1/CMR_V1_FREEZE_MANIFEST.json",
+      "manifest_sha256": "77ab2bad46aa8d25630ccc1cb38d8aba44bc3c45fd2b772cdd37f4e39afb1545",
+      "optional_entries": [
+        {
+          "expected_sha256": "2fa722f0601b3aba5acf3b37a2102763004d12f1a586ad6eae36fc943c3e895f",
+          "name": "README.md",
+          "path": null,
+          "resolved": false
+        },
+        {
+          "expected_sha256": "2dffacf44e937e54a55ad26b327d459c0aa1bcfb789d37e29e559d6031da443c",
+          "name": "CMR_V1_REPOSITORY_LAYOUT.md",
+          "path": null,
+          "resolved": false
+        }
+      ],
+      "verified_files": [
+        {
+          "expected_sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a",
+          "match": true,
+          "name": "CROSS_MECHANISM_REPLICATION_PROTOCOL_V1.0.md",
+          "path": "docs/governance/nature/CROSS_MECHANISM_REPLICATION_PROTOCOL_V1.md",
+          "sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a"
+        },
+        {
+          "expected_sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b",
+          "match": true,
+          "name": "cross_mechanism_replication_protocol_v1.yaml",
+          "path": "configs/cross_mechanism_replication_protocol_v1.yaml",
+          "sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b"
+        },
+        {
+          "expected_sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001",
+          "match": true,
+          "name": "CMR_V1_GATE_MATRIX.csv",
+          "path": "docs/phases/cmr_v1/CMR_V1_GATE_MATRIX.csv",
+          "sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001"
+        },
+        {
+          "expected_sha256": "264cf0f4ac31d66855e826d4ebcfd69b7e96c48db5847d47bdcdd4b49bfb0192",
+          "match": true,
+          "name": "CMR_V1_CODEX_X1_IMPLEMENTATION_PROMPT.md",
+          "path": "docs/phases/cmr_v1/CMR_V1_CODEX_X1_IMPLEMENTATION_PROMPT.md",
+          "sha256": "264cf0f4ac31d66855e826d4ebcfd69b7e96c48db5847d47bdcdd4b49bfb0192"
+        }
+      ]
+    },
+    "gate_matrix_sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001",
+    "implementation_prompt_sha256": "264cf0f4ac31d66855e826d4ebcfd69b7e96c48db5847d47bdcdd4b49bfb0192",
+    "protocol_md_sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a",
+    "protocol_yaml_sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b",
+    "source_files": {
+      "src/frontier/cmr_kernel_layer.py": "e58fa2bdfa607c1b9e33c3b4823d22ad13f3f1280b7a180e449cb43dcd01d86e",
+      "tests/test_cmr_v1_protocol.py": "00410282f3bfb2e2b4418409f24f284584455196d2701713d541b3a78f5d69ae",
+      "tests/test_cmr_v1_x1.py": "ebf9f921dda42857fe55e11c4e015a30d9ed3f30bc31f2c3d88623aa430305a6",
+      "tools/run_cmr_v1.py": "384f19c57210b2f2b6ea4ebf5afe934587aa38fd758f48a332e8e7d8e656d369"
+    }
+  },
+  "run_type": "CMR_V1_X1_FORMAL",
+  "stage": "X1",
+  "x1_result": {
+    "balanced_accuracy": {
+      "A": {
+        "layer1": 1.0,
+        "layer2": 0.3333333333333333
+      },
+      "B": {
+        "layer1": 0.3333333333333333,
+        "layer2": 1.0
+      }
+    },
+    "core_gates_pass": true,
+    "deterministic_regret": {
+      "argmin_action": "layer1",
+      "optimal_risk_A": 0.0,
+      "optimal_risk_B": 0.0,
+      "per_action": {
+        "layer1": {
+          "max_regret": 0.6666666666666667,
+          "regret_A": 0.0,
+          "regret_B": 0.6666666666666667
+        },
+        "layer2": {
+          "max_regret": 0.6666666666666667,
+          "regret_A": 0.6666666666666667,
+          "regret_B": 0.0
+        }
+      },
+      "value": 0.6666666666666667
+    },
+    "expected": {
+      "bacc": {
+        "A": {
+          "layer1": 1.0,
+          "layer2": 0.3333333333333333
+        },
+        "B": {
+          "layer1": 0.3333333333333333,
+          "layer2": 1.0
+        }
+      },
+      "deterministic_regret": 0.6666666666666666,
+      "numeric_tolerance": 1e-12,
+      "randomized_regret": 0.3333333333333333
+    },
+    "float_dtype": "float64",
+    "gates": {
+      "X1-G1": {
+        "class_counts_equal": true,
+        "class_sums_symbolically_equal": true,
+        "max_abs_vector_sum_diff": 0.0,
+        "name": "message equality",
+        "numeric_tolerance": 1e-12,
+        "passed": true,
+        "protocol_ref": "protocol section 7.4 conditions 1-3; gate matrix X1-G1"
+      },
+      "X1-G2": {
+        "max_abs_prototype_diff": 0.0,
+        "name": "prototype equality",
+        "numeric_tolerance": 1e-12,
+        "passed": true,
+        "protocol_ref": "protocol section 7.4 condition 4"
+      },
+      "X1-G3": {
+        "intersection": [],
+        "name": "optimal-set conflict",
+        "optimal_sets": {
+          "A": [
+            "layer1"
+          ],
+          "B": [
+            "layer2"
+          ]
+        },
+        "passed": true,
+        "protocol_ref": "protocol section 7.4 condition 5; gate matrix X1-G2"
+      },
+      "X1-G4": {
+        "expected": 0.6666666666666666,
+        "name": "deterministic regret",
+        "numeric_tolerance": 1e-12,
+        "passed": true,
+        "protocol_ref": "protocol section 7.4 condition 6; gate matrix X1-G3",
+        "value": 0.6666666666666667
+      },
+      "X1-G5": {
+        "expected": 0.3333333333333333,
+        "name": "randomized regret",
+        "numeric_tolerance": 1e-12,
+        "passed": true,
+        "probabilities": [
+          0.5,
+          0.5
+        ],
+        "protocol_ref": "protocol section 7.4 condition 7; gate matrix X1-G4",
+        "support": [
+          "layer1",
+          "layer2"
+        ],
+        "value": 0.33333333333333337
+      }
+    },
+    "message_equality": {
+      "class_counts_equal": true,
+      "class_sums_symbolically_equal": true,
+      "max_abs_vector_sum_diff": 0.0,
+      "numeric_tolerance": 1e-12,
+      "per_layer_per_class_max_abs": {
+        "layer1": {
+          "0": 0.0,
+          "1": 0.0
+        },
+        "layer2": {
+          "0": 0.0,
+          "1": 0.0
+        }
+      }
+    },
+    "messages": {
+      "A": {
+        "layer1": {
+          "0": {
+            "count": 6,
+            "vector_sum": [
+              -1.2,
+              0.0
+            ]
+          },
+          "1": {
+            "count": 6,
+            "vector_sum": [
+              1.2,
+              0.0
+            ]
+          }
+        },
+        "layer2": {
+          "0": {
+            "count": 6,
+            "vector_sum": [
+              -1.2,
+              0.0
+            ]
+          },
+          "1": {
+            "count": 6,
+            "vector_sum": [
+              1.2,
+              0.0
+            ]
+          }
+        }
+      },
+      "B": {
+        "layer1": {
+          "0": {
+            "count": 6,
+            "vector_sum": [
+              -1.2,
+              0.0
+            ]
+          },
+          "1": {
+            "count": 6,
+            "vector_sum": [
+              1.2,
+              0.0
+            ]
+          }
+        },
+        "layer2": {
+          "0": {
+            "count": 6,
+            "vector_sum": [
+              -1.2,
+              0.0
+            ]
+          },
+          "1": {
+            "count": 6,
+            "vector_sum": [
+              1.2,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "optimal_sets": {
+      "A": [
+        "layer1"
+      ],
+      "B": [
+        "layer2"
+      ]
+    },
+    "protocol_id": "CMR-V1",
+    "protocol_status": "FROZEN_BEFORE_CMR_OUTCOME_ACCESS",
+    "protocol_version": "1.0.0-FROZEN",
+    "prototype_equality": {
+      "max_abs_diff": 0.0,
+      "numeric_tolerance": 1e-12,
+      "per_layer_per_class_max_abs": {
+        "layer1": {
+          "0": 0.0,
+          "1": 0.0
+        },
+        "layer2": {
+          "0": 0.0,
+          "1": 0.0
+        }
+      }
+    },
+    "prototypes": {
+      "A": {
+        "layer1": {
+          "0": [
+            -0.19999999999999998,
+            0.0
+          ],
+          "1": [
+            0.19999999999999998,
+            0.0
+          ]
+        },
+        "layer2": {
+          "0": [
+            -0.19999999999999998,
+            0.0
+          ],
+          "1": [
+            0.19999999999999998,
+            0.0
+          ]
+        }
+      },
+      "B": {
+        "layer1": {
+          "0": [
+            -0.19999999999999998,
+            0.0
+          ],
+          "1": [
+            0.19999999999999998,
+            0.0
+          ]
+        },
+        "layer2": {
+          "0": [
+            -0.19999999999999998,
+            0.0
+          ],
+          "1": [
+            0.19999999999999998,
+            0.0
+          ]
+        }
+      }
+    },
+    "randomized_regret": {
+      "expected_regret_A": 0.33333333333333337,
+      "expected_regret_B": 0.33333333333333337,
+      "optimal_risk_A": 0.0,
+      "optimal_risk_B": 0.0,
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "support": [
+        "layer1",
+        "layer2"
+      ],
+      "value": 0.33333333333333337
+    },
+    "risk": {
+      "A": {
+        "layer1": 0.0,
+        "layer2": 0.6666666666666667
+      },
+      "B": {
+        "layer1": 0.6666666666666667,
+        "layer2": 0.0
+      }
+    },
+    "spec": {
+      "a": 0.2,
+      "class_count": 6,
+      "classes": [
+        0,
+        1
+      ],
+      "feature_map": "[cos(theta), sin(theta)]",
+      "layers": [
+        "layer1",
+        "layer2"
+      ],
+      "mode": "exact_analytic",
+      "numeric_tolerance": 1e-12,
+      "patterns": {
+        "bad": {
+          "0": [
+            [
+              0.2,
+              0.9797958971132712
+            ],
+            [
+              0.2,
+              0.9797958971132712
+            ],
+            [
+              0.2,
+              -0.9797958971132712
+            ],
+            [
+              0.2,
+              -0.9797958971132712
+            ],
+            [
+              -1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0
+            ]
+          ],
+          "1": [
+            [
+              -0.2,
+              0.9797958971132712
+            ],
+            [
+              -0.2,
+              0.9797958971132712
+            ],
+            [
+              -0.2,
+              -0.9797958971132712
+            ],
+            [
+              -0.2,
+              -0.9797958971132712
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "good": {
+          "0": [
+            [
+              -0.2,
+              0.9797958971132712
+            ],
+            [
+              -0.2,
+              -0.9797958971132712
+            ],
+            [
+              -0.2,
+              0.9797958971132712
+            ],
+            [
+              -0.2,
+              -0.9797958971132712
+            ],
+            [
+              -0.2,
+              0.9797958971132712
+            ],
+            [
+              -0.2,
+              -0.9797958971132712
+            ]
+          ],
+          "1": [
+            [
+              0.2,
+              0.9797958971132712
+            ],
+            [
+              0.2,
+              -0.9797958971132712
+            ],
+            [
+              0.2,
+              0.9797958971132712
+            ],
+            [
+              0.2,
+              -0.9797958971132712
+            ],
+            [
+              0.2,
+              0.9797958971132712
+            ],
+            [
+              0.2,
+              -0.9797958971132712
+            ]
+          ]
+        }
+      },
+      "q": 0.9797958971132712,
+      "q_squared": 0.96,
+      "task_layer_patterns": {
+        "A": {
+          "layer1": "good",
+          "layer2": "bad"
+        },
+        "B": {
+          "layer1": "bad",
+          "layer2": "good"
+        }
+      }
+    },
+    "symbolic": {
+      "bad": {
+        "0": {
+          "count": 6,
+          "x_sum_over_a": "-6",
+          "y_sum_over_q": "0"
+        },
+        "1": {
+          "count": 6,
+          "x_sum_over_a": "6",
+          "y_sum_over_q": "0"
+        }
+      },
+      "class_counts_equal": true,
+      "class_sums_equal": true,
+      "good": {
+        "0": {
+          "count": 6,
+          "x_sum_over_a": "-6",
+          "y_sum_over_q": "0"
+        },
+        "1": {
+          "count": 6,
+          "x_sum_over_a": "6",
+          "y_sum_over_q": "0"
+        }
+      }
+    }
+  }
+}

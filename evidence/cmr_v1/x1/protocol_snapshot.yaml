@@ -1,0 +1,237 @@
+protocol:
+  id: CMR-V1
+  name: Kernel-Prototype Layer-Selection Cross-Mechanism Replication
+  version: 1.0.0-FROZEN
+  status: FROZEN_BEFORE_CMR_OUTCOME_ACCESS
+  freeze_date: "2026-10-01"
+  target_repository: nio3000/one_shot_frontier
+
+manuscript:
+  baseline_file: main_v2_2_prose_tightened.tex
+  baseline_sha256: d4e686850d81117555e99e5f4ca6f01e76b2b4702dc8c2b9c7b45c54c24739ba
+  frozen_during_cmr: true
+
+scientific_target:
+  communication_object: classwise_kernel_feature_counts_and_sums
+  reconstructed_family: kernel_feature_prototype_classifiers
+  downstream_action: representation_layer
+  primary_metric: balanced_accuracy
+  risk: one_minus_balanced_accuracy
+
+encoders:
+  resnet18_imagenet1k_v1:
+    layers: [layer1, layer2, layer3, layer4]
+    extraction: post_stage_adaptive_avg_pool_flatten
+  vit_b_16_imagenet1k_v1:
+    layers: [B3, B6, B9, B12]
+    extraction: post_block_cls_before_final_encoder_layernorm
+  normalization: l2
+
+rff:
+  type: gaussian_rbf_random_fourier_features
+  dimension: 256
+  sigma: 1.0
+  master_seed: 20261001
+  rng: numpy_Generator_PCG64
+  generation_dtype: float64
+  seed_derivation:
+    string_template: "20261001|<encoder_id>|<layer_id>"
+    hash: sha256
+    bytes: first_8
+    byte_order: big
+    modulus: 4294967296
+
+message:
+  fields:
+    - class_count
+    - class_kernel_feature_sum
+  covariance_transmitted: false
+  raw_features_transmitted: false
+  raw_samples_transmitted: false
+  evaluation_labels_transmitted: false
+  aggregation_recovery_abs_tolerance: 1.0e-8
+
+classifier:
+  type: kernel_feature_prototype
+  prototype: class_sum_divided_by_class_count
+  score: inner_product
+  class_tie_break: smallest_canonical_class_id
+
+decision:
+  action: layer_id
+  optimal_set_tolerance: 1.0e-12
+  pair_conflict:
+    deterministic_minimax_regret_min: 0.005
+    bootstrap_ci95_low_min: 0.0025
+    require_disjoint_optimal_sets: true
+
+x1:
+  mode: exact_analytic
+  feature_map: "[cos(theta), sin(theta)]"
+  class_count: 6
+  a: 0.2
+  q_squared: 0.96
+  expected_bacc_good: 1.0
+  expected_bacc_bad: 0.3333333333333333
+  expected_deterministic_regret: 0.6666666666666666
+  expected_randomized_regret: 0.3333333333333333
+  numeric_tolerance: 1.0e-12
+  hard_gate: true
+
+x2:
+  datasets: [cifar100, eurosat, pathmnist, dermamnist]
+  encoders: [resnet18_imagenet1k_v1, vit_b_16_imagenet1k_v1]
+  structural_conditions: 8
+  reuse_phase1_dataset_and_preprocessing_authority: true
+  client_partition:
+    n_clients: 20
+    dirichlet_alpha: 0.10
+    seed: 20260908
+    scientific_axis: false
+  action_relevant_spread_min: 0.01
+  unique_best_margin_min: 0.002
+  gate:
+    min_action_relevant_conditions: 6
+    resnet_min_distinct_unique_best_layers: 2
+    vit_min_distinct_unique_best_layers: 2
+    require_all_aggregation_recovery: true
+    require_all_finite: true
+  fail_decision: ACTION_FAMILY_NOT_DECISION_RELEVANT
+  fail_stops_protocol: true
+
+x3:
+  requires_x2_pass: true
+  transformation: "z_tilde = 2 * training_class_prototype - z"
+  transform_training_and_test: true
+  communication_invariant_abs_tolerance: 1.0e-8
+  bootstrap_replicates: 5000
+  bootstrap_master_seed: 20261005
+  bootstrap_unit: paired_test_record_stratified_within_class
+  gate:
+    min_qualifying_conditions: 4
+    min_datasets: 2
+    require_resnet: true
+    require_vit: true
+  failure_stops_later_natural_stages: false
+
+x4:
+  datasets: [camelyon17, rxrx1, iwildcam]
+  encoders: [resnet18_imagenet1k_v1, vit_b_16_imagenet1k_v1]
+  structural_conditions: 6
+  reuse_phase5_support_and_split_authority: true
+  group_split_seed: 20260910
+  class_subset_seed: 20260910
+  group_fit_fraction: 0.50
+  support_match_seed: 20261003
+  support_match_hash: sha256
+  pair_distance: rms_class_layer_prototype_euclidean
+  pair_near_fraction: 0.20
+  pair_max_selected: 10
+  pair_min_selected: 1
+  risk_blackout_until_committed_pair_manifest: true
+  pair_bootstrap_replicates: 1000
+  pair_bootstrap_unit: evaluation_record_stratified_within_class
+  panel_bootstrap_replicates: 5000
+  panel_bootstrap_unit: structural_condition
+  gate:
+    robust_pair_fraction_min: 0.15
+    cluster_ci95_low_min: 0.05
+    min_qualifying_conditions: 3
+    min_datasets_with_robust_pair: 2
+    require_both_encoders: true
+  failure_stops_x5: false
+
+x5:
+  datasets: [pacs, officehome]
+  encoders: [resnet18_imagenet1k_v1, vit_b_16_imagenet1k_v1]
+  structural_conditions: 4
+  raw_manifest_required_before_feature_extraction: true
+  split_seed: 20261002
+  split_method: deterministic_path_hash_stratified_by_domain_and_class
+  fit_fraction: 0.50
+  pacs:
+    required_classes: 7
+    min_fit_per_class: 10
+    min_eval_per_class: 10
+  officehome:
+    required_classes: 65
+    min_fit_per_class: 5
+    min_eval_per_class: 5
+  min_eligible_domain_pairs_per_condition: 4
+  pair_near_fraction: 0.50
+  pair_max_selected: 3
+  pair_min_selected: 1
+  risk_blackout_until_committed_pair_manifest: true
+  pair_bootstrap_replicates: 1000
+  gate:
+    robust_pair_fraction_min: 0.15
+    require_pacs_robust_pair: true
+    require_officehome_robust_pair: true
+    require_resnet_robust_pair: true
+    require_vit_robust_pair: true
+  wilson_interval_report_only: true
+
+final_decision:
+  CMR-A:
+    require: [X1_PASS, X2_PASS, X3_PASS, X4_PASS, X5_PASS]
+    meaning: strong_cross_mechanism_cross_ecosystem_replication
+  CMR-B:
+    require: [X1_PASS, X2_PASS, X3_PASS, X4_PASS, X5_FAIL]
+    meaning: cross_mechanism_replication_external_breadth_limited
+  CMR-C:
+    require:
+      - X1_PASS
+      - X2_PASS
+      - not_CMR-A
+      - not_CMR-B
+      - any_of_X3_X4_X5_PASS
+    meaning: cross_mechanism_evidence_present_breadth_incomplete
+  CMR-D:
+    require_any:
+      - X2_FAIL
+      - [X1_PASS, X2_PASS, X3_FAIL, X4_FAIL, X5_FAIL]
+    meaning: empirical_cross_mechanism_replication_not_supported
+  integrity_block: CMR_INTEGRITY_BLOCKED
+
+seeds:
+  rff_master: 20261001
+  external_split: 20261002
+  wilds_support_match: 20261003
+  intervention_reserved: 20261004
+  bootstrap_master: 20261005
+  phase1_client_partition: 20260908
+  phase5_group_split: 20260910
+  phase5_class_subset: 20260910
+
+prohibited_after_x2_outcome_access:
+  - replace_action_family
+  - add_or_remove_layers
+  - change_rff_dimension
+  - tune_kernel_bandwidth
+  - search_rff_seeds
+  - relax_gates
+  - replace_pacs_or_officehome
+  - drop_rxrx1
+  - change_wilds_support_rules
+  - change_pair_near_fractions
+  - use_evaluation_risk_for_pair_selection
+  - favorable_dataset_encoder_context_pair_selection
+  - redefine_final_decision_matrix
+
+paths:
+  protocol_markdown: docs/governance/nature/CROSS_MECHANISM_REPLICATION_PROTOCOL_V1.md
+  protocol_yaml: configs/cross_mechanism_replication_protocol_v1.yaml
+  gate_matrix: docs/phases/cmr_v1/CMR_V1_GATE_MATRIX.csv
+  freeze_manifest: docs/phases/cmr_v1/CMR_V1_FREEZE_MANIFEST.json
+  runner: tools/run_cmr_v1.py
+  module: src/frontier/cmr_kernel_layer.py
+  tests_x1: tests/test_cmr_v1_x1.py
+  feature_map_manifest: configs/cmr_v1_feature_map_manifest.json
+  feature_bank_manifest: configs/cmr_v1_feature_bank_manifest.json
+  wilds_pair_manifest: configs/cmr_v1_wilds_pair_manifest.json
+  wilds_unblind_authorization: configs/cmr_v1_wilds_unblind_authorization.json
+  external_raw_manifest: configs/cmr_v1_external_raw_manifest.json
+  external_pair_manifest: configs/cmr_v1_external_pair_manifest.json
+  external_unblind_authorization: configs/cmr_v1_external_unblind_authorization.json
+  evidence_root: evidence/cmr_v1
+  runs_root: runs/cmr_v1
