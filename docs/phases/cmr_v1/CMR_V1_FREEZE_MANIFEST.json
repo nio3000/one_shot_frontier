@@ -1,0 +1,40 @@
+{
+  "manifest_type": "CMR_V1_PROTOCOL_FREEZE_MANIFEST",
+  "protocol_id": "CMR-V1",
+  "protocol_version": "1.0.0-FROZEN",
+  "status": "FROZEN_BEFORE_CMR_OUTCOME_ACCESS",
+  "freeze_date": "2026-10-01",
+  "author_freeze_confirmation": true,
+  "manuscript_baseline": {
+    "file": "main_v2_2_prose_tightened.tex",
+    "sha256": "d4e686850d81117555e99e5f4ca6f01e76b2b4702dc8c2b9c7b45c54c24739ba"
+  },
+  "files": {
+    "CMR_V1_CODEX_X1_IMPLEMENTATION_PROMPT.md": {
+      "sha256": "264cf0f4ac31d66855e826d4ebcfd69b7e96c48db5847d47bdcdd4b49bfb0192",
+      "bytes": 2947
+    },
+    "CMR_V1_GATE_MATRIX.csv": {
+      "sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001",
+      "bytes": 1774
+    },
+    "CMR_V1_REPOSITORY_LAYOUT.md": {
+      "sha256": "2dffacf44e937e54a55ad26b327d459c0aa1bcfb789d37e29e559d6031da443c",
+      "bytes": 1342
+    },
+    "CROSS_MECHANISM_REPLICATION_PROTOCOL_V1.0.md": {
+      "sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a",
+      "bytes": 28441
+    },
+    "README.md": {
+      "sha256": "2fa722f0601b3aba5acf3b37a2102763004d12f1a586ad6eae36fc943c3e895f",
+      "bytes": 773
+    },
+    "cross_mechanism_replication_protocol_v1.yaml": {
+      "sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b",
+      "bytes": 7394
+    }
+  },
+  "next_authorized_action": "GIT_PROTOCOL_FREEZE_THEN_X1_IMPLEMENTATION_ONLY",
+  "x2_x5_outcome_access_authorized": false
+}
