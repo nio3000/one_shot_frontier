@@ -1,0 +1,137 @@
+{
+  "cpu_torch_version": "2.12.1+cpu",
+  "cpu_torchvision_version": "0.27.1+cpu",
+  "cuda_torch_version": "2.7.0+cu128",
+  "cuda_torchvision_version": "0.22.0+cu128",
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "layer_hook_identity_pass": true,
+  "layer_hooks": {
+    "resnet18_imagenet1k_v1": {
+      "cpu": {
+        "layer1": {
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "module_path": "model.layer1",
+          "module_type": "Sequential"
+        },
+        "layer2": {
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "module_path": "model.layer2",
+          "module_type": "Sequential"
+        },
+        "layer3": {
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "module_path": "model.layer3",
+          "module_type": "Sequential"
+        },
+        "layer4": {
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "module_path": "model.layer4",
+          "module_type": "Sequential"
+        }
+      },
+      "cuda": {
+        "layer1": {
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "module_path": "model.layer1",
+          "module_type": "Sequential"
+        },
+        "layer2": {
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "module_path": "model.layer2",
+          "module_type": "Sequential"
+        },
+        "layer3": {
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "module_path": "model.layer3",
+          "module_type": "Sequential"
+        },
+        "layer4": {
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "module_path": "model.layer4",
+          "module_type": "Sequential"
+        }
+      },
+      "identical": true
+    },
+    "vit_b_16_imagenet1k_v1": {
+      "cpu": {
+        "B12": {
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "module_path": "model.encoder.layers[11]",
+          "module_type": "EncoderBlock"
+        },
+        "B3": {
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "module_path": "model.encoder.layers[2]",
+          "module_type": "EncoderBlock"
+        },
+        "B6": {
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "module_path": "model.encoder.layers[5]",
+          "module_type": "EncoderBlock"
+        },
+        "B9": {
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "module_path": "model.encoder.layers[8]",
+          "module_type": "EncoderBlock"
+        }
+      },
+      "cuda": {
+        "B12": {
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "module_path": "model.encoder.layers[11]",
+          "module_type": "EncoderBlock"
+        },
+        "B3": {
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "module_path": "model.encoder.layers[2]",
+          "module_type": "EncoderBlock"
+        },
+        "B6": {
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "module_path": "model.encoder.layers[5]",
+          "module_type": "EncoderBlock"
+        },
+        "B9": {
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "module_path": "model.encoder.layers[8]",
+          "module_type": "EncoderBlock"
+        }
+      },
+      "identical": true
+    }
+  },
+  "preprocessing": {
+    "resnet18_imagenet1k_v1": {
+      "cpu_transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331",
+      "cuda_transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331",
+      "identical": true,
+      "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)"
+    },
+    "vit_b_16_imagenet1k_v1": {
+      "cpu_transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331",
+      "cuda_transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331",
+      "identical": true,
+      "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)"
+    }
+  },
+  "preprocessing_identity_pass": true,
+  "record_type": "CMR_V1_X2_BACKEND_IDENTITY_COMPARISON",
+  "weights": {
+    "resnet18_imagenet1k_v1": {
+      "cpu_state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080",
+      "cuda_state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080",
+      "enum_identical": true,
+      "state_identical": true,
+      "weights_enum": "ResNet18_Weights.IMAGENET1K_V1"
+    },
+    "vit_b_16_imagenet1k_v1": {
+      "cpu_state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa",
+      "cuda_state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa",
+      "enum_identical": true,
+      "state_identical": true,
+      "weights_enum": "ViT_B_16_Weights.IMAGENET1K_V1"
+    }
+  },
+  "weights_identity_pass": true
+}

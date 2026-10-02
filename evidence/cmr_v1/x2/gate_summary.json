@@ -1,0 +1,64 @@
+{
+  "action_relevant_count": 8,
+  "all_gates_pass": false,
+  "cmr_x2_decision": "ACTION_FAMILY_NOT_DECISION_RELEVANT",
+  "condition_count": 8,
+  "final_cmr_decision": "CMR-D",
+  "gates": {
+    "X2-G1": {
+      "action_relevant_count": 8,
+      "name": "action-relevant structural conditions",
+      "passed": true,
+      "required": 6,
+      "spread_threshold": 0.01,
+      "structural_conditions": 8
+    },
+    "X2-G2": {
+      "distinct_unique_best": [
+        "layer4"
+      ],
+      "margin_threshold": 0.002,
+      "name": "ResNet-18 UNIQUE_BEST layer breadth",
+      "passed": false,
+      "required": 2
+    },
+    "X2-G3": {
+      "distinct_unique_best": [
+        "B12",
+        "B6",
+        "B9"
+      ],
+      "margin_threshold": 0.002,
+      "name": "ViT-B/16 UNIQUE_BEST block breadth",
+      "passed": true,
+      "required": 2
+    },
+    "X2-G4": {
+      "max_abs": 1.2960299500264227e-11,
+      "name": "aggregation recovery",
+      "passed": true,
+      "tolerance": 1e-08
+    },
+    "X2-G5": {
+      "name": "finiteness",
+      "passed": true
+    }
+  },
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "protocol_id": "CMR-V1",
+  "protocol_status": "FROZEN_BEFORE_CMR_OUTCOME_ACCESS",
+  "protocol_stops": true,
+  "protocol_version": "1.0.0-FROZEN",
+  "provenance": {
+    "feature_bank_manifest_sha256": "70483027bb84c48c66852b9c1ae60c0fdfd37d13b17ef40528832323af93ed97",
+    "feature_extract_sha256": "ade3cc45822978391d4eb00070608a54650db97e436051b5eb4e32d1b6b358b1",
+    "feature_map_manifest_sha256": "3b225c1cd6b7a83f8452bd7405dc6f1ee64b92510d66da618ea3bab1afd36d36",
+    "freeze_manifest_sha256": "77ab2bad46aa8d25630ccc1cb38d8aba44bc3c45fd2b772cdd37f4e39afb1545",
+    "gate_matrix_sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001",
+    "module_sha256": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+    "protocol_md_sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a",
+    "protocol_yaml_sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b",
+    "runner_sha256": "d659eb274b3d089fbdc668fe322cc0b4c28c93a14ef6dcbc744f48507ca6c88d"
+  },
+  "stage": "X2"
+}

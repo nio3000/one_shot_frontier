@@ -1,0 +1,45 @@
+{
+  "determinism_flags": {
+    "torch.backends.cuda.matmul.allow_tf32": false,
+    "torch.backends.cudnn.allow_tf32": false
+  },
+  "device": "cuda",
+  "env_name": "envs",
+  "environment": {
+    "cuda_available": true,
+    "cuda_runtime_version": "12.8",
+    "cudnn_version": 90701,
+    "driver_version": "616.56",
+    "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+    "gpu_capability": [
+      8,
+      9
+    ],
+    "gpu_free_mib": 6742.6,
+    "gpu_model": "NVIDIA GeForce RTX 4060",
+    "gpu_total_mib": 8187.5,
+    "numpy_version": "2.3.5",
+    "os": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "python_executable": "D:\\ProgramData\\anaconda3\\envs\\osf\\python.exe",
+    "python_version": "3.11.16",
+    "torch_num_threads": 6,
+    "torch_version": "2.7.0+cu128",
+    "torchvision_version": "0.22.0+cu128"
+  },
+  "formal_extraction_defaults": {
+    "amp": false,
+    "autocast": false,
+    "bf16": false,
+    "forward_dtype": "float32",
+    "model_weights_dtype": "float32",
+    "rff_generation_dtype": "float64",
+    "storage_dtype": "float16"
+  },
+  "protocol": {
+    "id": "CMR-V1",
+    "status": "FROZEN_BEFORE_CMR_OUTCOME_ACCESS",
+    "version": "1.0.0-FROZEN"
+  },
+  "role": "CUDA_FORMAL_BACKEND"
+}

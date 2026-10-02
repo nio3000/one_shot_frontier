@@ -1,0 +1,3757 @@
+{
+  "conditions": [
+    {
+      "bacc": {
+        "layer1": 0.10344827586206896,
+        "layer2": 0.06896551724137931,
+        "layer3": 0.13793103448275862,
+        "layer4": 0.10344827586206896
+      },
+      "condition_id": "cifar100__resnet18_imagenet1k_v1",
+      "dataset": "cifar100",
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "identity": {
+        "canonical_sample_id_hash": "9459609a7f2840b9f04984377c24c4bee90d4f5666ea8bf78f72757551471268",
+        "test_class_counts": {
+          "0": 100,
+          "1": 100,
+          "10": 100,
+          "11": 100,
+          "12": 100,
+          "13": 100,
+          "14": 100,
+          "15": 100,
+          "16": 100,
+          "17": 100,
+          "18": 100,
+          "19": 100,
+          "2": 100,
+          "20": 100,
+          "21": 100,
+          "22": 100,
+          "23": 100,
+          "24": 100,
+          "25": 100,
+          "26": 100,
+          "27": 100,
+          "28": 100,
+          "29": 100,
+          "3": 100,
+          "30": 100,
+          "31": 100,
+          "32": 100,
+          "33": 100,
+          "34": 100,
+          "35": 100,
+          "36": 100,
+          "37": 100,
+          "38": 100,
+          "39": 100,
+          "4": 100,
+          "40": 100,
+          "41": 100,
+          "42": 100,
+          "43": 100,
+          "44": 100,
+          "45": 100,
+          "46": 100,
+          "47": 100,
+          "48": 100,
+          "49": 100,
+          "5": 100,
+          "50": 100,
+          "51": 100,
+          "52": 100,
+          "53": 100,
+          "54": 100,
+          "55": 100,
+          "56": 100,
+          "57": 100,
+          "58": 100,
+          "59": 100,
+          "6": 100,
+          "60": 100,
+          "61": 100,
+          "62": 100,
+          "63": 100,
+          "64": 100,
+          "65": 100,
+          "66": 100,
+          "67": 100,
+          "68": 100,
+          "69": 100,
+          "7": 100,
+          "70": 100,
+          "71": 100,
+          "72": 100,
+          "73": 100,
+          "74": 100,
+          "75": 100,
+          "76": 100,
+          "77": 100,
+          "78": 100,
+          "79": 100,
+          "8": 100,
+          "80": 100,
+          "81": 100,
+          "82": 100,
+          "83": 100,
+          "84": 100,
+          "85": 100,
+          "86": 100,
+          "87": 100,
+          "88": 100,
+          "89": 100,
+          "9": 100,
+          "90": 100,
+          "91": 100,
+          "92": 100,
+          "93": 100,
+          "94": 100,
+          "95": 100,
+          "96": 100,
+          "97": 100,
+          "98": 100,
+          "99": 100
+        },
+        "test_records": 10000,
+        "train_class_counts": {
+          "0": 500,
+          "1": 500,
+          "10": 500,
+          "11": 500,
+          "12": 500,
+          "13": 500,
+          "14": 500,
+          "15": 500,
+          "16": 500,
+          "17": 500,
+          "18": 500,
+          "19": 500,
+          "2": 500,
+          "20": 500,
+          "21": 500,
+          "22": 500,
+          "23": 500,
+          "24": 500,
+          "25": 500,
+          "26": 500,
+          "27": 500,
+          "28": 500,
+          "29": 500,
+          "3": 500,
+          "30": 500,
+          "31": 500,
+          "32": 500,
+          "33": 500,
+          "34": 500,
+          "35": 500,
+          "36": 500,
+          "37": 500,
+          "38": 500,
+          "39": 500,
+          "4": 500,
+          "40": 500,
+          "41": 500,
+          "42": 500,
+          "43": 500,
+          "44": 500,
+          "45": 500,
+          "46": 500,
+          "47": 500,
+          "48": 500,
+          "49": 500,
+          "5": 500,
+          "50": 500,
+          "51": 500,
+          "52": 500,
+          "53": 500,
+          "54": 500,
+          "55": 500,
+          "56": 500,
+          "57": 500,
+          "58": 500,
+          "59": 500,
+          "6": 500,
+          "60": 500,
+          "61": 500,
+          "62": 500,
+          "63": 500,
+          "64": 500,
+          "65": 500,
+          "66": 500,
+          "67": 500,
+          "68": 500,
+          "69": 500,
+          "7": 500,
+          "70": 500,
+          "71": 500,
+          "72": 500,
+          "73": 500,
+          "74": 500,
+          "75": 500,
+          "76": 500,
+          "77": 500,
+          "78": 500,
+          "79": 500,
+          "8": 500,
+          "80": 500,
+          "81": 500,
+          "82": 500,
+          "83": 500,
+          "84": 500,
+          "85": 500,
+          "86": 500,
+          "87": 500,
+          "88": 500,
+          "89": 500,
+          "9": 500,
+          "90": 500,
+          "91": 500,
+          "92": 500,
+          "93": 500,
+          "94": 500,
+          "95": 500,
+          "96": 500,
+          "97": 500,
+          "98": 500,
+          "99": 500
+        },
+        "train_records": 50000
+      },
+      "provenance": {
+        "encoder_state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080",
+        "preprocessing_id": "torchvision_weights_transforms::ResNet18_Weights.IMAGENET1K_V1",
+        "pretrained_weights_enum": "ResNet18_Weights.IMAGENET1K_V1",
+        "raw_layer_dim": {
+          "layer1": 64,
+          "layer2": 128,
+          "layer3": 256,
+          "layer4": 512
+        },
+        "torch_version": "2.7.0+cu128",
+        "torchvision_version": "0.22.0+cu128",
+        "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+        "transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331"
+      },
+      "reference_path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/cifar100__resnet18_imagenet1k_v1.npz",
+      "reference_sha256": "e363f5f34b369f556c8b3162c6ecf93c9f3244fc029875398ca9e40547dce1a9",
+      "sampled": true,
+      "split_meta": {
+        "split_id": "official_train__official_test"
+      },
+      "stage_hashes": [
+        {
+          "layer": "layer1",
+          "sha256": "038122a930557ca53b32dc2d4f3c39b82922fa9c64ec645459ddcbe5892f0d12",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "6d2194f2e47e6d06bb56b59d99b5d04159cca9e8b2d6e5f0f5918c914d9a3188",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "2c6620e9dba57978a62bafd57838d7a290f81bd206052f65379a07341f2a9911",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "1bc0ada47bb91acac43441cd080c3c35d217e58eede8c1f94e867de1aec33512",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "05d93209dbc3d13882ae07fbed8170a89237e63fd856c01c600e0c66e7447b1e",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "7bd89cecec17165a65424ed4e8db7e33de0b92e42a733e9d0a78e1a952521111",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "2ae462c7dd35d63d85cb5728334cb074dacd6e7d836753da581d6bff198568c7",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "0cc9535c2a88dd7de82b76aa450254e0cfd7b7114136b4f3b58be231760ec87a",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "8a2a1a8791d36d984cc6b24e88747851d218869bae8b0fa0f1b7b0f759f2bd52",
+          "shape": [
+            32,
+            29
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "bccd2c8cff22896d00dff31851354be66a3072e53f83060ca06f84fbf85fff0d",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "fb493bceeb4785420f16d4ec028eb85ecc6101f4518843a120f1d0923b72ef10",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "ca45e0a7ec9acb813f55b324e3f97c2c37b9fa53cfaa6e5da2705ffc44ffd09d",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "3cd537611f87961ad31e75844c937e71ad1dd611a85ec3615e9ba163e1e9f821",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "d94caafc5970d05f6bee573f524c1a1d3dcc9a50ca02afdd5743114269540954",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "dc1f047112d08b36c54b5cec5e1ef326e0f9252cdfe7dc563574471b6280d6d8",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "ff2d23d8998e87aeaa3b761c6be5d0b861f12b27e2e9e122e6d387aab7dd4db1",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "27c390d73a7b4215332343e830ddb95e57aa3453fa6e58ec98061fdcab6bcb7e",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "f65b2b358ce70212894f5511a0ccb481dd66a96026335fd7c5aa7857d2384cc4",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "e68e824f1a4716884bb0f11b2cf079022627258cd0cfaf40d916bd8186424063",
+          "shape": [
+            32,
+            29
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "177a00de832eb5e23f4ed81d9c8820b63b51bd632508f53df6920ced85f48bdc",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "8383924ae0c657324fb034cb13d9366d5e4f63c2542673fc55ce92a68bf23096",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "60f54797d2bfa1a8c6b9ede5bbaf4fe0d1781127e1247d6d90e08721da00c180",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "a0b7b20f6a57fb0b5763d82a8ab22e710c5bd54d6d3708325b634fad19eef42c",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "53846e6a199d309ce44818acaaeb8996aafc491267e471c2556f86dca2a19ab1",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "e1a849d3ff099510ff2ca1fe7065fccaaf92d6da71579c341091ba56db06536c",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "6fa303d3d109d593592100a71520f9ef89c3b9cf22cf5999f603091074479757",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "5b79b3351f7b8ca41e46ad4dc4449932725d2631e99f039b7124f8f1d1631252",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "0927adf70b3f164839836438abe8671682cb030d95b65ee63d4ec87f56a763bc",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "b08f19e126dbb2a109e6aa246149acb1bc8c723d5b2387a331df99549c853126",
+          "shape": [
+            32,
+            29
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "e045f8d38eaf718978c9e75141bf3ff083f84ce01e4fddbda9214bafdd518423",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "3a7b2ffaa9e6e2dcc46301ccce79d1cb9d10d2174a44633470c58f6428b69e72",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "ebe9cf046f11c7f5280e4054b36c276fa67bda2cea3dcb82fd73ed927138cf61",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "217cfd4464b750d7e9d5f7c26f0d21c7bc501e0a8d13879035e9e634833ce2dc",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "0978391e098155b1cc4c4478e3cbd6ddd9289566e8a9250953f705580bcdae66",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "16b49eb59d0fa1c804f39e1207fbe78afe965131b5d582f47316acc710e2527f",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "fa039d7a2254c90fd6b9cc50bd29d85cc431ec927fc3db8e1d03e45f0401e569",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "c79dbf86f09a2114d95b533e31b82c54828c74953d1c24a639ea24fe26024c7f",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "a5bff6e0b9927d7e33a075b164114985fa1fca52779aa39ac4eaa43dd3b29b8b",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "c81511af627e2ece2e1c4b88d9e5e0382ab25c0be2b7b3aebf68912987fee8f2",
+          "shape": [
+            32,
+            29
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "5b8c09dae3b73c97a24f5b1fc8ee6e66f8a119a3928c47999646f668205a5d31",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        }
+      ],
+      "test_records": 32,
+      "train_records": 32
+    },
+    {
+      "bacc": {
+        "B12": 0.1724137931034483,
+        "B3": 0.06896551724137931,
+        "B6": 0.13793103448275862,
+        "B9": 0.1724137931034483
+      },
+      "condition_id": "cifar100__vit_b_16_imagenet1k_v1",
+      "dataset": "cifar100",
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "identity": {
+        "canonical_sample_id_hash": "9459609a7f2840b9f04984377c24c4bee90d4f5666ea8bf78f72757551471268",
+        "test_class_counts": {
+          "0": 100,
+          "1": 100,
+          "10": 100,
+          "11": 100,
+          "12": 100,
+          "13": 100,
+          "14": 100,
+          "15": 100,
+          "16": 100,
+          "17": 100,
+          "18": 100,
+          "19": 100,
+          "2": 100,
+          "20": 100,
+          "21": 100,
+          "22": 100,
+          "23": 100,
+          "24": 100,
+          "25": 100,
+          "26": 100,
+          "27": 100,
+          "28": 100,
+          "29": 100,
+          "3": 100,
+          "30": 100,
+          "31": 100,
+          "32": 100,
+          "33": 100,
+          "34": 100,
+          "35": 100,
+          "36": 100,
+          "37": 100,
+          "38": 100,
+          "39": 100,
+          "4": 100,
+          "40": 100,
+          "41": 100,
+          "42": 100,
+          "43": 100,
+          "44": 100,
+          "45": 100,
+          "46": 100,
+          "47": 100,
+          "48": 100,
+          "49": 100,
+          "5": 100,
+          "50": 100,
+          "51": 100,
+          "52": 100,
+          "53": 100,
+          "54": 100,
+          "55": 100,
+          "56": 100,
+          "57": 100,
+          "58": 100,
+          "59": 100,
+          "6": 100,
+          "60": 100,
+          "61": 100,
+          "62": 100,
+          "63": 100,
+          "64": 100,
+          "65": 100,
+          "66": 100,
+          "67": 100,
+          "68": 100,
+          "69": 100,
+          "7": 100,
+          "70": 100,
+          "71": 100,
+          "72": 100,
+          "73": 100,
+          "74": 100,
+          "75": 100,
+          "76": 100,
+          "77": 100,
+          "78": 100,
+          "79": 100,
+          "8": 100,
+          "80": 100,
+          "81": 100,
+          "82": 100,
+          "83": 100,
+          "84": 100,
+          "85": 100,
+          "86": 100,
+          "87": 100,
+          "88": 100,
+          "89": 100,
+          "9": 100,
+          "90": 100,
+          "91": 100,
+          "92": 100,
+          "93": 100,
+          "94": 100,
+          "95": 100,
+          "96": 100,
+          "97": 100,
+          "98": 100,
+          "99": 100
+        },
+        "test_records": 10000,
+        "train_class_counts": {
+          "0": 500,
+          "1": 500,
+          "10": 500,
+          "11": 500,
+          "12": 500,
+          "13": 500,
+          "14": 500,
+          "15": 500,
+          "16": 500,
+          "17": 500,
+          "18": 500,
+          "19": 500,
+          "2": 500,
+          "20": 500,
+          "21": 500,
+          "22": 500,
+          "23": 500,
+          "24": 500,
+          "25": 500,
+          "26": 500,
+          "27": 500,
+          "28": 500,
+          "29": 500,
+          "3": 500,
+          "30": 500,
+          "31": 500,
+          "32": 500,
+          "33": 500,
+          "34": 500,
+          "35": 500,
+          "36": 500,
+          "37": 500,
+          "38": 500,
+          "39": 500,
+          "4": 500,
+          "40": 500,
+          "41": 500,
+          "42": 500,
+          "43": 500,
+          "44": 500,
+          "45": 500,
+          "46": 500,
+          "47": 500,
+          "48": 500,
+          "49": 500,
+          "5": 500,
+          "50": 500,
+          "51": 500,
+          "52": 500,
+          "53": 500,
+          "54": 500,
+          "55": 500,
+          "56": 500,
+          "57": 500,
+          "58": 500,
+          "59": 500,
+          "6": 500,
+          "60": 500,
+          "61": 500,
+          "62": 500,
+          "63": 500,
+          "64": 500,
+          "65": 500,
+          "66": 500,
+          "67": 500,
+          "68": 500,
+          "69": 500,
+          "7": 500,
+          "70": 500,
+          "71": 500,
+          "72": 500,
+          "73": 500,
+          "74": 500,
+          "75": 500,
+          "76": 500,
+          "77": 500,
+          "78": 500,
+          "79": 500,
+          "8": 500,
+          "80": 500,
+          "81": 500,
+          "82": 500,
+          "83": 500,
+          "84": 500,
+          "85": 500,
+          "86": 500,
+          "87": 500,
+          "88": 500,
+          "89": 500,
+          "9": 500,
+          "90": 500,
+          "91": 500,
+          "92": 500,
+          "93": 500,
+          "94": 500,
+          "95": 500,
+          "96": 500,
+          "97": 500,
+          "98": 500,
+          "99": 500
+        },
+        "train_records": 50000
+      },
+      "provenance": {
+        "encoder_state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa",
+        "preprocessing_id": "torchvision_weights_transforms::ViT_B_16_Weights.IMAGENET1K_V1",
+        "pretrained_weights_enum": "ViT_B_16_Weights.IMAGENET1K_V1",
+        "raw_layer_dim": {
+          "B12": 768,
+          "B3": 768,
+          "B6": 768,
+          "B9": 768
+        },
+        "torch_version": "2.7.0+cu128",
+        "torchvision_version": "0.22.0+cu128",
+        "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+        "transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331"
+      },
+      "reference_path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/cifar100__vit_b_16_imagenet1k_v1.npz",
+      "reference_sha256": "64c08c5808e7588f356cf37efba94d112aa359e1eb38363f722068b241d9db20",
+      "sampled": true,
+      "split_meta": {
+        "split_id": "official_train__official_test"
+      },
+      "stage_hashes": [
+        {
+          "layer": "B3",
+          "sha256": "82844135a0a239606617e72f16708cb3a1c5781703924e11dadd60fb1d8b8dfe",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "97d8a9333aaf29946fae21b72c4774bea99837166ade9c41f0c91dc400410243",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "1e7575a59faaf4cfed5c01fb49f2d1d78d73a5f84d345b82905d8653c7587515",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "9eb316d71c9c24c83c16e6911c1b3795e8fa7fbc3c64cf8405277dd12d634838",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "222eb4f54138b96774c392db053fee9b88e29dd7dd8cf9089753d1f928054dbb",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "b97f0326b007e40844ebe2731cef941868dadf03f680ee4b4bf67fc08bb901b3",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "fd3f0b0a5790620fcde418843a48be98bd26c31f36e7750f447d8f110a361cc2",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B3",
+          "sha256": "b7923094948d5602709aed410504cc02bb3fa2dcfa68d438ee1e215a1fde7f9f",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B3",
+          "sha256": "b0f0904c70d5f93fe446d100bf8df3fadc77488f41c59f6fd0a3c228a8a8fa9f",
+          "shape": [
+            32,
+            29
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B3",
+          "sha256": "a104dcd7e005aa3ebbb6293cdfb77ee906ba29a9d8a244d66e12054d20de5ba3",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B6",
+          "sha256": "27d8237a4ae0cfe3034bf824bfc12516e1c8c08d6f88b4cd2a0e51977d76b440",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "508261dcbba805ff1b6579044df895c5bc638218efd50ce392b16e385d8ce988",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "47c25b135827a648ce70e4aba890695c694ac579fa83d44d4ffdf5ffc7e156b5",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "f35695be74fb88ff71855a446e9f7674ab7ae12e095f4b82742106167e323030",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "2ad2ac8c7f268fca244f0ab1fd129e659ec93005cc0860f1c5eb1d4d3610e5f3",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "8409dc65873b40e39a0406f3fb1926e0fb1d7efeb7ccd7d50879b79c48d6236a",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "fe15104fa60807f6199ffb4e7b29624e61111e55a3d2f58f212b69f94ffb3cdc",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B6",
+          "sha256": "84b0f2fe6d26ba99ccccad56535c8a803e473a142a75f8921c3a54b4c612773a",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B6",
+          "sha256": "0089a6355b734f5d42d3dd177a6af6e3b40ab3c3b1a06ebb84d718e96d5f2a8c",
+          "shape": [
+            32,
+            29
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B6",
+          "sha256": "273c413233812a1f673bc9e2636cd5c16031035849bc310476433224ccac85d6",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B9",
+          "sha256": "7dffe81f43945a1d52946ff7021322d64ba125e24ae36746c08e4a5ac1c7f6b0",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "e2df1f2c8261732a4935fb5c237e8fd70f6969795d18674d8d548ec886c565bf",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "9ace13e2d22f95f9c23a1db8027e6216297dc37914b0e33699415dcccf662b4a",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "df6c6537e86db4ecce8a10424154831aae845707712e37fd376fc56414c2adc7",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "a444b3ecfe71cf21c3c3c9849edfb16caec8034b2cf1d4c9112d3d09f3890c77",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "cd6a20d7d5ac77eda2b42a696e9f84daedee3a96f174902671b50fa05f9d8509",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "43b3838e3fabcfb2aeeb7ab8d4495fa125d9cafb13f9bc2a307095f0ddce77b4",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B9",
+          "sha256": "81adac7d832299ef02a717244ffa7dd99a9becebecc12c9e4c9f4eaa72150c62",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B9",
+          "sha256": "34e1abc3d9f9c79f33fc303ac69c2ac7fcd9059bd77cc72b0278e7743df21c32",
+          "shape": [
+            32,
+            29
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B9",
+          "sha256": "66c741acafcf261debf41e8d35a29b6b334f5ae717ce588305b12e2f0da3e373",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B12",
+          "sha256": "c65a17392c712742d7d7b81b27a6691e34f2404bd9f1e7c541e6c27135863f95",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "4efd9acd359eb331b82872482a30b5c464521592ed81941c87e032c016258eae",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "e1ef115a6443d7c191d266918744309cd164e130087d6a832d842ad0b2023378",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "5cd35e4a6c4d0153e54ad3ebf8253704f3e3b1fec652ffb32828eb2abcedae8c",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "7d401325f4179e6bfd39e530ca4df86a0f8ce656e6f4e27ff02538314c5006d5",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "9b134ea926569b5a67521228c8783a0ed0e21984f9189c8f91ff610f74c33097",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "78f0ec41d24f82cd7ce5ba3223885180c2df1fa6a9154ec99de1f68ae8132a2a",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B12",
+          "sha256": "ceed68f66f7d7967ac20522dc87c8d309ac3e5ced5e43fb7c71fd9bb6fc1613f",
+          "shape": [
+            29,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B12",
+          "sha256": "13ffceafc332ca5a5c2145f11e5cb32294a573615f9bbaedd229f06fda5191ca",
+          "shape": [
+            32,
+            29
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B12",
+          "sha256": "868bf8ac1e0ae943fc66efc57dfce8f75032119dde7b700a6cf1caf71b851069",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        }
+      ],
+      "test_records": 32,
+      "train_records": 32
+    },
+    {
+      "bacc": {
+        "layer1": 0.16,
+        "layer2": 0.625,
+        "layer3": 0.6416666666666666,
+        "layer4": 0.7916666666666666
+      },
+      "condition_id": "eurosat__resnet18_imagenet1k_v1",
+      "dataset": "eurosat",
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "identity": {
+        "canonical_sample_id_hash": "a3039bcccda779d1cc2f75a1c6af1cf048d863e94d53aa9b20d21bfe742b1ce9",
+        "test_class_counts": {
+          "0": 600,
+          "1": 600,
+          "2": 600,
+          "3": 500,
+          "4": 500,
+          "5": 400,
+          "6": 500,
+          "7": 600,
+          "8": 500,
+          "9": 600
+        },
+        "test_records": 5400,
+        "train_class_counts": {
+          "0": 2400,
+          "1": 2400,
+          "2": 2400,
+          "3": 2000,
+          "4": 2000,
+          "5": 1600,
+          "6": 2000,
+          "7": 2400,
+          "8": 2000,
+          "9": 2400
+        },
+        "train_records": 21600
+      },
+      "provenance": {
+        "encoder_state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080",
+        "preprocessing_id": "torchvision_weights_transforms::ResNet18_Weights.IMAGENET1K_V1",
+        "pretrained_weights_enum": "ResNet18_Weights.IMAGENET1K_V1",
+        "raw_layer_dim": {
+          "layer1": 64,
+          "layer2": 128,
+          "layer3": 256,
+          "layer4": 512
+        },
+        "torch_version": "2.7.0+cu128",
+        "torchvision_version": "0.22.0+cu128",
+        "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+        "transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331"
+      },
+      "reference_path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/eurosat__resnet18_imagenet1k_v1.npz",
+      "reference_sha256": "3b8f39607ae3415f728957eb7ef7ecff1d30c1a29f957027fc85bf846076e43c",
+      "sampled": true,
+      "split_meta": {
+        "split_id": "stratified_80_20_seed20260908",
+        "test_indices_sha256": "d86e6b1210f6b3e7f96fa74b0fcd9195bb7a6d02468207348bf4d3a2fdf871f0",
+        "train_indices_sha256": "bd9991e00f851acb84393888886caff4b80edc54530f5cf7de0f2df1c6edb493"
+      },
+      "stage_hashes": [
+        {
+          "layer": "layer1",
+          "sha256": "dd118d7343cffc4390e301a23d42c0b616a296c9ab7d21dd1740650ae37898a1",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "d16ee952f08d8fe255bebe4d7fe341e3a1150ef9ca63d3bf4b57ae1e6d5b8555",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "0943cb0bb350772ca350c7a3f48f0b0fe0fc2855b688b9358afea6a5337013f3",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "c9a038ffc1b72e19dec3f9283a7c1a818e03cdd0a744af5883b8e174b044b526",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "a727856d0fe7cca5710f5be06f90bf7e27533c9b13e0b21e89d6fea2d52afcc4",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "93287dcdf11acad688c96ee7d977dbaa8ffa1749a2fb37b34232e4c34f36aabd",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "4bb7c3e2b28fc3f3adf55b70233a4e25b91f527155dbf99cf378538c9479dc87",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "d81d66f76e68771d7e8e3c7e4a8ef5b686cb962ed5603da21f2b62b0bbe30019",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "05e8076955a302148d55095611d40d0f013ff4106ee7d37ce61d2057296acb70",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "800147e3bd7f088fcddbf58324c70611df9b95cc789d60c912593d464d4b3183",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "d0aaf3bf433fc96d80cf336641e9762ed6c72621fe617f845e262cc558e29b5a",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "4d2a723f3e87b56bb45efeab1ea84b09d5bdc6a66f79ee45bb0c386dea8733d0",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "2b59090ee80cfc6e842e995e8c18de2f2082eb88b9b7665a7c457ae3e0499852",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "82b1cd08eb42e151297f41e79aa39066ed67dd5b0a73b9d1d1aa7fa956faae0a",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "33b14fc01e9013110bde618f170b81340a70f39a872a5f8a73d48a9cd365c030",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "8183969e6e24e15ec9b2addb4bd230f99c0fbcc2f7de0c6cccfb1d6a82312d87",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "d026c9fb74c3a7d2cead68419d59ed81f4997db8364194635ed60b8f5c667bf6",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "8787849a0b137f788a914f1bc67364943918c5882cc96814641ac6245963a313",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "1c76eb16a5197832b0426de99d2cffb748cd3bb7453a1e218873aedbad04a931",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "698afdeb8c1cae81ade9d84bbc8c8fa529d1e13a75a4b11fbce1f821a15344e4",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "63a3191c0143f981d459a573f3d8e7582d79b7593b60f9d14b02a167feab8470",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "c5b680117866fefcda61089ac0a5f0a2d41991785986f963e3081d309d6dee71",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "e145b4a270005d8fea8d9c86c2f548b49c663893ef79dca4e2ed65d0a299d14a",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "ce4cd5d4cb2d61d76c77e8e409d8dcd7d91b9e37c331f8d7673213ae38140ee8",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "34592d3dd25a02bab3b4173f03bf4f13b6931fa25bcb6d0a277623c39f930ca4",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "885ceaf7a4e65cdf8c5c7ce9b36ad80e9e9bff7eac1fb8d30db91552b47c6644",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "7aee050c59c3d534c9939d1a80161e688a9483bb4d4d3afbbdf73649fa1942ce",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "6ae7dd42c3cdf07721cdbb94364b6e85f640455cd1e733a4461dbaaa05bb0e69",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "38973da56ed1a0cf437ecbe37390168664d5b5008d196b92238074d48a14e2a9",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "c3209c84b706bc0672f46ff4b1e75909ed5e7a420dc4e25c8ce934fdc4943b07",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "81268d9ab1511b98f12e5419b72decae51a7d92627c7b391fda3011f30869fdb",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "41263715dca72db53e2553cc4b6d2bc010ed44da44bdad5737d8aed728da49b9",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "2c629579a8af5329b414afd82810010761c7439e52c4f4ad011c04e0244fe52d",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "abaf1ceac3bd1d39f029b7cb0bb07f3eb9b15d84428a5e7f0e381541f86b3b53",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "151f9c83eabb2a58a9bc12536e42f00dc0be3e7b0597d148fb3ca654c8544920",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "10aad24b1c0ca750bd764dcd74df1fa7383e2473860288ddf94a46e4f47689d6",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "3bc289a815e424478fb0dafe90ab7428f34a0906f94bffadd03e0e9bae2ace1d",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "ff325c21b3b1063dee2f5b37219edb9cddba170c1ec09acec18c6955980626cc",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "aa7bb4b1869d785fe6d4a74928c05d4122444d7a8274b39ac0396d8e8465791f",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "6a650b6ecb8d9f5744dd8c8ca4b536cf54d53c9efd12e5e187c0217059e696b9",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        }
+      ],
+      "test_records": 32,
+      "train_records": 32
+    },
+    {
+      "bacc": {
+        "B12": 0.6,
+        "B3": 0.47666666666666657,
+        "B6": 0.4716666666666667,
+        "B9": 0.65
+      },
+      "condition_id": "eurosat__vit_b_16_imagenet1k_v1",
+      "dataset": "eurosat",
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "identity": {
+        "canonical_sample_id_hash": "a3039bcccda779d1cc2f75a1c6af1cf048d863e94d53aa9b20d21bfe742b1ce9",
+        "test_class_counts": {
+          "0": 600,
+          "1": 600,
+          "2": 600,
+          "3": 500,
+          "4": 500,
+          "5": 400,
+          "6": 500,
+          "7": 600,
+          "8": 500,
+          "9": 600
+        },
+        "test_records": 5400,
+        "train_class_counts": {
+          "0": 2400,
+          "1": 2400,
+          "2": 2400,
+          "3": 2000,
+          "4": 2000,
+          "5": 1600,
+          "6": 2000,
+          "7": 2400,
+          "8": 2000,
+          "9": 2400
+        },
+        "train_records": 21600
+      },
+      "provenance": {
+        "encoder_state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa",
+        "preprocessing_id": "torchvision_weights_transforms::ViT_B_16_Weights.IMAGENET1K_V1",
+        "pretrained_weights_enum": "ViT_B_16_Weights.IMAGENET1K_V1",
+        "raw_layer_dim": {
+          "B12": 768,
+          "B3": 768,
+          "B6": 768,
+          "B9": 768
+        },
+        "torch_version": "2.7.0+cu128",
+        "torchvision_version": "0.22.0+cu128",
+        "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+        "transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331"
+      },
+      "reference_path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/eurosat__vit_b_16_imagenet1k_v1.npz",
+      "reference_sha256": "812bcc1ef256224b0d610fbebe4002b129c8ee7d19e9d9235dda990ced89ba55",
+      "sampled": true,
+      "split_meta": {
+        "split_id": "stratified_80_20_seed20260908",
+        "test_indices_sha256": "d86e6b1210f6b3e7f96fa74b0fcd9195bb7a6d02468207348bf4d3a2fdf871f0",
+        "train_indices_sha256": "bd9991e00f851acb84393888886caff4b80edc54530f5cf7de0f2df1c6edb493"
+      },
+      "stage_hashes": [
+        {
+          "layer": "B3",
+          "sha256": "df6096fac39f60c44386e87963bc659b2bcaa1be283f6dd09b3c8add78a2192d",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "77c095097b7674f7ab991c2a5d21afbd1632acb31c65e3f613eebb1d7c9e84ad",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "d1bb7d20eaf06469f4b68a5e93c73a75065ef4496529485f75653b85cfba4a23",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "233a5b629c12aeed9b7bfe81c889bf2e66f3e755ebd29fe73f35a2653e074a11",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "54aa8e230790ba152e34c4675dcad34aa1706e020b2a06ecad13e07839c4b04a",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "407428877d7aa85afc1f8f775eac37c89562d098fa7f69003954456c5636cdb9",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "501e6822085612eb917faaec9fe04b0b40b4cb3f2309c5187cf7ce367d6e0c4c",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B3",
+          "sha256": "ef508fcf7e2b471dae442d03d5d17cc1db28880431e2aa880abbcdd79f42403c",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B3",
+          "sha256": "a359bf2d1e474101e7eb2e03e6e650cfb5b43c172158294be09fec818e8df960",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B3",
+          "sha256": "d47824ae424957fd45656318db07f6700a9b669c14f1b99178104ace7770ae80",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B6",
+          "sha256": "db5ed03507b38926e7ce22ef3c3800d37adcf868102bcd32f7a8b67ae4c4ad28",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "0cf262a9ad2c7712f03c506d9857f79ef302a2ad3db0c8ebe2b55d5edab803c9",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "833bf6cfb6145e27af3d7bed0ecbd5aeed497ce8f77f5faa5ea418b812493eb5",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "d85c4b1c531de37477b2635b2a7318db8e84597bb84bfc0d01a075f08962ff9a",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "5e0bcfba37f9632d039bd52b6d2681c1d1c5e81dfaf2c65c9afd2a038a8dffc1",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "c5f7d6a002441acf278eafeafb6161bceed641316743db93b6771d9c65f4a1eb",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "b61535314011ec095b964926a615c2abf0d94388240c52ad7ad937bf7e1200e1",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B6",
+          "sha256": "e2f7501c6784739eaee920b40b50ddb5a56de10f19e4ccd6e128b7ec3fe8f426",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B6",
+          "sha256": "cc33d9b9737de65f9f877ac8a81bcb708bffe0e145c952f5936b736a28418939",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B6",
+          "sha256": "cf6322a27aa275c3110ac0df4afd4386ab135b2da3e8fb8c7ee98977c261af3e",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B9",
+          "sha256": "63e35a70c06283cf022da2a748a5f487da90ccadb59268d1cd975cb323da3886",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "2028842a73ed848a157bec0a3b5802ba7ec293ac7745f0171d030a99a7a2f7a6",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "798e81885375b35663a6641a61ad684ca57f033271e76da90326b015fd543a90",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "b639be4c90ea6460371b7d1aa13304a1e25e7cab6c56bc0a4bf0c2f61839d4c6",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "de05b6b6d9da664d6eda92dff646f133bdc81f133f15715ab10a095937f76f20",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "ca87fde6a955980be8a7a6672e74aec923746f633116f9119963333bfe32b64c",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "dcb13868d8f67f4a7e1e98938653decd2991044bd8c7f2b8466ac31e95ad9313",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B9",
+          "sha256": "71472ae145b0c948abd3c9883a00ce9bc362ea7d3500c25a54ba131bc485cc90",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B9",
+          "sha256": "b0129c539572371ce11e82f550b9db8da061a6395b69df16eb4bcf5d30d9e78b",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B9",
+          "sha256": "1778e7d4cb7d544a0252b8df1722e2db63681e34ebfa0b8c045754ce283bb855",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B12",
+          "sha256": "f2214a7766b3802df2d9f506ba4025ba8d6b37a242ea80db572159802a24c3b8",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "90b653e42e4defc95beeaf75f0d4755c138ddd21bc289513aed0cac1a1e65e0e",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "0c389caae03624a22e85de44a8052f745101ad5d646c01518fa651e5ea75cc32",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "6c5fd84598603588966fd3a140e78fed420d0c10fb878e9e89c5f87ee039053c",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "f7515431a5b4eedc553377bd1863d1426ac41e52e115509451afdd7ebbfe587e",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "675d2359a2e509d78f3d843d679e252cfc25a9ba69f632867c5535668d17a8f1",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "2c665c62eaec2d0d44b770e76c87428075eab733bdc32fde0fb504820c9e4765",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B12",
+          "sha256": "6db13581e46c88fa5b9414ed39de0c49db56f676198c7bdfb6a8da5fccf0efbb",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B12",
+          "sha256": "2290c0470ba01f9a148d23d92dff42cf26c8551df46b15b5cfcfbbba0a1510cd",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B12",
+          "sha256": "eff6886590d4e15b8a3bedf3dc4bb0e8482d20d050df46d16c2a383f6a98ad12",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        }
+      ],
+      "test_records": 32,
+      "train_records": 32
+    },
+    {
+      "bacc": {
+        "layer1": 0.225,
+        "layer2": 0.4142857142857143,
+        "layer3": 0.5163690476190477,
+        "layer4": 0.3788690476190476
+      },
+      "condition_id": "pathmnist__resnet18_imagenet1k_v1",
+      "dataset": "pathmnist",
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "identity": {
+        "canonical_sample_id_hash": "48f7d84525ab7abccf0310da2ec305ac342f458be0e966d5ef643909448f7061",
+        "test_class_counts": {
+          "0": 1338,
+          "1": 847,
+          "2": 339,
+          "3": 634,
+          "4": 1035,
+          "5": 592,
+          "6": 741,
+          "7": 421,
+          "8": 1233
+        },
+        "test_records": 7180,
+        "train_class_counts": {
+          "0": 9366,
+          "1": 9509,
+          "2": 10360,
+          "3": 10401,
+          "4": 8006,
+          "5": 12182,
+          "6": 7886,
+          "7": 9401,
+          "8": 12885
+        },
+        "train_records": 89996
+      },
+      "provenance": {
+        "encoder_state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080",
+        "preprocessing_id": "torchvision_weights_transforms::ResNet18_Weights.IMAGENET1K_V1",
+        "pretrained_weights_enum": "ResNet18_Weights.IMAGENET1K_V1",
+        "raw_layer_dim": {
+          "layer1": 64,
+          "layer2": 128,
+          "layer3": 256,
+          "layer4": 512
+        },
+        "torch_version": "2.7.0+cu128",
+        "torchvision_version": "0.22.0+cu128",
+        "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+        "transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331"
+      },
+      "reference_path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/pathmnist__resnet18_imagenet1k_v1.npz",
+      "reference_sha256": "18f547f0e55e8a97c5b60e269f02bc24d6cd52ac93b15e02a2f54d9351f0588c",
+      "sampled": true,
+      "split_meta": {
+        "medmnist_version": "3.0.2",
+        "split_id": "official_train__official_test"
+      },
+      "stage_hashes": [
+        {
+          "layer": "layer1",
+          "sha256": "c8f41955dff0a9ee5a2d45d00e8cbf9e38a3982bd8b0ac8fa2426db7c3c87a7d",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "6c2d0b3df35c05022d9467e599c79359924f8c912855770ce1f2d81fc9600ebf",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "2bb7840c44504a515f44220cf158793e284f999b35750b8ff7792e021a1bbdac",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "bdc15b0fe63b9aeac8840abba80197e2726e2b0e210c79ae52cebb4410e149c3",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "60a2ced79c34c60459c232f0791ef2b41d0b40ca410263e9c6bc87f5a2f15251",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "94ed22647c98d8e352f201ac7ccfe6ac0706c1db3b33b48125b91b3d09b7780c",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "75f9a90101a45d03b09185283501ae5f452d0b32d7aa1247c3363515f5738815",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "81d732ed82c74484e590a7f50367ed8ca2bc5c08d9c6ad37e20cf4190fd8dd24",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "827e2b967e585facb88801519056f46ecb6d2501e96f960c6cb8b06179d71175",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "57a6b80bb9dc0e14030af867065f90f47f6b69eac0df0b99b08045eac2532900",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "47fc9d132bd9b5c0c6ac5566a987d86e6d8de6c95a1e7b25bc9073c4f34054fe",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "baf7967b38b588515ca5a35e50a4f0339bdc9b25fee8144e84e21e8c0339d67d",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "50ad8bc6eac543ebc3b33105be7f441d0cb7c7811166200ff4a1592713071569",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "377c8f06558201acc874958207d38560518f861574560f3079de8226d47962f3",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "54774b5707cfc7748097dc23e78d8ffaedf2051a36e26745429e872f1dcec7fb",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "5753e4b0b1bd3307c49779f361b0cae849d1583d9ec56682823a50c952a4f54a",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "f810165264a7e6cfa02e8b07b4c4735c2023a317cef08db9ee065d43eee7ee96",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "db15e5733fc168feb7502aba189fcb05a08685dd9bd4b6e5b9884b5dc4265c24",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "ea48eb4120b29b1cd83c0bd504d5ce7e1dbc07c7e5ddf4c0054d67993b9f51bc",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "5eed29ae071f50ea5e1c806e533b35ba606a311f66ef5cb9a990d1e4ef186249",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "775e3e629a59c24e3e85eacae56235fb039c3845f0990bcfb5796503fe991093",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "86f188c3795bbb61f1694e9718076551d4ec0a6b7e72e1056bee36f770d0088d",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "9ef9f659d8eb7b6b2351946161119dddd69f17648938ec4fcfbf9f0ae78dc760",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "fef4720a0066e26cffa5e104b4c530cca0302e957c08c32c59883b4fa0883c07",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "f3c2cc043811a4d0f14e431a09bbc1ea2826d91222e3002203794caa367536f8",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "cb3495461ca0e124bc4d98e627227ef9d59e141e5a5853be8276da7cfaecfbea",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "aa6854d4badd63b2a96b84221804768aa5ace037d2938546da057f41f1806889",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "5b339c9748f40151a153817c4c6863b74f262fb6e8d6d39f589215824a909041",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "77e4c25cfcc3236597c9bcfa77ba349bc475dd05175268b64ee704c769eddefc",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "f2df30234fc5c45a87788ec28f891225708302092d931c05f74be4f41c188d4d",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "ed86bc3620fa43df44868c22c80bb1d61e6fa16b168fe54fe8c4a12d9269d408",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "b2fc27b3ef9d3d1ed29cdf1c503192b013ede89b3d5105c972bdbcf2d42ab71d",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "f3827bf849886df1473fb0ce269c1bb69165bedc4356d286170ec86c69c8d9f6",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "eef7a9c1df03764529f9389b9e8f538905c4086cf3eb623c14e8a321c4e05e7a",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "463d694d9e1a0bc888e6c54b4d277e3b28667f9b684ff83b9ebef87b54a0d8b6",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "bed53545a03d739ffb131299eb174e46d3d41893241051d03fc3f10694340077",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "0c2e09f3a8143d21f251c7ecbf75a00de7a35f90780740cd4a6cc8e60cdc459d",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "793918895a600db766792e438e975c1cb6ac9ac585817a5d3928830128f565b4",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "798c7ec51a314e7fb112ecb8ddeafc3a2f80c53c056a1759ebddb4356dba319a",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "fa74a12a9ce8ec3b4aae78129b2048c1e1505c39ebe7a01529551991c065ebba",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        }
+      ],
+      "test_records": 32,
+      "train_records": 32
+    },
+    {
+      "bacc": {
+        "B12": 0.44895833333333335,
+        "B3": 0.3013392857142857,
+        "B6": 0.328125,
+        "B9": 0.30044642857142856
+      },
+      "condition_id": "pathmnist__vit_b_16_imagenet1k_v1",
+      "dataset": "pathmnist",
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "identity": {
+        "canonical_sample_id_hash": "48f7d84525ab7abccf0310da2ec305ac342f458be0e966d5ef643909448f7061",
+        "test_class_counts": {
+          "0": 1338,
+          "1": 847,
+          "2": 339,
+          "3": 634,
+          "4": 1035,
+          "5": 592,
+          "6": 741,
+          "7": 421,
+          "8": 1233
+        },
+        "test_records": 7180,
+        "train_class_counts": {
+          "0": 9366,
+          "1": 9509,
+          "2": 10360,
+          "3": 10401,
+          "4": 8006,
+          "5": 12182,
+          "6": 7886,
+          "7": 9401,
+          "8": 12885
+        },
+        "train_records": 89996
+      },
+      "provenance": {
+        "encoder_state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa",
+        "preprocessing_id": "torchvision_weights_transforms::ViT_B_16_Weights.IMAGENET1K_V1",
+        "pretrained_weights_enum": "ViT_B_16_Weights.IMAGENET1K_V1",
+        "raw_layer_dim": {
+          "B12": 768,
+          "B3": 768,
+          "B6": 768,
+          "B9": 768
+        },
+        "torch_version": "2.7.0+cu128",
+        "torchvision_version": "0.22.0+cu128",
+        "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+        "transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331"
+      },
+      "reference_path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/pathmnist__vit_b_16_imagenet1k_v1.npz",
+      "reference_sha256": "8ef568fde813483c19b6ce05ebecbe2d13c94058465ac0e5c71fd4fbf5fecebe",
+      "sampled": true,
+      "split_meta": {
+        "medmnist_version": "3.0.2",
+        "split_id": "official_train__official_test"
+      },
+      "stage_hashes": [
+        {
+          "layer": "B3",
+          "sha256": "e71a16a2303b69cd636a18d80164f53c58660336711e9ca656da139f54604796",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "59cdbcff83adfa62d21a98d0a26a1862e0fbaf3dfe9cf4a938e95bbac32d831a",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "94094dee9866ab2f16abf2b592358603d0f2393bac0f2d1152cb5cbb080fabee",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "c1884f0eb5bb9c020a10910c897384d1fac629e9d12c6aeb6c8d30afb7162e4f",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "a26ffd054d594db487f406ef7dd7a71d223152b28abf8718c29ba6fb48d66b6b",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "c304c101f7735e80f52482fa5ab3ac165bd24453a83a926d5078cc7b1de7971a",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "49af8b91a268bc486c56ae6b9ccb8955a589b3160b485b5fca7f2f77d84fb5c7",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B3",
+          "sha256": "0efb96a75077edf068167eb39308802a9a39567fb683865a2b70335d1f6966a3",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B3",
+          "sha256": "a98b71b07200e5e0b891fd89db549f2fb8b4fbe1f7b49ba9d8146b67592b33b0",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B3",
+          "sha256": "a8aea57dfbdc44a235f0a994d4d9362d863f922159a97327de390187c3876374",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B6",
+          "sha256": "d3b4402a8bd59e61a29346a1f1e10b330033cee462104db7fafc9aa1005d48c8",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "ae7c579b345d59ab1d7998a73a323ce6376331fa03a7d12823af03f560936129",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "9f4110f7c5c16365f1f58b326cab68a75dfddd3324116f3d87abb03eecc9da7c",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "28bedd694cce76afe820222376bee3fdb6504b1604181374a080bd8450f206ae",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "2b557961a7eae80d397b8162b36d329d58466248e608891236c3391ce0071102",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "ccddcc6b867e141de9540b99201797cbfa5b4f4ae71ef57c1925a456adbf6fc6",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "1cf75cc1c45c9af4bc0e88ef540ef67b9edf55ec709feb2473920732fefec6ff",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B6",
+          "sha256": "88dd951ea321659136a7b785fd1f0f8af0b1a10813474043612186a5277e88bb",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B6",
+          "sha256": "acdafdd83b47e9eed777174ca35d8ded1b7f7e7b13ebf4de6168fe958b60a958",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B6",
+          "sha256": "79bdb3a1e575d5491353ab05adca0e0803c2d72ec645c59a0e39513bad98942d",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B9",
+          "sha256": "415814a560cb61481551b9c77066edc42931c06bb4a64cb9a5a5d4f5388e35ae",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "7411402a82d66af3e33068be8ee052711efca5abd7a81eedf92c5c37b04e0301",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "09d92106675795e076d6eb81ecc86902101b174b12394487e8b18c999882907a",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "9bc5ea060e8e185a0be773bcdf26f2bbf524e7098d86460c2724b22fd23da7df",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "6bee2dbdf25dee8aba318c66f9e32425691664eb5350ca2fcc2a0052d0e9b529",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "ffd5d740d11cf4e7164d3c50e341470c43bf50dadb4252d83bf5c4b650db3739",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "cbe35ef3ed022971c049a40d66dbda1f76970cfe75271f333d99bf2f0386ed92",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B9",
+          "sha256": "f21adc290eee9ef37b02133bf01e3aed264cb5cb86fba8512920f67e16945edb",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B9",
+          "sha256": "8e9b63b08c824a34a96c03fd32e194575d8fdd6f6567f1dcbfcc8d540a8c0602",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B9",
+          "sha256": "3e0f17ef1cf541918b3707d2518aca3a5a65d5560455fc52fbec123a9abd827a",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B12",
+          "sha256": "9a4ae110f7f778496c5b10109ffccbde78beb6e4c136a190b8c65c6da897bdd8",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "df76ffcc9e5bd798bbae5cc488576392339f141f84cca6da97db2ddeae081dd9",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "59452dfb91193f3129cc4272eeb9e48ca0fbaa6d56aa0a7e6a4606794d17d6e7",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "556c6c5591643ee758d0c903ae3be3c61b0d7ace2c999f31a9225bd9fe210d7f",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "1f013b2915cb4454f621b6afb67c44ccba4f476d20bb66dea9b80fe058f4a845",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "b7be860899ab7028408c9e179435563a0bba0b5493e07ed1f93c814c021552eb",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "f3f291c63ccc0cfcaa3891a7a1ca34513d068f918fa83959387277349fb37f52",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B12",
+          "sha256": "06e4ad1466de7f12a19374142ef108b6e52d6959413dbbdf4aeb5b81870bc6ab",
+          "shape": [
+            9,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B12",
+          "sha256": "15bbe2f61079e79106ea86c38666987d0b2e2604f5d6a4f22725dd4e2f612da1",
+          "shape": [
+            32,
+            9
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B12",
+          "sha256": "be82b03013b1c4763b4b7adbc68645d81d7deb373b080f6a5acd626cdba51539",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        }
+      ],
+      "test_records": 32,
+      "train_records": 32
+    },
+    {
+      "bacc": {
+        "layer1": 0.07368421052631578,
+        "layer2": 0.05263157894736842,
+        "layer3": 0.12210526315789474,
+        "layer4": 0.04
+      },
+      "condition_id": "dermamnist__resnet18_imagenet1k_v1",
+      "dataset": "dermamnist",
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "identity": {
+        "canonical_sample_id_hash": "0f4695f2033aebddcf414590d2cefe19a3a009f843114bfea4594d367c7c14b5",
+        "test_class_counts": {
+          "0": 66,
+          "1": 103,
+          "2": 220,
+          "3": 23,
+          "4": 223,
+          "5": 1341,
+          "6": 29
+        },
+        "test_records": 2005,
+        "train_class_counts": {
+          "0": 228,
+          "1": 359,
+          "2": 769,
+          "3": 80,
+          "4": 779,
+          "5": 4693,
+          "6": 99
+        },
+        "train_records": 7007
+      },
+      "provenance": {
+        "encoder_state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080",
+        "preprocessing_id": "torchvision_weights_transforms::ResNet18_Weights.IMAGENET1K_V1",
+        "pretrained_weights_enum": "ResNet18_Weights.IMAGENET1K_V1",
+        "raw_layer_dim": {
+          "layer1": 64,
+          "layer2": 128,
+          "layer3": 256,
+          "layer4": 512
+        },
+        "torch_version": "2.7.0+cu128",
+        "torchvision_version": "0.22.0+cu128",
+        "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+        "transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331"
+      },
+      "reference_path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/dermamnist__resnet18_imagenet1k_v1.npz",
+      "reference_sha256": "12ea7875537806a6dfdb0d13957e0c2dcf9b5ff5abfdef1c7098bff7fd3bc0bf",
+      "sampled": true,
+      "split_meta": {
+        "medmnist_version": "3.0.2",
+        "split_id": "official_train__official_test"
+      },
+      "stage_hashes": [
+        {
+          "layer": "layer1",
+          "sha256": "2055b206924e4ce5c070ffa82c460f456b666bc27b7645a552812f0dfb4630fc",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "293b9b0fb12700d78bf4154772cf74e86d89b0ca06226e17505d6de47efdda2b",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "90451e6002751c56b79c5f6f87b1b9f1987d59b3dfde384234bc2412d181a5f0",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "51797d908e910f3db5e26228e34b91c06819ebb81797185314b13698ff97be52",
+          "shape": [
+            32,
+            64
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "e0fe06863acd70073c077db5c66d76faf938e5bb60399f6c459927e91dfce2e9",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "d8f1f23685aef9135248cce5e2fcd0522ed68c4d1fbd9ef107b308f7bbf9b3cc",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "dc38d605a9ac222b637371dad94c5503b3db34370c880f58643ccf501a0c65fe",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "11b56744e26a8e76adbe0e23dc8d4fa475ad63e1177a4b63a1cf930b6b9f205c",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "2ec3955b3d60dc925dba9adc9b8f2417256ae9d447a4662d3ebb62d0f80a8366",
+          "shape": [
+            32,
+            4
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer1",
+          "sha256": "8b5d22e38ec5bd6ce8a30315b38770ac48056d7ec191018e076d7c194d3cfdd2",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "456796927e5a54f37487376cc81fadcc4bbbf9b71919f0230c3037c7a11c26f3",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "500f38c3b5e44f606a00e362aebdf0a69e0a52f1ce70c6261b243e437be88165",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "7e1b051a010cddca5beef8c1a69ea213ac9df981e8b4add3a95ab950442a8ebc",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "6d6380a519af72e8d8b8452c4089c73527f442349f14e15d29218d6b45e23312",
+          "shape": [
+            32,
+            128
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "1c32b63e0b1ebe359c9c6d95fdc3c67082cdaea9de91690e130714d74b78846a",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "89e9849e103639425081c2228c914c9cbf4e547555f92259f704eba7fd1c681e",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "f3d425c488b4bc782f90a7eba1eab240a15cf06756e42b9967dd9f6e218b4381",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "374764500b1663adff80817a0d9ba63bff74aa1f0b975f9ac9d5df6be60ef1cb",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "42d2af79688b0f95175cfc83749fb460a4663a4c477183242cd4797c908ec0fc",
+          "shape": [
+            32,
+            4
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer2",
+          "sha256": "0213b9bfa407830b37141b5702287d628e4039f307c6187529d376faf93236c6",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "134776c83ec602e82f9734349adcc4e26432ea0e381f51fd77d86d45f7b78008",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "973f34f239b3b086f58326089bc98db087a73929fff107bf3fadf60d1081ba76",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "9a905793874b0805e3bc9b9a5ab42b59e796d1152623436d724c53521be4356e",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "eb6b485b60298596c95dc947822997af58816a557f0b629ff71f51fba9c13b87",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "8078dafa82d6efd28705394dd1ea822783a86d0cf1e323ad7c587728c55ec050",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "7378b0530b9f8aa48940dd75973b73c2b1bfee3e9dd50a730dae80e5e8275da8",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "91604553a444108daa826d1051d9ffe4e7b5dd6b72da1b495ec9309e8a37763b",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "effc67f66a67e26662f071730ccf15777746b50e8593a15241e44cddc698632e",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "f7a32575a3f05b72ae4ae7b956faf3a973507cd7ae2511d072cd4c51ae4f3cd4",
+          "shape": [
+            32,
+            4
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer3",
+          "sha256": "a6121a4382a96adba1f1eee34149be7c3d7ae8e1f8fc695a2f4c7a865c51a153",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "6a0196cddf5db4e2a9b7e29b57b31864c472f74328f72ff89a8efe15327c0667",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "6c73a6f2ef17aba7ab31d407d55be3e31d82e3e41ae8e0af7a1807cc8912ca90",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "e6d44fcaf5f8671b706d672353b7ee927cfc0a41ce942df8f9850a791a055c0e",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "ee1cb280a5949286f9feb70f01d01a2fbb473fc01baf63977b341c7e49d3d207",
+          "shape": [
+            32,
+            512
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "3c6dc838d63495e8c5bdcca61ccbd3121f0cb99c50092fa78329416d9ab70bb7",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "c23a477e721f0b1453697d82c5e195b3275892f86ef1987c72ed36cc802df91e",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "a4a77e2a3b16847ed4b2233ed569f04aab5ae2a37903c3b225e0f1255b595129",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "3c70e17d6a94745bb4e21ea9aa5fbbc268baec0f787a374cedad359635f3c458",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "826f78a7518f86f26575a2a8b41ec795f2560a5868229dc6a612e43018fbdf4a",
+          "shape": [
+            32,
+            4
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "layer4",
+          "sha256": "235239eb8138146c5c81acdbf26ab7b7641742254c776d5b60ef51ee78ba1c99",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        }
+      ],
+      "test_records": 32,
+      "train_records": 32
+    },
+    {
+      "bacc": {
+        "B12": 0.1431578947368421,
+        "B3": 0.031578947368421054,
+        "B6": 0.3291228070175439,
+        "B9": 0.2098245614035088
+      },
+      "condition_id": "dermamnist__vit_b_16_imagenet1k_v1",
+      "dataset": "dermamnist",
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "identity": {
+        "canonical_sample_id_hash": "0f4695f2033aebddcf414590d2cefe19a3a009f843114bfea4594d367c7c14b5",
+        "test_class_counts": {
+          "0": 66,
+          "1": 103,
+          "2": 220,
+          "3": 23,
+          "4": 223,
+          "5": 1341,
+          "6": 29
+        },
+        "test_records": 2005,
+        "train_class_counts": {
+          "0": 228,
+          "1": 359,
+          "2": 769,
+          "3": 80,
+          "4": 779,
+          "5": 4693,
+          "6": 99
+        },
+        "train_records": 7007
+      },
+      "provenance": {
+        "encoder_state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa",
+        "preprocessing_id": "torchvision_weights_transforms::ViT_B_16_Weights.IMAGENET1K_V1",
+        "pretrained_weights_enum": "ViT_B_16_Weights.IMAGENET1K_V1",
+        "raw_layer_dim": {
+          "B12": 768,
+          "B3": 768,
+          "B6": 768,
+          "B9": 768
+        },
+        "torch_version": "2.7.0+cu128",
+        "torchvision_version": "0.22.0+cu128",
+        "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+        "transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331"
+      },
+      "reference_path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/dermamnist__vit_b_16_imagenet1k_v1.npz",
+      "reference_sha256": "b3d8c3cd6931f1b2cfa79aa65cdd00b8a4934a85d353557a376582e162e62d64",
+      "sampled": true,
+      "split_meta": {
+        "medmnist_version": "3.0.2",
+        "split_id": "official_train__official_test"
+      },
+      "stage_hashes": [
+        {
+          "layer": "B3",
+          "sha256": "129c39c9013fa02c54054d0a3ea2ffdda9a4d71917cebe27b84ce7a7cad105c8",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "3fd8414786a4ae958cbe77b142b1913b4a552af18ffd9e295fe9137bbac872cd",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "bd66c3a841dfb2ecd6df2ecb987f3ca84663d7bdeee3a1e0b194587b18bebe16",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "ed0c610fd46d0283dac38e74d88838a514b0c21c7378d073b2c31426e09c1811",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "445edf0fcba18f877262fce586a19b7bf5493c0a6f67c6ce45e6f1af69ea5224",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B3",
+          "sha256": "29ff49e71ebfd0ff53ccca08c1994ca328f083c16c551ded9a7946b43c6e3b85",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B3",
+          "sha256": "e8e74ef33ba4a21a11ca8e6204eeb848952b907e39fcb067111869cc6d666ef8",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B3",
+          "sha256": "08a32b6b78c97d04596801f390e0df2c9f63887412e133824b9767e2e1723b80",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B3",
+          "sha256": "8015da96b6d2c4fa2dd3e51648d8eafa002252925333a3359e9ff598f8ba8181",
+          "shape": [
+            32,
+            4
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B3",
+          "sha256": "be8cbd6cd0716d70cb9b7910653177c3f6b560a3e6106d0a67b67365bc44de84",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B6",
+          "sha256": "69bfd9b60fba4beaab22fffa5b428ca7549b273f6ab9826471bf80c197914b2a",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "c5b2137972c86603f8af783162511da66e5f22216f65d97d316a0eff4da9c409",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "2f1402bfab3bd8bf24e4460505f4a2b5f721bf09eb1e564e6fda815d68660c50",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "8d4081164cb7e92a32b748e5b948e501a27bd704b2232809bb6cc3c392d1bdbb",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "7e577c2d1e1ff88b8df6df79fe8b4eb51dfdfda5918f461c05435dcd64bfbd5f",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B6",
+          "sha256": "2e17785cf88e0ab3b935b3efb7c24f2aa4759e6a93e2ee14b012e007b0ab0dc4",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B6",
+          "sha256": "4a31ec7ab6c2aca07f94aab887ae0c04dd8c8eafb33f1d38a6cbea44fca5de41",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B6",
+          "sha256": "5e92dc73c652071d975cb59162fab4c1b9f6977f8d49827535558dc042c28781",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B6",
+          "sha256": "a7cebae8fedc694685f8e89e9250bdda7443b0399de996676a4176daa6dfbb2f",
+          "shape": [
+            32,
+            4
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B6",
+          "sha256": "931476e07d64e92b65c9cab62859b57a87c8046caf2d523bc09071abad0502b5",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B9",
+          "sha256": "2ea98a402bf18e4a0455beaff96b7bb7ddae9aa4ca83b2af9db010e1891601ae",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "bc7f089ba9d445ffeb99cf444d15d2378979ddd8266781096301a323fc019b0c",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "7e16dd558a1e27cfda9745080b0b992c07cff039335f10fb06233320a5b0dc01",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "a09374bc10db8f18647eafc699f7bd6455c38ca881a7925189baf8bd4a8ebe08",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "f6896d04d983de1473e555c3c7e61d0c48727c636a5015c9e35c7297ddd95981",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B9",
+          "sha256": "e92cad200255839089ad800886c8084545a7e45c942401e2016c73a1c966f7cf",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B9",
+          "sha256": "be99621e5ade6733c19f0ea7b0b408ac4f9690d646bcdab8a4a98b971465e1ab",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B9",
+          "sha256": "768c0b0db7369ba0da7acdf145bf9ecf6eeea0d7f2d4bde3fe6c35a7e93685a8",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B9",
+          "sha256": "2692e57c2281f6d45b6ea8c49b51625647e6182a89f36248c88729407b902b2b",
+          "shape": [
+            32,
+            4
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B9",
+          "sha256": "b6dbb5bb5628746468826f08f66be48c051c4d68b029215cf54fd5d7ca5cdd55",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        },
+        {
+          "layer": "B12",
+          "sha256": "40fb06baa217c08045dfbfb5b720e2ef6e1d9be13974f600deb54b3c6275d0c0",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "a51f7e9b0ee59170dc7baa7757c136ac452f9d22c0b6901cd733b8a425277b4e",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "raw_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "b6d540d9ed52e7c0a33d5f800fd93c533344029ad0d8c1505a71dfd5b5c62cd4",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "bce3ab4ff6ee1b4e9d152d2c4fe94b9bfbea3bc5677cd9485512d7b67ee7e82e",
+          "shape": [
+            32,
+            768
+          ],
+          "stage": "norm_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "f4eaa03a00b5530739c81e2bde14670256ac3a1c6fd54ea95acf18b6c24b3a82",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_train"
+        },
+        {
+          "layer": "B12",
+          "sha256": "76a54d47b1e73c2d1a4f2f16968ec0299a4764c701d27cd2fdded29e49842aa8",
+          "shape": [
+            32,
+            256
+          ],
+          "stage": "rff_test"
+        },
+        {
+          "layer": "B12",
+          "sha256": "5f9153396d4c43b165796d4a4855f5aa4cce8d4a7ae6225d9df38dc7d027fe1f",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "class_sums"
+        },
+        {
+          "layer": "B12",
+          "sha256": "c35ade3272d438005e983cbeaa10dbf3eb114b922091d189ee54062e3ceb304c",
+          "shape": [
+            4,
+            256
+          ],
+          "stage": "prototypes"
+        },
+        {
+          "layer": "B12",
+          "sha256": "7e03e829a4772aebabd715ef28857bb424f251cd35eb0ed2ecd0258cf5f17d6b",
+          "shape": [
+            32,
+            4
+          ],
+          "stage": "scores"
+        },
+        {
+          "layer": "B12",
+          "sha256": "49a4e11b9a1103a04256b6ddfe5b765fc0017144bea1c75ed2d2b17b68059786",
+          "shape": [
+            32
+          ],
+          "stage": "predictions"
+        }
+      ],
+      "test_records": 32,
+      "train_records": 32
+    }
+  ],
+  "device": "cuda",
+  "environment": {
+    "cuda_available": true,
+    "cuda_runtime_version": "12.8",
+    "cudnn_version": 90701,
+    "driver_version": "616.56",
+    "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+    "gpu_capability": [
+      8,
+      9
+    ],
+    "gpu_free_mib": 6701.0,
+    "gpu_model": "NVIDIA GeForce RTX 4060",
+    "gpu_total_mib": 8187.5,
+    "numpy_version": "2.3.5",
+    "os": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "python_executable": "D:\\ProgramData\\anaconda3\\envs\\osf\\python.exe",
+    "python_version": "3.11.16",
+    "torch_num_threads": 6,
+    "torch_version": "2.7.0+cu128",
+    "torchvision_version": "0.22.0+cu128"
+  },
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "parity_sample_hash": "57453146b2523555634060fcc3db9b4c00aeec34161605e68fde6570a3fa0024"
+}

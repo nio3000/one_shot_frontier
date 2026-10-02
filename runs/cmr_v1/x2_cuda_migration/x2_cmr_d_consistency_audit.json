@@ -1,0 +1,56 @@
+{
+  "audit_pass": true,
+  "audit_type": "CMR_V1_X2_CMR_D_READ_ONLY_CONSISTENCY_AUDIT",
+  "expected": {
+    "action_relevant": 8,
+    "conditions": 8,
+    "final_cmr_decision": "CMR-D",
+    "gates": {
+      "X2-G1": true,
+      "X2-G2": false,
+      "X2-G3": true,
+      "X2-G4": true,
+      "X2-G5": true
+    },
+    "protocol_stop": true,
+    "recovery_max_abs_max": 1e-08,
+    "resnet_unique_best": [
+      "layer4"
+    ],
+    "vit_unique_best": [
+      "B12",
+      "B6",
+      "B9"
+    ],
+    "x2_decision": "ACTION_FAMILY_NOT_DECISION_RELEVANT"
+  },
+  "failures": [],
+  "observed": {
+    "action_relevant": 8,
+    "conditions": 8,
+    "cpu_gpu_bacc_abs_diff": 0.0,
+    "cpu_gpu_prediction_agreement": 1.0,
+    "cuda_migration_status": "PASS",
+    "final_cmr_decision": "CMR-D",
+    "gates": {
+      "X2-G1": true,
+      "X2-G2": false,
+      "X2-G3": true,
+      "X2-G4": true,
+      "X2-G5": true
+    },
+    "layer_spread_max": 0.4842,
+    "layer_spread_min": 0.118494555893,
+    "protocol_stop": true,
+    "recovery_max_abs": 1.296e-11,
+    "resnet_unique_best": [
+      "layer4"
+    ],
+    "vit_unique_best": [
+      "B12",
+      "B6",
+      "B9"
+    ],
+    "x2_decision": "ACTION_FAMILY_NOT_DECISION_RELEVANT"
+  }
+}

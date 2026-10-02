@@ -1,0 +1,609 @@
+{
+  "all_gates_pass": false,
+  "baseline_match": true,
+  "cmr_x2_decision": "ACTION_FAMILY_NOT_DECISION_RELEVANT",
+  "conditions": [
+    {
+      "action_relevant": true,
+      "aggregation_recovery_max_abs": 1.4921397450962104e-13,
+      "aggregation_recovery_pass": true,
+      "balanced_accuracy": {
+        "layer1": 0.0585,
+        "layer2": 0.1493,
+        "layer3": 0.2365,
+        "layer4": 0.3907999999999999
+      },
+      "best_layer": "layer4",
+      "best_margin": 0.15429999999999994,
+      "dataset": "cifar100",
+      "encoder": "resnet18_imagenet1k_v1",
+      "finite_pass": true,
+      "layer_spread": 0.33229999999999993,
+      "second_best_layer": "layer3",
+      "unique_best": "layer4"
+    },
+    {
+      "action_relevant": true,
+      "aggregation_recovery_max_abs": 1.2079226507921703e-13,
+      "aggregation_recovery_pass": true,
+      "balanced_accuracy": {
+        "B12": 0.5345,
+        "B3": 0.08040000000000001,
+        "B6": 0.1154,
+        "B9": 0.36510000000000015
+      },
+      "best_layer": "B12",
+      "best_margin": 0.16939999999999983,
+      "dataset": "cifar100",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "finite_pass": true,
+      "layer_spread": 0.45409999999999995,
+      "second_best_layer": "B9",
+      "unique_best": "B12"
+    },
+    {
+      "action_relevant": true,
+      "aggregation_recovery_max_abs": 9.379164112033322e-13,
+      "aggregation_recovery_pass": true,
+      "balanced_accuracy": {
+        "layer1": 0.27653333333333335,
+        "layer2": 0.6201500000000001,
+        "layer3": 0.7329166666666667,
+        "layer4": 0.7607333333333334
+      },
+      "best_layer": "layer4",
+      "best_margin": 0.02781666666666671,
+      "dataset": "eurosat",
+      "encoder": "resnet18_imagenet1k_v1",
+      "finite_pass": true,
+      "layer_spread": 0.4842,
+      "second_best_layer": "layer3",
+      "unique_best": "layer4"
+    },
+    {
+      "action_relevant": true,
+      "aggregation_recovery_max_abs": 1.1368683772161603e-12,
+      "aggregation_recovery_pass": true,
+      "balanced_accuracy": {
+        "B12": 0.6334166666666666,
+        "B3": 0.42074999999999996,
+        "B6": 0.6154833333333333,
+        "B9": 0.7545666666666667
+      },
+      "best_layer": "B9",
+      "best_margin": 0.12115000000000009,
+      "dataset": "eurosat",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "finite_pass": true,
+      "layer_spread": 0.33381666666666676,
+      "second_best_layer": "B12",
+      "unique_best": "B9"
+    },
+    {
+      "action_relevant": true,
+      "aggregation_recovery_max_abs": 1.2960299500264227e-11,
+      "aggregation_recovery_pass": true,
+      "balanced_accuracy": {
+        "layer1": 0.36584334086566617,
+        "layer2": 0.54705677348046,
+        "layer3": 0.5821390165757979,
+        "layer4": 0.6008135251808087
+      },
+      "best_layer": "layer4",
+      "best_margin": 0.018674508605010742,
+      "dataset": "pathmnist",
+      "encoder": "resnet18_imagenet1k_v1",
+      "finite_pass": true,
+      "layer_spread": 0.2349701843151425,
+      "second_best_layer": "layer3",
+      "unique_best": "layer4"
+    },
+    {
+      "action_relevant": true,
+      "aggregation_recovery_max_abs": 1.0231815394945443e-11,
+      "aggregation_recovery_pass": true,
+      "balanced_accuracy": {
+        "B12": 0.4947876404316479,
+        "B3": 0.3295076846001692,
+        "B6": 0.5977932746969964,
+        "B9": 0.41310541640034976
+      },
+      "best_layer": "B6",
+      "best_margin": 0.10300563426534848,
+      "dataset": "pathmnist",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "finite_pass": true,
+      "layer_spread": 0.2682855900968272,
+      "second_best_layer": "B12",
+      "unique_best": "B6"
+    },
+    {
+      "action_relevant": true,
+      "aggregation_recovery_max_abs": 1.9895196601282805e-12,
+      "aggregation_recovery_pass": true,
+      "balanced_accuracy": {
+        "layer1": 0.2636927197886501,
+        "layer2": 0.3019797891542249,
+        "layer3": 0.3637802189380433,
+        "layer4": 0.38218727568143257
+      },
+      "best_layer": "layer4",
+      "best_margin": 0.018407056743389272,
+      "dataset": "dermamnist",
+      "encoder": "resnet18_imagenet1k_v1",
+      "finite_pass": true,
+      "layer_spread": 0.11849455589278246,
+      "second_best_layer": "layer3",
+      "unique_best": "layer4"
+    },
+    {
+      "action_relevant": true,
+      "aggregation_recovery_max_abs": 2.4442670110147446e-12,
+      "aggregation_recovery_pass": true,
+      "balanced_accuracy": {
+        "B12": 0.425477976786525,
+        "B3": 0.27890149599479525,
+        "B6": 0.4133714880065376,
+        "B9": 0.4571435146822936
+      },
+      "best_layer": "B9",
+      "best_margin": 0.03166553789576859,
+      "dataset": "dermamnist",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "finite_pass": true,
+      "layer_spread": 0.17824201868749834,
+      "second_best_layer": "B12",
+      "unique_best": "B9"
+    }
+  ],
+  "decision": "ACTION_FAMILY_NOT_DECISION_RELEVANT",
+  "environment": {
+    "device": "cuda",
+    "float_dtype": "float64",
+    "numpy_version": "2.3.5",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python_version": "3.11.16"
+  },
+  "expected_baseline": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "final_cmr_decision": "CMR-D",
+  "frozen_constants": {
+    "action_relevant_spread_min": 0.01,
+    "aggregation_tolerance": 1e-08,
+    "client_partition": {
+      "dirichlet_alpha": 0.1,
+      "n_clients": 20,
+      "seed": 20260908
+    },
+    "datasets": [
+      "cifar100",
+      "eurosat",
+      "pathmnist",
+      "dermamnist"
+    ],
+    "encoders": {
+      "resnet18_imagenet1k_v1": [
+        "layer1",
+        "layer2",
+        "layer3",
+        "layer4"
+      ],
+      "vit_b_16_imagenet1k_v1": [
+        "B3",
+        "B6",
+        "B9",
+        "B12"
+      ]
+    },
+    "primary_metric": "balanced_accuracy",
+    "rff": {
+      "dimension": 256,
+      "generation_dtype": "float64",
+      "master_seed": 20261001,
+      "sigma": 1.0
+    },
+    "unique_best_margin_min": 0.002
+  },
+  "gates": {
+    "X2-G1": {
+      "action_relevant_count": 8,
+      "name": "action-relevant structural conditions",
+      "passed": true,
+      "required": 6,
+      "spread_threshold": 0.01,
+      "structural_conditions": 8
+    },
+    "X2-G2": {
+      "distinct_unique_best": [
+        "layer4"
+      ],
+      "margin_threshold": 0.002,
+      "name": "ResNet-18 UNIQUE_BEST layer breadth",
+      "passed": false,
+      "required": 2
+    },
+    "X2-G3": {
+      "distinct_unique_best": [
+        "B12",
+        "B6",
+        "B9"
+      ],
+      "margin_threshold": 0.002,
+      "name": "ViT-B/16 UNIQUE_BEST block breadth",
+      "passed": true,
+      "required": 2
+    },
+    "X2-G4": {
+      "max_abs": 1.2960299500264227e-11,
+      "name": "aggregation recovery",
+      "passed": true,
+      "tolerance": 1e-08
+    },
+    "X2-G5": {
+      "name": "finiteness",
+      "passed": true
+    }
+  },
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "inference_backend": {
+    "cuda_available": true,
+    "cuda_runtime_version": "12.8",
+    "cudnn_version": 90701,
+    "device": "cuda",
+    "driver_version": "616.56",
+    "gpu_capability": [
+      8,
+      9
+    ],
+    "gpu_model": "NVIDIA GeForce RTX 4060",
+    "inference_backend": "CUDA",
+    "inference_dtype": "float32",
+    "rff_dtype": "float64",
+    "tf32_cudnn_allowed": false,
+    "tf32_matmul_allowed": false,
+    "torch_version": "2.7.0+cu128",
+    "torchvision_version": "0.22.0+cu128"
+  },
+  "outcome_access": {
+    "already_open_before_run": true,
+    "engineering_failure_record": "runs/cmr_v1/x2_cuda_migration/engineering_correction_rff_width.json",
+    "first_stale_artifact": "configs/cmr_v1_feature_bank_manifest.json",
+    "justification": "documented engineering failure with no outcome access: frozen RFF input width was built from a hard-coded 512/768 instead of the frozen per-layer width, so the first attempt aborted with a shape error before any X2 BACC existed (see runs/cmr_v1/x2_cuda_migration/engineering_correction_rff_width.json)",
+    "metadata_correction": "first_stale_artifact path corrected to the artifact the guard actually reported; no scientific field changed",
+    "reopened_outcome_access": true
+  },
+  "prohibited_after_x2_outcome_access": [
+    "replace_action_family",
+    "add_or_remove_layers",
+    "change_rff_dimension",
+    "tune_kernel_bandwidth",
+    "search_rff_seeds",
+    "relax_gates",
+    "replace_pacs_or_officehome",
+    "drop_rxrx1",
+    "change_wilds_support_rules",
+    "change_pair_near_fractions",
+    "use_evaluation_risk_for_pair_selection",
+    "favorable_dataset_encoder_context_pair_selection",
+    "redefine_final_decision_matrix"
+  ],
+  "protocol": {
+    "id": "CMR-V1",
+    "status": "FROZEN_BEFORE_CMR_OUTCOME_ACCESS",
+    "version": "1.0.0-FROZEN"
+  },
+  "protocol_stops": true,
+  "provenance": {
+    "feature_bank_manifest_sha256": "70483027bb84c48c66852b9c1ae60c0fdfd37d13b17ef40528832323af93ed97",
+    "feature_map_manifest_sha256": "3b225c1cd6b7a83f8452bd7405dc6f1ee64b92510d66da618ea3bab1afd36d36",
+    "freeze_manifest_sha256": "77ab2bad46aa8d25630ccc1cb38d8aba44bc3c45fd2b772cdd37f4e39afb1545",
+    "freeze_manifest_verification": {
+      "manifest_path": "docs/phases/cmr_v1/CMR_V1_FREEZE_MANIFEST.json",
+      "manifest_sha256": "77ab2bad46aa8d25630ccc1cb38d8aba44bc3c45fd2b772cdd37f4e39afb1545",
+      "optional_entries": [
+        {
+          "expected_sha256": "2fa722f0601b3aba5acf3b37a2102763004d12f1a586ad6eae36fc943c3e895f",
+          "name": "README.md",
+          "path": null,
+          "resolved": false
+        },
+        {
+          "expected_sha256": "2dffacf44e937e54a55ad26b327d459c0aa1bcfb789d37e29e559d6031da443c",
+          "name": "CMR_V1_REPOSITORY_LAYOUT.md",
+          "path": null,
+          "resolved": false
+        }
+      ],
+      "verified_files": [
+        {
+          "expected_sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a",
+          "match": true,
+          "name": "CROSS_MECHANISM_REPLICATION_PROTOCOL_V1.0.md",
+          "path": "docs/governance/nature/CROSS_MECHANISM_REPLICATION_PROTOCOL_V1.md",
+          "sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a"
+        },
+        {
+          "expected_sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b",
+          "match": true,
+          "name": "cross_mechanism_replication_protocol_v1.yaml",
+          "path": "configs/cross_mechanism_replication_protocol_v1.yaml",
+          "sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b"
+        },
+        {
+          "expected_sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001",
+          "match": true,
+          "name": "CMR_V1_GATE_MATRIX.csv",
+          "path": "docs/phases/cmr_v1/CMR_V1_GATE_MATRIX.csv",
+          "sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001"
+        },
+        {
+          "expected_sha256": "264cf0f4ac31d66855e826d4ebcfd69b7e96c48db5847d47bdcdd4b49bfb0192",
+          "match": true,
+          "name": "CMR_V1_CODEX_X1_IMPLEMENTATION_PROMPT.md",
+          "path": "docs/phases/cmr_v1/CMR_V1_CODEX_X1_IMPLEMENTATION_PROMPT.md",
+          "sha256": "264cf0f4ac31d66855e826d4ebcfd69b7e96c48db5847d47bdcdd4b49bfb0192"
+        }
+      ]
+    },
+    "gate_matrix_sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001",
+    "protocol_md_sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a",
+    "protocol_yaml_sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b",
+    "source_files": {
+      "src/frontier/cmr_feature_extract.py": "ade3cc45822978391d4eb00070608a54650db97e436051b5eb4e32d1b6b358b1",
+      "src/frontier/cmr_kernel_layer.py": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+      "tests/test_cmr_v1_protocol.py": "21afacda5888136544dc410adfa13cf674745b1d9ad043eba048206698a154b5",
+      "tests/test_cmr_v1_x1.py": "ebf9f921dda42857fe55e11c4e015a30d9ed3f30bc31f2c3d88623aa430305a6",
+      "tests/test_cmr_v1_x2.py": "f825d2d0067612ec7ab8c87f7b198660d3e412eb6c6bb519db3343e0be9c4bfb",
+      "tools/run_cmr_v1.py": "d659eb274b3d089fbdc668fe322cc0b4c28c93a14ef6dcbc744f48507ca6c88d"
+    }
+  },
+  "rff_input_dimension_guard": {
+    "passed": true,
+    "verified": [
+      {
+        "condition_id": "cifar100__resnet18_imagenet1k_v1",
+        "layers": [
+          {
+            "declared": 64,
+            "frozen": 64,
+            "layer": "layer1",
+            "stored": 64
+          },
+          {
+            "declared": 128,
+            "frozen": 128,
+            "layer": "layer2",
+            "stored": 128
+          },
+          {
+            "declared": 256,
+            "frozen": 256,
+            "layer": "layer3",
+            "stored": 256
+          },
+          {
+            "declared": 512,
+            "frozen": 512,
+            "layer": "layer4",
+            "stored": 512
+          }
+        ]
+      },
+      {
+        "condition_id": "cifar100__vit_b_16_imagenet1k_v1",
+        "layers": [
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B3",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B6",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B9",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B12",
+            "stored": 768
+          }
+        ]
+      },
+      {
+        "condition_id": "eurosat__resnet18_imagenet1k_v1",
+        "layers": [
+          {
+            "declared": 64,
+            "frozen": 64,
+            "layer": "layer1",
+            "stored": 64
+          },
+          {
+            "declared": 128,
+            "frozen": 128,
+            "layer": "layer2",
+            "stored": 128
+          },
+          {
+            "declared": 256,
+            "frozen": 256,
+            "layer": "layer3",
+            "stored": 256
+          },
+          {
+            "declared": 512,
+            "frozen": 512,
+            "layer": "layer4",
+            "stored": 512
+          }
+        ]
+      },
+      {
+        "condition_id": "eurosat__vit_b_16_imagenet1k_v1",
+        "layers": [
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B3",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B6",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B9",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B12",
+            "stored": 768
+          }
+        ]
+      },
+      {
+        "condition_id": "pathmnist__resnet18_imagenet1k_v1",
+        "layers": [
+          {
+            "declared": 64,
+            "frozen": 64,
+            "layer": "layer1",
+            "stored": 64
+          },
+          {
+            "declared": 128,
+            "frozen": 128,
+            "layer": "layer2",
+            "stored": 128
+          },
+          {
+            "declared": 256,
+            "frozen": 256,
+            "layer": "layer3",
+            "stored": 256
+          },
+          {
+            "declared": 512,
+            "frozen": 512,
+            "layer": "layer4",
+            "stored": 512
+          }
+        ]
+      },
+      {
+        "condition_id": "pathmnist__vit_b_16_imagenet1k_v1",
+        "layers": [
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B3",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B6",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B9",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B12",
+            "stored": 768
+          }
+        ]
+      },
+      {
+        "condition_id": "dermamnist__resnet18_imagenet1k_v1",
+        "layers": [
+          {
+            "declared": 64,
+            "frozen": 64,
+            "layer": "layer1",
+            "stored": 64
+          },
+          {
+            "declared": 128,
+            "frozen": 128,
+            "layer": "layer2",
+            "stored": 128
+          },
+          {
+            "declared": 256,
+            "frozen": 256,
+            "layer": "layer3",
+            "stored": 256
+          },
+          {
+            "declared": 512,
+            "frozen": 512,
+            "layer": "layer4",
+            "stored": 512
+          }
+        ]
+      },
+      {
+        "condition_id": "dermamnist__vit_b_16_imagenet1k_v1",
+        "layers": [
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B3",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B6",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B9",
+            "stored": 768
+          },
+          {
+            "declared": 768,
+            "frozen": 768,
+            "layer": "B12",
+            "stored": 768
+          }
+        ]
+      }
+    ]
+  },
+  "run_type": "CMR_V1_X2_FORMAL",
+  "stage": "X2",
+  "unit_tests": {
+    "passed": true,
+    "returncode": 0,
+    "targets": [
+      "tests/test_cmr_v1_x1.py",
+      "tests/test_cmr_v1_protocol.py",
+      "tests/test_cmr_v1_x2.py"
+    ],
+    "tests_failed": null,
+    "tests_passed": 61
+  }
+}

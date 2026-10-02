@@ -1,0 +1,466 @@
+{
+  "cpu_premigration_cache_status": "CPU_PREMIGRATION_REFERENCE_ONLY",
+  "cuda_migration_status": "PASS",
+  "environment_cpu": {
+    "cuda_available": false,
+    "cuda_runtime_version": null,
+    "cudnn_version": null,
+    "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+    "numpy_version": "2.4.6",
+    "os": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "python_executable": "D:\\ProgramData\\anaconda3\\python.exe",
+    "python_version": "3.11.7",
+    "torch_num_threads": 6,
+    "torch_version": "2.12.1+cpu",
+    "torchvision_version": "0.27.1+cpu"
+  },
+  "environment_cuda": {
+    "cuda_available": true,
+    "cuda_runtime_version": "12.8",
+    "cudnn_version": 90701,
+    "driver_version": "616.56",
+    "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+    "gpu_capability": [
+      8,
+      9
+    ],
+    "gpu_free_mib": 6742.6,
+    "gpu_model": "NVIDIA GeForce RTX 4060",
+    "gpu_total_mib": 8187.5,
+    "numpy_version": "2.3.5",
+    "os": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "python_executable": "D:\\ProgramData\\anaconda3\\envs\\osf\\python.exe",
+    "python_version": "3.11.16",
+    "torch_num_threads": 6,
+    "torch_version": "2.7.0+cu128",
+    "torchvision_version": "0.22.0+cu128"
+  },
+  "formal_x2_cuda_reextraction": "AUTHORIZED",
+  "gates": {
+    "M1": {
+      "cuda_available": true,
+      "cuda_build": true,
+      "cuda_runtime_version": "12.8",
+      "cudnn_version": 90701,
+      "driver_version": "616.56",
+      "gpu_capability": [
+        8,
+        9
+      ],
+      "gpu_model": "NVIDIA GeForce RTX 4060",
+      "name": "CUDA environment valid",
+      "passed": true,
+      "tf32_disabled": true,
+      "torch_version": "2.7.0+cu128",
+      "torchvision_version": "0.22.0+cu128"
+    },
+    "M2": {
+      "detail": {
+        "resnet18_imagenet1k_v1": {
+          "cpu_state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080",
+          "cuda_state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080",
+          "enum_identical": true,
+          "state_identical": true,
+          "weights_enum": "ResNet18_Weights.IMAGENET1K_V1"
+        },
+        "vit_b_16_imagenet1k_v1": {
+          "cpu_state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa",
+          "cuda_state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa",
+          "enum_identical": true,
+          "state_identical": true,
+          "weights_enum": "ViT_B_16_Weights.IMAGENET1K_V1"
+        }
+      },
+      "name": "weights identity valid",
+      "passed": true
+    },
+    "M3": {
+      "detail": {
+        "resnet18_imagenet1k_v1": {
+          "cpu_transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331",
+          "cuda_transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331",
+          "identical": true,
+          "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)"
+        },
+        "vit_b_16_imagenet1k_v1": {
+          "cpu_transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331",
+          "cuda_transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331",
+          "identical": true,
+          "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)"
+        }
+      },
+      "name": "preprocessing identity valid",
+      "passed": true
+    },
+    "M4": {
+      "detail": {
+        "resnet18_imagenet1k_v1": {
+          "cpu": {
+            "layer1": {
+              "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+              "module_path": "model.layer1",
+              "module_type": "Sequential"
+            },
+            "layer2": {
+              "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+              "module_path": "model.layer2",
+              "module_type": "Sequential"
+            },
+            "layer3": {
+              "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+              "module_path": "model.layer3",
+              "module_type": "Sequential"
+            },
+            "layer4": {
+              "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+              "module_path": "model.layer4",
+              "module_type": "Sequential"
+            }
+          },
+          "cuda": {
+            "layer1": {
+              "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+              "module_path": "model.layer1",
+              "module_type": "Sequential"
+            },
+            "layer2": {
+              "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+              "module_path": "model.layer2",
+              "module_type": "Sequential"
+            },
+            "layer3": {
+              "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+              "module_path": "model.layer3",
+              "module_type": "Sequential"
+            },
+            "layer4": {
+              "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+              "module_path": "model.layer4",
+              "module_type": "Sequential"
+            }
+          },
+          "identical": true
+        },
+        "vit_b_16_imagenet1k_v1": {
+          "cpu": {
+            "B12": {
+              "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+              "module_path": "model.encoder.layers[11]",
+              "module_type": "EncoderBlock"
+            },
+            "B3": {
+              "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+              "module_path": "model.encoder.layers[2]",
+              "module_type": "EncoderBlock"
+            },
+            "B6": {
+              "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+              "module_path": "model.encoder.layers[5]",
+              "module_type": "EncoderBlock"
+            },
+            "B9": {
+              "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+              "module_path": "model.encoder.layers[8]",
+              "module_type": "EncoderBlock"
+            }
+          },
+          "cuda": {
+            "B12": {
+              "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+              "module_path": "model.encoder.layers[11]",
+              "module_type": "EncoderBlock"
+            },
+            "B3": {
+              "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+              "module_path": "model.encoder.layers[2]",
+              "module_type": "EncoderBlock"
+            },
+            "B6": {
+              "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+              "module_path": "model.encoder.layers[5]",
+              "module_type": "EncoderBlock"
+            },
+            "B9": {
+              "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+              "module_path": "model.encoder.layers[8]",
+              "module_type": "EncoderBlock"
+            }
+          },
+          "identical": true
+        }
+      },
+      "name": "layer hook identity valid",
+      "passed": true
+    },
+    "M5": {
+      "detail": {
+        "dimension": 256,
+        "maps": [
+          {
+            "b_sha256": "90286402ec34ec6342d49f42d844b19a9a2dfbdaa3ca2a4aeafa39c5ea0a9b5e",
+            "derived_seed": 2593967492,
+            "encoder": "resnet18_imagenet1k_v1",
+            "layer": "layer1",
+            "w_sha256": "b976c18efb8afce39ea6d4856bf319a0ce53c970ec9b5fc1e74f005b20db3a72"
+          },
+          {
+            "b_sha256": "cb4cbda5704a9e33c2675f48297ed65bb5de9ddc48e0e0a16d9bd91c188bdd1f",
+            "derived_seed": 3655982490,
+            "encoder": "resnet18_imagenet1k_v1",
+            "layer": "layer2",
+            "w_sha256": "94c1999cba999af9cf1123af862e7dc55054ae91251781b740a7b0e820911bba"
+          },
+          {
+            "b_sha256": "49eaf46e368576f0b47db6c4e30e725d44a45f6602fa308513dde65558498a2b",
+            "derived_seed": 704796591,
+            "encoder": "resnet18_imagenet1k_v1",
+            "layer": "layer3",
+            "w_sha256": "588d8637bd529b0edcc0d6f61e7efd5ea6a8874f03e570e0419bda88ef5a4a5d"
+          },
+          {
+            "b_sha256": "34a106f94e9cc43514feab9a29c3874607381307a533b709a2e6fc7d9e0bc3d6",
+            "derived_seed": 1652377611,
+            "encoder": "resnet18_imagenet1k_v1",
+            "layer": "layer4",
+            "w_sha256": "0b0b63fa8044b88a2db46ad11361932c7b004bf4ef7bd4d9612add635388f227"
+          },
+          {
+            "b_sha256": "778bf7cb00369ead22b9b6eff2f00dc19e5cc68161e939b4678526d995d85f93",
+            "derived_seed": 2431622510,
+            "encoder": "vit_b_16_imagenet1k_v1",
+            "layer": "B3",
+            "w_sha256": "9ad5a0396c6485113d65478d55f3922ecf6d8c570a0f2fbe8b2234d4b0b7dd86"
+          },
+          {
+            "b_sha256": "5f29b2275c26088adfedbe1473a335615fe26886d01f94b9233b0659d4b79a38",
+            "derived_seed": 31367928,
+            "encoder": "vit_b_16_imagenet1k_v1",
+            "layer": "B6",
+            "w_sha256": "ab3c56a3c689a414c05b6651127f7d1096280cfa2f49cf636f07057d4f555086"
+          },
+          {
+            "b_sha256": "cba68ba7e7b6179217511ffd38c6ebedc52f3c9a227ac442e19dc5d9af6fda66",
+            "derived_seed": 136646290,
+            "encoder": "vit_b_16_imagenet1k_v1",
+            "layer": "B9",
+            "w_sha256": "7205d3d44da3f28f8527dc00381adb8b046aae1c89bf42a604782252762b11fa"
+          },
+          {
+            "b_sha256": "e0315d3c8fb30ee23798ab25a2b6907188ce37c272423dd776564994b46c8cc4",
+            "derived_seed": 3117873395,
+            "encoder": "vit_b_16_imagenet1k_v1",
+            "layer": "B12",
+            "w_sha256": "a827cdc3bd0a6a6c5970cd8f96b339ebc9c36e8ba4da04cec030f3abbacb7c0e"
+          }
+        ],
+        "master_seed": 20261001,
+        "sigma": 1.0
+      },
+      "name": "RFF arrays identical",
+      "passed": true
+    },
+    "M6": {
+      "acceptance": {
+        "bacc_abs_diff_max": 1e-06,
+        "normalized_cosine_median_min": 0.999999,
+        "normalized_cosine_min": 0.99999,
+        "prediction_agreement_required": 1.0,
+        "tolerance_class": "IMPLEMENTATION_VALIDATION_TOLERANCE_NOT_SCIENTIFIC_GATE"
+      },
+      "name": "CPU<->GPU feature parity",
+      "passed": true,
+      "worst_cosine_median": 0.999999999975656,
+      "worst_cosine_min": 0.9999999999068935
+    },
+    "M7": {
+      "max_bacc_abs_diff": 0.0,
+      "min_agreement": 1.0,
+      "name": "prediction agreement",
+      "passed": true
+    },
+    "M8": {
+      "dataset_definition_hash": "57453146b2523555634060fcc3db9b4c00aeec34161605e68fde6570a3fa0024",
+      "gate_matrix_sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001",
+      "model_definition_unchanged": true,
+      "name": "no scientific protocol field changed",
+      "passed": true,
+      "protocol_md_sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a",
+      "protocol_yaml_sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b"
+    }
+  },
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "migration_type": "IMPLEMENTATION_BACKEND_MIGRATION_NOT_PROTOCOL_AMENDMENT",
+  "summary_type": "CMR_V1_X2_CUDA_MIGRATION_GATE",
+  "throughput": [
+    {
+      "batch_size": 32,
+      "device": "cpu",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 53.34349044181079,
+      "records": 1024,
+      "seconds": 19.196344137191772,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 64,
+      "device": "cpu",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 54.23695425574986,
+      "records": 1024,
+      "seconds": 18.88011622428894,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 128,
+      "device": "cpu",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 52.01220773957475,
+      "records": 1024,
+      "seconds": 19.68768572807312,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 256,
+      "device": "cpu",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 47.608018022770416,
+      "records": 1024,
+      "seconds": 21.508981943130493,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 32,
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 324.8216772890592,
+      "peak_vram_mib": 257.1,
+      "records": 1024,
+      "seconds": 3.152498960494995,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 64,
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 346.2189535966337,
+      "peak_vram_mib": 471.4,
+      "records": 1024,
+      "seconds": 2.9576659202575684,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 128,
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 347.90100257813214,
+      "peak_vram_mib": 900.2,
+      "records": 1024,
+      "seconds": 2.943366050720215,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 256,
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 350.99816596954116,
+      "peak_vram_mib": 1757.7,
+      "records": 1024,
+      "seconds": 2.9173941612243652,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 8,
+      "device": "cpu",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 7.3984998935443365,
+      "records": 1024,
+      "seconds": 138.40643572807312,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 16,
+      "device": "cpu",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 7.696982774472993,
+      "records": 1024,
+      "seconds": 133.03914403915405,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 32,
+      "device": "cpu",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 7.269862787412617,
+      "records": 1024,
+      "seconds": 140.85547828674316,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 64,
+      "device": "cpu",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 7.096578230451159,
+      "records": 1024,
+      "seconds": 144.2948935031891,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 8,
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 145.88428085414046,
+      "peak_vram_mib": 414.1,
+      "records": 1024,
+      "seconds": 7.019262075424194,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 16,
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 151.4362202726585,
+      "peak_vram_mib": 492.4,
+      "records": 1024,
+      "seconds": 6.761922597885132,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 32,
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 151.41010933691032,
+      "peak_vram_mib": 649.5,
+      "records": 1024,
+      "seconds": 6.763088703155518,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 64,
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 149.4712972380313,
+      "peak_vram_mib": 963.9,
+      "records": 1024,
+      "seconds": 6.850813627243042,
+      "status": "OK",
+      "workers": 0
+    }
+  ]
+}

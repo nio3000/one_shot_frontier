@@ -1,0 +1,116 @@
+{
+  "conditions": [
+    {
+      "bacc_identical": true,
+      "dataset": "cifar100",
+      "encoder": "resnet18_imagenet1k_v1",
+      "layers": {
+        "layer1": {
+          "bacc_first": 0.10344827586206896,
+          "bacc_identical": true,
+          "bacc_second": 0.10344827586206896,
+          "predictions_identical": true,
+          "prototype_bitwise_identical": true,
+          "raw_bitwise_identical": true,
+          "raw_test_max_abs_diff": 0.0,
+          "rff_bitwise_identical": true,
+          "rff_test_max_abs_diff": 0.0
+        },
+        "layer2": {
+          "bacc_first": 0.06896551724137931,
+          "bacc_identical": true,
+          "bacc_second": 0.06896551724137931,
+          "predictions_identical": true,
+          "prototype_bitwise_identical": true,
+          "raw_bitwise_identical": true,
+          "raw_test_max_abs_diff": 0.0,
+          "rff_bitwise_identical": true,
+          "rff_test_max_abs_diff": 0.0
+        },
+        "layer3": {
+          "bacc_first": 0.13793103448275862,
+          "bacc_identical": true,
+          "bacc_second": 0.13793103448275862,
+          "predictions_identical": true,
+          "prototype_bitwise_identical": true,
+          "raw_bitwise_identical": true,
+          "raw_test_max_abs_diff": 0.0,
+          "rff_bitwise_identical": true,
+          "rff_test_max_abs_diff": 0.0
+        },
+        "layer4": {
+          "bacc_first": 0.10344827586206896,
+          "bacc_identical": true,
+          "bacc_second": 0.10344827586206896,
+          "predictions_identical": true,
+          "prototype_bitwise_identical": true,
+          "raw_bitwise_identical": true,
+          "raw_test_max_abs_diff": 0.0,
+          "rff_bitwise_identical": true,
+          "rff_test_max_abs_diff": 0.0
+        }
+      },
+      "predictions_identical": true,
+      "sample_order_identical": true
+    },
+    {
+      "bacc_identical": true,
+      "dataset": "cifar100",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "layers": {
+        "B12": {
+          "bacc_first": 0.1724137931034483,
+          "bacc_identical": true,
+          "bacc_second": 0.1724137931034483,
+          "predictions_identical": true,
+          "prototype_bitwise_identical": true,
+          "raw_bitwise_identical": true,
+          "raw_test_max_abs_diff": 0.0,
+          "rff_bitwise_identical": true,
+          "rff_test_max_abs_diff": 0.0
+        },
+        "B3": {
+          "bacc_first": 0.06896551724137931,
+          "bacc_identical": true,
+          "bacc_second": 0.06896551724137931,
+          "predictions_identical": true,
+          "prototype_bitwise_identical": true,
+          "raw_bitwise_identical": true,
+          "raw_test_max_abs_diff": 0.0,
+          "rff_bitwise_identical": true,
+          "rff_test_max_abs_diff": 0.0
+        },
+        "B6": {
+          "bacc_first": 0.13793103448275862,
+          "bacc_identical": true,
+          "bacc_second": 0.13793103448275862,
+          "predictions_identical": true,
+          "prototype_bitwise_identical": true,
+          "raw_bitwise_identical": true,
+          "raw_test_max_abs_diff": 0.0,
+          "rff_bitwise_identical": true,
+          "rff_test_max_abs_diff": 0.0
+        },
+        "B9": {
+          "bacc_first": 0.1724137931034483,
+          "bacc_identical": true,
+          "bacc_second": 0.1724137931034483,
+          "predictions_identical": true,
+          "prototype_bitwise_identical": true,
+          "raw_bitwise_identical": true,
+          "raw_test_max_abs_diff": 0.0,
+          "rff_bitwise_identical": true,
+          "rff_test_max_abs_diff": 0.0
+        }
+      },
+      "predictions_identical": true,
+      "sample_order_identical": true
+    }
+  ],
+  "dataset": "cifar100",
+  "determinism_pass": true,
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "note": "raw features are not required to be bitwise identical; decisions must be",
+  "report_type": "CMR_V1_X2_CUDA_DETERMINISM",
+  "sample_source": "parity_sample_manifest"
+}

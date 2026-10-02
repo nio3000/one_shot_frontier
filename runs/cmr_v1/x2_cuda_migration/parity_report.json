@@ -1,0 +1,2596 @@
+{
+  "acceptance": {
+    "bacc_abs_diff_max": 1e-06,
+    "normalized_cosine_median_min": 0.999999,
+    "normalized_cosine_min": 0.99999,
+    "prediction_agreement_required": 1.0,
+    "tolerance_class": "IMPLEMENTATION_VALIDATION_TOLERANCE_NOT_SCIENTIFIC_GATE"
+  },
+  "conditions": [
+    {
+      "condition_id": "cifar100__resnet18_imagenet1k_v1",
+      "dataset": "cifar100",
+      "encoder": "resnet18_imagenet1k_v1",
+      "layers": [
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.10344827586206896,
+          "bacc_gpu": 0.10344827586206896,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer1",
+          "layer_module_path": "model.layer1",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999999616,
+              "cosine_median": 0.9999999999999809,
+              "cosine_min": 0.9999999999995813,
+              "max_abs": 1.9669532775878906e-06,
+              "max_rel": 4.711333996232303e-06,
+              "mean_abs": 8.838878784445114e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999999616,
+              "cosine_median": 0.9999999999999809,
+              "cosine_min": 0.9999999999995813,
+              "max_abs": 4.311748410118499e-07,
+              "max_rel": 4.655128912218468e-06,
+              "mean_abs": 2.0258576087056372e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999999594,
+              "cosine_median": 0.9999999999999776,
+              "cosine_min": 0.999999999999593,
+              "max_abs": 2.1479992374714985e-07,
+              "max_rel": 0.00655308699301911,
+              "mean_abs": 1.1030261509771265e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999695,
+              "cosine_median": 0.9999999999999799,
+              "cosine_min": 0.9999999999997543,
+              "max_abs": 1.8086942544029427e-07,
+              "max_rel": 0.005145018256440396,
+              "mean_abs": 1.1028621617869162e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999695,
+              "cosine_median": 0.9999999999999799,
+              "cosine_min": 0.9999999999997543,
+              "max_abs": 1.8086942544029427e-07,
+              "max_rel": 0.005145018256440396,
+              "mean_abs": 1.0138518931406337e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 1.0,
+              "cosine_median": 0.9999999999999999,
+              "cosine_min": 0.9999999999999996,
+              "max_abs": 7.944675073368046e-08,
+              "max_rel": 8.098586565128299e-08,
+              "mean_abs": 9.93810575835279e-09,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            64
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.06896551724137931,
+          "bacc_gpu": 0.06896551724137931,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer2",
+          "layer_module_path": "model.layer2",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999999344,
+              "cosine_median": 0.9999999999999716,
+              "cosine_min": 0.9999999999992366,
+              "max_abs": 1.3113021850585938e-06,
+              "max_rel": 7.105326498140822e-06,
+              "mean_abs": 4.040330736643227e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999999345,
+              "cosine_median": 0.9999999999999719,
+              "cosine_min": 0.9999999999992368,
+              "max_abs": 5.844927415954437e-07,
+              "max_rel": 7.046721229763911e-06,
+              "mean_abs": 1.8214709240692642e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.99999999999993,
+              "cosine_median": 0.9999999999999718,
+              "cosine_min": 0.9999999999991287,
+              "max_abs": 2.576937018000311e-07,
+              "max_rel": 0.0016542863765653059,
+              "mean_abs": 1.3574739756009828e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999478,
+              "cosine_median": 0.9999999999999655,
+              "cosine_min": 0.9999999999995253,
+              "max_abs": 2.0169925595524274e-07,
+              "max_rel": 0.0015768691263618314,
+              "mean_abs": 1.406937739499459e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999478,
+              "cosine_median": 0.9999999999999655,
+              "cosine_min": 0.9999999999995253,
+              "max_abs": 2.0169925595524274e-07,
+              "max_rel": 0.0015768691263618314,
+              "mean_abs": 1.3026143097242749e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999998,
+              "cosine_median": 0.9999999999999997,
+              "cosine_min": 0.9999999999999991,
+              "max_abs": 1.7214478731375493e-07,
+              "max_rel": 1.998807810442587e-07,
+              "mean_abs": 2.6241043037016124e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            128
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.13793103448275862,
+          "bacc_gpu": 0.13793103448275862,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer3",
+          "layer_module_path": "model.layer3",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999999181,
+              "cosine_median": 0.9999999999999412,
+              "cosine_min": 0.9999999999995847,
+              "max_abs": 6.407499313354492e-07,
+              "max_rel": 0.00016348884289983269,
+              "mean_abs": 4.2179434278644123e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.999999999999918,
+              "cosine_median": 0.9999999999999413,
+              "cosine_min": 0.9999999999995849,
+              "max_abs": 2.7693880495782697e-07,
+              "max_rel": 0.00016349292282685015,
+              "mean_abs": 1.7841160939845926e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999999021,
+              "cosine_median": 0.9999999999999253,
+              "cosine_min": 0.9999999999995576,
+              "max_abs": 2.1131944261815194e-07,
+              "max_rel": 0.0011239955832972345,
+              "mean_abs": 1.8693042481118146e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999019,
+              "cosine_median": 0.9999999999999197,
+              "cosine_min": 0.9999999999997399,
+              "max_abs": 1.9971649516115075e-07,
+              "max_rel": 0.008818810836571662,
+              "mean_abs": 2.0120791451472093e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999019,
+              "cosine_median": 0.9999999999999197,
+              "cosine_min": 0.9999999999997399,
+              "max_abs": 1.9971649516115075e-07,
+              "max_rel": 0.008818810836571662,
+              "mean_abs": 1.8793978885273446e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999993,
+              "cosine_median": 0.9999999999999993,
+              "cosine_min": 0.9999999999999986,
+              "max_abs": 1.1452869164152446e-07,
+              "max_rel": 1.4551208110249992e-07,
+              "mean_abs": 2.7399099091922197e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            256
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.10344827586206896,
+          "bacc_gpu": 0.10344827586206896,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer4",
+          "layer_module_path": "model.layer4",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999994531,
+              "cosine_median": 0.9999999999994948,
+              "cosine_min": 0.9999999999990762,
+              "max_abs": 1.0013580322265625e-05,
+              "max_rel": 0.004087591313718766,
+              "mean_abs": 8.002432763110079e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999994531,
+              "cosine_median": 0.9999999999994948,
+              "cosine_min": 0.9999999999990763,
+              "max_abs": 3.53739110947604e-07,
+              "max_rel": 0.004087595751935365,
+              "mean_abs": 3.127498136194933e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999994021,
+              "cosine_median": 0.9999999999994351,
+              "cosine_min": 0.9999999999988248,
+              "max_abs": 3.7390117442817616e-07,
+              "max_rel": 0.0009405930179790943,
+              "mean_abs": 4.745484055823381e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999993856,
+              "cosine_median": 0.9999999999993807,
+              "cosine_min": 0.9999999999988998,
+              "max_abs": 4.1600927458765313e-07,
+              "max_rel": 0.0014942689397353332,
+              "mean_abs": 5.173522054776741e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999993856,
+              "cosine_median": 0.9999999999993807,
+              "cosine_min": 0.9999999999988998,
+              "max_abs": 3.448178294562787e-07,
+              "max_rel": 0.0014942689397353332,
+              "mean_abs": 4.803715145016298e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999886,
+              "cosine_median": 0.9999999999999893,
+              "cosine_min": 0.9999999999999768,
+              "max_abs": 6.142521096208498e-07,
+              "max_rel": 9.272460949985595e-07,
+              "mean_abs": 1.0033521424800656e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            512
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "condition_id": "cifar100__vit_b_16_imagenet1k_v1",
+      "dataset": "cifar100",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "layers": [
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.06896551724137931,
+          "bacc_gpu": 0.06896551724137931,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B3",
+          "layer_module_path": "model.encoder.layers[2]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999982623,
+              "cosine_median": 0.9999999999982858,
+              "cosine_min": 0.9999999999980228,
+              "max_abs": 2.86102294921875e-06,
+              "max_rel": 0.07225924867231341,
+              "mean_abs": 3.649051419548262e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999982623,
+              "cosine_median": 0.9999999999982858,
+              "cosine_min": 0.9999999999980227,
+              "max_abs": 4.2337341199516487e-07,
+              "max_rel": 0.0722591238172772,
+              "mean_abs": 4.750178262428911e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999983546,
+              "cosine_median": 0.9999999999983902,
+              "cosine_min": 0.999999999997826,
+              "max_abs": 4.868606583770946e-07,
+              "max_rel": 0.015912739158633858,
+              "mean_abs": 8.245319900077524e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999983171,
+              "cosine_median": 0.9999999999983233,
+              "cosine_min": 0.9999999999978966,
+              "max_abs": 8.532169584636595e-07,
+              "max_rel": 0.005405014456477082,
+              "mean_abs": 9.191882640263273e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999983171,
+              "cosine_median": 0.9999999999983233,
+              "cosine_min": 0.9999999999978966,
+              "max_abs": 4.6978876691323307e-07,
+              "max_rel": 0.005405014456477082,
+              "mean_abs": 8.352236834168317e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999998,
+              "cosine_median": 0.9999999999999996,
+              "cosine_min": 0.9999999999999991,
+              "max_abs": 3.1617537066264134e-07,
+              "max_rel": 3.467393274166821e-07,
+              "mean_abs": 1.2745971922332677e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.13793103448275862,
+          "bacc_gpu": 0.13793103448275862,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B6",
+          "layer_module_path": "model.encoder.layers[5]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999960856,
+              "cosine_median": 0.9999999999960779,
+              "cosine_min": 0.9999999999952205,
+              "max_abs": 4.410743713378906e-06,
+              "max_rel": 0.01731924753563995,
+              "mean_abs": 6.817377335247935e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999960856,
+              "cosine_median": 0.9999999999960778,
+              "cosine_min": 0.9999999999952206,
+              "max_abs": 4.799264217425492e-07,
+              "max_rel": 0.01731983728410951,
+              "mean_abs": 7.661103235068124e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999958767,
+              "cosine_median": 0.9999999999958836,
+              "cosine_min": 0.999999999994766,
+              "max_abs": 7.99762484521814e-07,
+              "max_rel": 0.03895492358839397,
+              "mean_abs": 1.2797680507014848e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999960362,
+              "cosine_median": 0.999999999996123,
+              "cosine_min": 0.9999999999952685,
+              "max_abs": 1.2626414759246002e-06,
+              "max_rel": 0.08438507383360938,
+              "mean_abs": 1.3746881984781767e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999960362,
+              "cosine_median": 0.999999999996123,
+              "cosine_min": 0.9999999999952685,
+              "max_abs": 8.321037848341151e-07,
+              "max_rel": 0.08438507383360938,
+              "mean_abs": 1.252057917656801e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999978,
+              "cosine_median": 0.9999999999999979,
+              "cosine_min": 0.9999999999999962,
+              "max_abs": 4.4587480374502775e-07,
+              "max_rel": 4.754896676002014e-07,
+              "mean_abs": 1.5241382625538184e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.1724137931034483,
+          "bacc_gpu": 0.1724137931034483,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B9",
+          "layer_module_path": "model.encoder.layers[8]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999855315,
+              "cosine_median": 0.9999999999857083,
+              "cosine_min": 0.99999999997582,
+              "max_abs": 9.000301361083984e-06,
+              "max_rel": 0.08042895442359249,
+              "mean_abs": 1.0332295422207e-06,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999855315,
+              "cosine_median": 0.9999999999857083,
+              "cosine_min": 0.9999999999758201,
+              "max_abs": 1.3474838200661088e-06,
+              "max_rel": 0.08042934826399602,
+              "mean_abs": 1.511089643954637e-07,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999855194,
+              "cosine_median": 0.9999999999850655,
+              "cosine_min": 0.9999999999797633,
+              "max_abs": 1.7680589188516505e-06,
+              "max_rel": 0.08610099281789596,
+              "mean_abs": 2.39673697859455e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999876349,
+              "cosine_median": 0.9999999999875191,
+              "cosine_min": 0.9999999999820548,
+              "max_abs": 2.6216169894364982e-06,
+              "max_rel": 0.01893386733194225,
+              "mean_abs": 2.410271640621266e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999876349,
+              "cosine_median": 0.9999999999875191,
+              "cosine_min": 0.9999999999820548,
+              "max_abs": 1.9110608856821865e-06,
+              "max_rel": 0.01893386733194225,
+              "mean_abs": 2.206897885896189e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999998342,
+              "cosine_median": 0.9999999999998355,
+              "cosine_min": 0.9999999999997143,
+              "max_abs": 2.012460276201722e-06,
+              "max_rel": 3.5770067979572194e-06,
+              "mean_abs": 6.699474577520577e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.1724137931034483,
+          "bacc_gpu": 0.1724137931034483,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B12",
+          "layer_module_path": "model.encoder.layers[11]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.999999999978684,
+              "cosine_median": 0.9999999999794753,
+              "cosine_min": 0.9999999999500805,
+              "max_abs": 2.0265579223632812e-05,
+              "max_rel": 0.01717937870180104,
+              "mean_abs": 1.8132174848991174e-06,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.999999999978684,
+              "cosine_median": 0.9999999999794755,
+              "cosine_min": 0.9999999999500807,
+              "max_abs": 1.750818141486865e-06,
+              "max_rel": 0.017179956164863938,
+              "mean_abs": 1.7727399072216562e-07,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999793014,
+              "cosine_median": 0.999999999979338,
+              "cosine_min": 0.999999999941837,
+              "max_abs": 2.5856591885104613e-06,
+              "max_rel": 0.32013376974397106,
+              "mean_abs": 2.840681574291438e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999823974,
+              "cosine_median": 0.9999999999847721,
+              "cosine_min": 0.9999999999553191,
+              "max_abs": 2.2231497711724425e-06,
+              "max_rel": 0.004805510934398321,
+              "mean_abs": 2.789695498325619e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999823974,
+              "cosine_median": 0.9999999999847721,
+              "cosine_min": 0.9999999999553191,
+              "max_abs": 2.2231497711724425e-06,
+              "max_rel": 0.004805510934398321,
+              "mean_abs": 2.571326453174543e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999990217,
+              "cosine_median": 0.999999999999128,
+              "cosine_min": 0.9999999999978347,
+              "max_abs": 2.667355125551829e-06,
+              "max_rel": 7.83709360223479e-06,
+              "mean_abs": 6.191452339498512e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "condition_id": "eurosat__resnet18_imagenet1k_v1",
+      "dataset": "eurosat",
+      "encoder": "resnet18_imagenet1k_v1",
+      "layers": [
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.16,
+          "bacc_gpu": 0.16,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer1",
+          "layer_module_path": "model.layer1",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999999777,
+              "cosine_median": 0.9999999999999793,
+              "cosine_min": 0.999999999999957,
+              "max_abs": 5.960464477539062e-07,
+              "max_rel": 6.388238178666651e-06,
+              "mean_abs": 7.601556717418134e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999999778,
+              "cosine_median": 0.9999999999999793,
+              "cosine_min": 0.999999999999957,
+              "max_abs": 1.3208896540439774e-07,
+              "max_rel": 6.434507529878632e-06,
+              "mean_abs": 1.7909504988793262e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999999758,
+              "cosine_median": 0.9999999999999778,
+              "cosine_min": 0.9999999999999521,
+              "max_abs": 8.754451225057025e-08,
+              "max_rel": 0.000659371553033866,
+              "mean_abs": 9.715632444003867e-09,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999781,
+              "cosine_median": 0.9999999999999828,
+              "cosine_min": 0.9999999999999526,
+              "max_abs": 3.4150342920202803e-07,
+              "max_rel": 0.0008751308851628056,
+              "mean_abs": 2.986582027249386e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999781,
+              "cosine_median": 0.9999999999999826,
+              "cosine_min": 0.9999999999999526,
+              "max_abs": 6.56655469721823e-08,
+              "max_rel": 0.0008751308851628056,
+              "mean_abs": 9.025545202268635e-09,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 1.0,
+              "cosine_median": 1.0,
+              "cosine_min": 0.9999999999999998,
+              "max_abs": 2.0609519202352544e-08,
+              "max_rel": 2.1194215059349468e-08,
+              "mean_abs": 5.79210466317765e-09,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            64
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.625,
+          "bacc_gpu": 0.625,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer2",
+          "layer_module_path": "model.layer2",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999999473,
+              "cosine_median": 0.9999999999999638,
+              "cosine_min": 0.9999999999996947,
+              "max_abs": 6.556510925292969e-07,
+              "max_rel": 0.00011218797486542102,
+              "mean_abs": 3.8414363079386504e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999999473,
+              "cosine_median": 0.9999999999999638,
+              "cosine_min": 0.9999999999996948,
+              "max_abs": 3.4487255920478965e-07,
+              "max_rel": 0.0001122648937444202,
+              "mean_abs": 1.859066522270088e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.999999999999946,
+              "cosine_median": 0.9999999999999623,
+              "cosine_min": 0.9999999999997202,
+              "max_abs": 1.8173075192785826e-07,
+              "max_rel": 0.00040710351558748706,
+              "mean_abs": 1.3920077048474216e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999631,
+              "cosine_median": 0.9999999999999761,
+              "cosine_min": 0.9999999999998781,
+              "max_abs": 3.513535615784491e-07,
+              "max_rel": 0.0044115041945579645,
+              "mean_abs": 3.57053738265748e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999631,
+              "cosine_median": 0.9999999999999761,
+              "cosine_min": 0.9999999999998781,
+              "max_abs": 1.3856971273901175e-07,
+              "max_rel": 0.0044115041945579645,
+              "mean_abs": 1.1427903374623618e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999999,
+              "cosine_median": 0.9999999999999999,
+              "cosine_min": 0.9999999999999993,
+              "max_abs": 7.007998292785089e-08,
+              "max_rel": 8.395469762894662e-08,
+              "mean_abs": 1.8273543915691015e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            128
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.6416666666666666,
+          "bacc_gpu": 0.6416666666666666,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer3",
+          "layer_module_path": "model.layer3",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999999154,
+              "cosine_median": 0.9999999999999329,
+              "cosine_min": 0.9999999999997824,
+              "max_abs": 4.023313522338867e-07,
+              "max_rel": 0.0026887056046486285,
+              "mean_abs": 4.346324649490141e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999999154,
+              "cosine_median": 0.9999999999999329,
+              "cosine_min": 0.9999999999997824,
+              "max_abs": 1.7340329742931981e-07,
+              "max_rel": 0.002688733538545944,
+              "mean_abs": 1.8210142103461787e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999999063,
+              "cosine_median": 0.999999999999915,
+              "cosine_min": 0.9999999999997299,
+              "max_abs": 1.5133337114697776e-07,
+              "max_rel": 0.0068220758659577815,
+              "mean_abs": 1.8760234022291044e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999455,
+              "cosine_median": 0.9999999999999563,
+              "cosine_min": 0.9999999999997959,
+              "max_abs": 4.3184021226647107e-07,
+              "max_rel": 0.0003189483249028713,
+              "mean_abs": 4.114205903867501e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999455,
+              "cosine_median": 0.9999999999999564,
+              "cosine_min": 0.9999999999997959,
+              "max_abs": 1.57585232387486e-07,
+              "max_rel": 0.0003189483249028713,
+              "mean_abs": 1.3668784278475494e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999996,
+              "cosine_median": 0.9999999999999996,
+              "cosine_min": 0.9999999999999984,
+              "max_abs": 1.1867956462019436e-07,
+              "max_rel": 1.514170875606945e-07,
+              "mean_abs": 2.5595598664857055e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            256
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.7916666666666666,
+          "bacc_gpu": 0.7916666666666666,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer4",
+          "layer_module_path": "model.layer4",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999992215,
+              "cosine_median": 0.9999999999992971,
+              "cosine_min": 0.9999999999980704,
+              "max_abs": 8.58306884765625e-06,
+              "max_rel": 0.00560188568492694,
+              "mean_abs": 6.331976939166761e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999992214,
+              "cosine_median": 0.9999999999992972,
+              "cosine_min": 0.9999999999980704,
+              "max_abs": 4.861612624140754e-07,
+              "max_rel": 0.005602020570324793,
+              "mean_abs": 3.456361213343619e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999991763,
+              "cosine_median": 0.9999999999992311,
+              "cosine_min": 0.9999999999981065,
+              "max_abs": 4.442095361753551e-07,
+              "max_rel": 0.003171902896786036,
+              "mean_abs": 5.62269292493279e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999995818,
+              "cosine_median": 0.9999999999996578,
+              "cosine_min": 0.9999999999991982,
+              "max_abs": 1.2700473723814554e-06,
+              "max_rel": 0.001151579408114261,
+              "mean_abs": 1.2112709108526745e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999995818,
+              "cosine_median": 0.9999999999996577,
+              "cosine_min": 0.9999999999991982,
+              "max_abs": 2.536860854926437e-07,
+              "max_rel": 0.001151579408114261,
+              "mean_abs": 3.8499938258364737e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999892,
+              "cosine_median": 0.9999999999999911,
+              "cosine_min": 0.9999999999999653,
+              "max_abs": 4.875262429315796e-07,
+              "max_rel": 8.493286223667425e-07,
+              "mean_abs": 9.565948565176983e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            512
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "condition_id": "eurosat__vit_b_16_imagenet1k_v1",
+      "dataset": "eurosat",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "layers": [
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.47666666666666657,
+          "bacc_gpu": 0.47666666666666657,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B3",
+          "layer_module_path": "model.encoder.layers[2]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999981368,
+              "cosine_median": 0.9999999999981504,
+              "cosine_min": 0.9999999999978156,
+              "max_abs": 3.0994415283203125e-06,
+              "max_rel": 0.08808147536471236,
+              "mean_abs": 3.726829109022371e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999981368,
+              "cosine_median": 0.9999999999981504,
+              "cosine_min": 0.9999999999978155,
+              "max_abs": 3.972779413219385e-07,
+              "max_rel": 0.08808174348335901,
+              "mean_abs": 4.941996921370721e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999982712,
+              "cosine_median": 0.9999999999983071,
+              "cosine_min": 0.999999999997795,
+              "max_abs": 5.185109776904145e-07,
+              "max_rel": 0.013947167546085599,
+              "mean_abs": 8.376352565982025e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999983612,
+              "cosine_median": 0.9999999999984249,
+              "cosine_min": 0.9999999999979352,
+              "max_abs": 2.979353680723773e-06,
+              "max_rel": 0.00471676324468838,
+              "mean_abs": 2.881047126202309e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999983612,
+              "cosine_median": 0.9999999999984248,
+              "cosine_min": 0.9999999999979352,
+              "max_abs": 5.596196008478618e-07,
+              "max_rel": 0.00471676324468838,
+              "mean_abs": 8.150588418621877e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999992,
+              "cosine_median": 0.9999999999999991,
+              "cosine_min": 0.9999999999999984,
+              "max_abs": 2.944802612869779e-07,
+              "max_rel": 3.1915783613065647e-07,
+              "mean_abs": 1.6068494743154108e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.4716666666666667,
+          "bacc_gpu": 0.4716666666666667,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B6",
+          "layer_module_path": "model.encoder.layers[5]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999957173,
+              "cosine_median": 0.9999999999957135,
+              "cosine_min": 0.9999999999947031,
+              "max_abs": 4.604458808898926e-06,
+              "max_rel": 0.07695028619203807,
+              "mean_abs": 7.102191593351866e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999957174,
+              "cosine_median": 0.9999999999957137,
+              "cosine_min": 0.9999999999947031,
+              "max_abs": 5.408684800450869e-07,
+              "max_rel": 0.07695064284991651,
+              "mean_abs": 8.02344922138782e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999956786,
+              "cosine_median": 0.9999999999956111,
+              "cosine_min": 0.9999999999943416,
+              "max_abs": 9.104912423556211e-07,
+              "max_rel": 0.013560088936868954,
+              "mean_abs": 1.304787055323261e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.999999999995686,
+              "cosine_median": 0.9999999999957591,
+              "cosine_min": 0.9999999999946086,
+              "max_abs": 5.425479216142337e-06,
+              "max_rel": 0.0016334754440015093,
+              "mean_abs": 4.565655000647357e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.999999999995686,
+              "cosine_median": 0.9999999999957591,
+              "cosine_min": 0.9999999999946086,
+              "max_abs": 8.317534864552695e-07,
+              "max_rel": 0.0016334754440015327,
+              "mean_abs": 1.302067841195488e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.999999999999992,
+              "cosine_median": 0.9999999999999913,
+              "cosine_min": 0.9999999999999817,
+              "max_abs": 5.15411174073499e-07,
+              "max_rel": 5.900992400332966e-07,
+              "mean_abs": 1.6033764859370457e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.65,
+          "bacc_gpu": 0.65,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B9",
+          "layer_module_path": "model.encoder.layers[8]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.999999999983703,
+              "cosine_median": 0.9999999999841098,
+              "cosine_min": 0.999999999973498,
+              "max_abs": 7.659196853637695e-06,
+              "max_rel": 1.8053097345132743,
+              "mean_abs": 1.157311215157127e-06,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.999999999983703,
+              "cosine_median": 0.9999999999841098,
+              "cosine_min": 0.9999999999734981,
+              "max_abs": 1.0463800586557603e-06,
+              "max_rel": 1.805306583189272,
+              "mean_abs": 1.615214097840628e-07,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999836179,
+              "cosine_median": 0.9999999999851381,
+              "cosine_min": 0.9999999999691435,
+              "max_abs": 1.7137375525506926e-06,
+              "max_rel": 0.007359832816802223,
+              "mean_abs": 2.545921369441113e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999867314,
+              "cosine_median": 0.999999999988416,
+              "cosine_min": 0.9999999999800246,
+              "max_abs": 7.275765409847645e-06,
+              "max_rel": 0.02216336936343849,
+              "mean_abs": 7.146000957885634e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999867312,
+              "cosine_median": 0.999999999988416,
+              "cosine_min": 0.9999999999800246,
+              "max_abs": 1.643015511405485e-06,
+              "max_rel": 0.02216336936343849,
+              "mean_abs": 2.1464323551216443e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.999999999999846,
+              "cosine_median": 0.9999999999998799,
+              "cosine_min": 0.9999999999995157,
+              "max_abs": 1.232853027333114e-06,
+              "max_rel": 2.768812096996909e-06,
+              "mean_abs": 3.018759204010309e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.6,
+          "bacc_gpu": 0.6,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B12",
+          "layer_module_path": "model.encoder.layers[11]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999708289,
+              "cosine_median": 0.9999999999756559,
+              "cosine_min": 0.9999999999247348,
+              "max_abs": 1.6748905181884766e-05,
+              "max_rel": 0.32279649284725426,
+              "mean_abs": 2.3050226095241064e-06,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999708289,
+              "cosine_median": 0.999999999975656,
+              "cosine_min": 0.9999999999247347,
+              "max_abs": 1.7253412371159849e-06,
+              "max_rel": 0.3227968127690877,
+              "mean_abs": 2.092010447457692e-07,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999703983,
+              "cosine_median": 0.9999999999768843,
+              "cosine_min": 0.9999999999068935,
+              "max_abs": 2.7264040198199738e-06,
+              "max_rel": 0.06997630915275442,
+              "mean_abs": 3.2568032053008866e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999770515,
+              "cosine_median": 0.999999999983827,
+              "cosine_min": 0.999999999934771,
+              "max_abs": 8.710549637760967e-06,
+              "max_rel": 0.015025790615696472,
+              "mean_abs": 8.133493804144358e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.999999999977051,
+              "cosine_median": 0.9999999999838268,
+              "cosine_min": 0.999999999934771,
+              "max_abs": 3.0359506028188737e-06,
+              "max_rel": 0.015025790615696538,
+              "mean_abs": 2.6468690921776887e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999995133,
+              "cosine_median": 0.9999999999995296,
+              "cosine_min": 0.9999999999985637,
+              "max_abs": 2.0890468624967795e-06,
+              "max_rel": 3.7810835028856765e-06,
+              "mean_abs": 5.403886821465303e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "condition_id": "pathmnist__resnet18_imagenet1k_v1",
+      "dataset": "pathmnist",
+      "encoder": "resnet18_imagenet1k_v1",
+      "layers": [
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.225,
+          "bacc_gpu": 0.225,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer1",
+          "layer_module_path": "model.layer1",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.999999999999974,
+              "cosine_median": 0.9999999999999778,
+              "cosine_min": 0.9999999999999408,
+              "max_abs": 1.043081283569336e-06,
+              "max_rel": 0.0003100653379661602,
+              "mean_abs": 8.462120601460121e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.999999999999974,
+              "cosine_median": 0.9999999999999778,
+              "cosine_min": 0.9999999999999408,
+              "max_abs": 2.3351493790013667e-07,
+              "max_rel": 0.0003100473158252318,
+              "mean_abs": 1.8767787575768457e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.999999999999972,
+              "cosine_median": 0.9999999999999765,
+              "cosine_min": 0.9999999999999406,
+              "max_abs": 7.400395305931506e-08,
+              "max_rel": 0.00034312031766022493,
+              "mean_abs": 1.0447918578062412e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999781,
+              "cosine_median": 0.9999999999999792,
+              "cosine_min": 0.9999999999999678,
+              "max_abs": 3.648043644666199e-07,
+              "max_rel": 0.00024238662006440624,
+              "mean_abs": 3.285795871432148e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999781,
+              "cosine_median": 0.9999999999999791,
+              "cosine_min": 0.9999999999999678,
+              "max_abs": 6.416928968050462e-08,
+              "max_rel": 0.00024238662006447053,
+              "mean_abs": 9.360019573614535e-09,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 1.0,
+              "cosine_median": 1.0,
+              "cosine_min": 0.9999999999999998,
+              "max_abs": 3.355038713515057e-08,
+              "max_rel": 3.401170394842976e-08,
+              "mean_abs": 1.2933744707948552e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            64
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.4142857142857143,
+          "bacc_gpu": 0.4142857142857143,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer2",
+          "layer_module_path": "model.layer2",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999999457,
+              "cosine_median": 0.9999999999999678,
+              "cosine_min": 0.9999999999997113,
+              "max_abs": 9.5367431640625e-07,
+              "max_rel": 1.275582906141737e-05,
+              "mean_abs": 3.9809368246324084e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999999458,
+              "cosine_median": 0.9999999999999678,
+              "cosine_min": 0.9999999999997116,
+              "max_abs": 4.659278802776612e-07,
+              "max_rel": 1.2769502715466241e-05,
+              "mean_abs": 1.8228182239763344e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.999999999999944,
+              "cosine_median": 0.9999999999999634,
+              "cosine_min": 0.999999999999738,
+              "max_abs": 1.9051711956305506e-07,
+              "max_rel": 0.0002658275409899704,
+              "mean_abs": 1.4084060260764987e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999756,
+              "cosine_median": 0.9999999999999802,
+              "cosine_min": 0.9999999999999514,
+              "max_abs": 4.1505298331925844e-07,
+              "max_rel": 0.0017236889273921424,
+              "mean_abs": 3.3733867219062913e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999756,
+              "cosine_median": 0.9999999999999802,
+              "cosine_min": 0.9999999999999514,
+              "max_abs": 8.043823440662123e-08,
+              "max_rel": 0.0017236889273921424,
+              "mean_abs": 9.613607021187488e-09,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999998,
+              "cosine_median": 0.9999999999999999,
+              "cosine_min": 0.9999999999999996,
+              "max_abs": 7.112103106443612e-08,
+              "max_rel": 7.625136668204223e-08,
+              "mean_abs": 1.709868015000356e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            128
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.5163690476190477,
+          "bacc_gpu": 0.5163690476190477,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer3",
+          "layer_module_path": "model.layer3",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999999187,
+              "cosine_median": 0.9999999999999386,
+              "cosine_min": 0.9999999999997139,
+              "max_abs": 3.725290298461914e-07,
+              "max_rel": 0.00047648017482368737,
+              "mean_abs": 4.4006423463582856e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999999187,
+              "cosine_median": 0.9999999999999387,
+              "cosine_min": 0.9999999999997138,
+              "max_abs": 1.4840531229604048e-07,
+              "max_rel": 0.0004764897381437351,
+              "mean_abs": 1.7800140986858865e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999999063,
+              "cosine_median": 0.9999999999999232,
+              "cosine_min": 0.9999999999997042,
+              "max_abs": 1.473000788357326e-07,
+              "max_rel": 0.005440842029765892,
+              "mean_abs": 1.8651754197118313e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999569,
+              "cosine_median": 0.9999999999999563,
+              "cosine_min": 0.9999999999999234,
+              "max_abs": 5.562066336950444e-07,
+              "max_rel": 0.0002074436628339433,
+              "mean_abs": 4.2063734996593065e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999569,
+              "cosine_median": 0.9999999999999561,
+              "cosine_min": 0.9999999999999234,
+              "max_abs": 8.225394978328415e-08,
+              "max_rel": 0.0002074436628339433,
+              "mean_abs": 1.2601923088942453e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999998,
+              "cosine_median": 0.9999999999999998,
+              "cosine_min": 0.9999999999999993,
+              "max_abs": 1.2083912270810515e-07,
+              "max_rel": 1.477487281506066e-07,
+              "mean_abs": 2.377116947110341e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            256
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.3788690476190476,
+          "bacc_gpu": 0.3788690476190476,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer4",
+          "layer_module_path": "model.layer4",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999992963,
+              "cosine_median": 0.9999999999994347,
+              "cosine_min": 0.9999999999983347,
+              "max_abs": 1.0013580322265625e-05,
+              "max_rel": 0.011881190784078776,
+              "mean_abs": 6.703605838209725e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999992965,
+              "cosine_median": 0.9999999999994349,
+              "cosine_min": 0.999999999998335,
+              "max_abs": 4.765597334532856e-07,
+              "max_rel": 0.011881207488605735,
+              "mean_abs": 3.311681085176155e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999992939,
+              "cosine_median": 0.9999999999994202,
+              "cosine_min": 0.9999999999982512,
+              "max_abs": 4.0319222966312546e-07,
+              "max_rel": 0.0017434704052715993,
+              "mean_abs": 5.168678007492091e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999996816,
+              "cosine_median": 0.9999999999997745,
+              "cosine_min": 0.9999999999992027,
+              "max_abs": 7.927528813955753e-07,
+              "max_rel": 0.0088929222422757,
+              "mean_abs": 1.0180925443176363e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999996816,
+              "cosine_median": 0.9999999999997745,
+              "cosine_min": 0.9999999999992027,
+              "max_abs": 2.8308168525253974e-07,
+              "max_rel": 0.008892922242275654,
+              "mean_abs": 3.3653082683010864e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999911,
+              "cosine_median": 0.9999999999999916,
+              "cosine_min": 0.9999999999999764,
+              "max_abs": 4.721825961340187e-07,
+              "max_rel": 6.059781403960578e-07,
+              "mean_abs": 9.481480756002365e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            512
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "condition_id": "pathmnist__vit_b_16_imagenet1k_v1",
+      "dataset": "pathmnist",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "layers": [
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.3013392857142857,
+          "bacc_gpu": 0.3013392857142857,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B3",
+          "layer_module_path": "model.encoder.layers[2]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999982809,
+              "cosine_median": 0.9999999999982978,
+              "cosine_min": 0.9999999999978739,
+              "max_abs": 2.294778823852539e-06,
+              "max_rel": 0.04719020172910663,
+              "mean_abs": 3.4199056623644236e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999982809,
+              "cosine_median": 0.9999999999982979,
+              "cosine_min": 0.9999999999978739,
+              "max_abs": 3.216190544372277e-07,
+              "max_rel": 0.047190144410976485,
+              "mean_abs": 4.8266751551516984e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999985267,
+              "cosine_median": 0.9999999999985486,
+              "cosine_min": 0.999999999997967,
+              "max_abs": 4.97019827029252e-07,
+              "max_rel": 0.0031526390314142536,
+              "mean_abs": 7.704570390469344e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999986083,
+              "cosine_median": 0.9999999999986636,
+              "cosine_min": 0.9999999999981439,
+              "max_abs": 2.8500736759459744e-06,
+              "max_rel": 0.0014092054513568702,
+              "mean_abs": 2.583609905643217e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999986083,
+              "cosine_median": 0.999999999998664,
+              "cosine_min": 0.9999999999981439,
+              "max_abs": 4.2305532340844443e-07,
+              "max_rel": 0.0014092054513567941,
+              "mean_abs": 7.43647166103705e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999996,
+              "cosine_median": 0.9999999999999997,
+              "cosine_min": 0.9999999999999991,
+              "max_abs": 2.117284055858093e-07,
+              "max_rel": 2.2171982335055625e-07,
+              "mean_abs": 9.270127510564872e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.328125,
+          "bacc_gpu": 0.328125,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B6",
+          "layer_module_path": "model.encoder.layers[5]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999954201,
+              "cosine_median": 0.9999999999954354,
+              "cosine_min": 0.9999999999946646,
+              "max_abs": 4.41819429397583e-06,
+              "max_rel": 2.899786780383795,
+              "mean_abs": 6.978132205404108e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999954201,
+              "cosine_median": 0.9999999999954354,
+              "cosine_min": 0.9999999999946647,
+              "max_abs": 5.290224512968789e-07,
+              "max_rel": 2.899786337940643,
+              "mean_abs": 8.271254194016821e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999949263,
+              "cosine_median": 0.9999999999949536,
+              "cosine_min": 0.9999999999937726,
+              "max_abs": 9.212431002778368e-07,
+              "max_rel": 0.023527939560073787,
+              "mean_abs": 1.428224492638703e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.999999999995316,
+              "cosine_median": 0.999999999995224,
+              "cosine_min": 0.9999999999950341,
+              "max_abs": 5.093137688906568e-06,
+              "max_rel": 0.0037318037828113593,
+              "mean_abs": 4.769286345050464e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.999999999995316,
+              "cosine_median": 0.9999999999952239,
+              "cosine_min": 0.9999999999950341,
+              "max_abs": 8.368273651006286e-07,
+              "max_rel": 0.00373180378281148,
+              "mean_abs": 1.3632105133941838e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999956,
+              "cosine_median": 0.9999999999999957,
+              "cosine_min": 0.9999999999999918,
+              "max_abs": 4.015433848758576e-07,
+              "max_rel": 4.479283159077036e-07,
+              "mean_abs": 1.228001694104456e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.30044642857142856,
+          "bacc_gpu": 0.30044642857142856,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B9",
+          "layer_module_path": "model.encoder.layers[8]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999856788,
+              "cosine_median": 0.9999999999860263,
+              "cosine_min": 0.9999999999784324,
+              "max_abs": 6.22868537902832e-06,
+              "max_rel": 0.03889255108767304,
+              "mean_abs": 1.150022910678672e-06,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999856788,
+              "cosine_median": 0.9999999999860264,
+              "cosine_min": 0.9999999999784324,
+              "max_abs": 8.323370854282364e-07,
+              "max_rel": 0.03889292216192148,
+              "mean_abs": 1.52239506743143e-07,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999849665,
+              "cosine_median": 0.9999999999848885,
+              "cosine_min": 0.9999999999731379,
+              "max_abs": 1.7426865789285824e-06,
+              "max_rel": 0.19732833610826234,
+              "mean_abs": 2.419896090284197e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999879987,
+              "cosine_median": 0.9999999999891538,
+              "cosine_min": 0.9999999999767499,
+              "max_abs": 7.889776708569496e-06,
+              "max_rel": 0.004783805704320609,
+              "mean_abs": 6.833337767574736e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999879989,
+              "cosine_median": 0.9999999999891538,
+              "cosine_min": 0.9999999999767499,
+              "max_abs": 1.4149888525466503e-06,
+              "max_rel": 0.004783805704320608,
+              "mean_abs": 2.059941271804804e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999998941,
+              "cosine_median": 0.9999999999999002,
+              "cosine_min": 0.999999999999747,
+              "max_abs": 1.6393135475745169e-06,
+              "max_rel": 2.545305205622418e-06,
+              "mean_abs": 5.141811697378466e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.44895833333333335,
+          "bacc_gpu": 0.44895833333333335,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B12",
+          "layer_module_path": "model.encoder.layers[11]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999852682,
+              "cosine_median": 0.9999999999884004,
+              "cosine_min": 0.9999999999644754,
+              "max_abs": 2.4080276489257812e-05,
+              "max_rel": 0.035229315686799524,
+              "mean_abs": 1.928597953337885e-06,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999852682,
+              "cosine_median": 0.9999999999884004,
+              "cosine_min": 0.9999999999644756,
+              "max_abs": 1.5528292012789713e-06,
+              "max_rel": 0.035229364101212475,
+              "mean_abs": 1.4999642346651897e-07,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999862287,
+              "cosine_median": 0.9999999999886562,
+              "cosine_min": 0.99999999996238,
+              "max_abs": 1.9296254364503662e-06,
+              "max_rel": 0.03013446929304617,
+              "mean_abs": 2.2730967891949067e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999880322,
+              "cosine_median": 0.9999999999890917,
+              "cosine_min": 0.999999999970557,
+              "max_abs": 6.504075596852621e-06,
+              "max_rel": 0.004022627797746473,
+              "mean_abs": 6.741363592828084e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999880322,
+              "cosine_median": 0.9999999999890917,
+              "cosine_min": 0.999999999970557,
+              "max_abs": 2.014147014228751e-06,
+              "max_rel": 0.004022627797746536,
+              "mean_abs": 2.038576653598811e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999997665,
+              "cosine_median": 0.9999999999997855,
+              "cosine_min": 0.9999999999992734,
+              "max_abs": 2.4608929232172727e-06,
+              "max_rel": 3.7175305502719417e-06,
+              "mean_abs": 4.929867816375827e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "condition_id": "dermamnist__resnet18_imagenet1k_v1",
+      "dataset": "dermamnist",
+      "encoder": "resnet18_imagenet1k_v1",
+      "layers": [
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.07368421052631578,
+          "bacc_gpu": 0.07368421052631578,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer1",
+          "layer_module_path": "model.layer1",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999999756,
+              "cosine_median": 0.9999999999999765,
+              "cosine_min": 0.9999999999999543,
+              "max_abs": 5.662441253662109e-07,
+              "max_rel": 5.852184927873284e-06,
+              "mean_abs": 8.267058859701137e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999999756,
+              "cosine_median": 0.9999999999999766,
+              "cosine_min": 0.9999999999999545,
+              "max_abs": 1.2862472272695546e-07,
+              "max_rel": 5.852669289928515e-06,
+              "mean_abs": 1.8852730384752504e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999999736,
+              "cosine_median": 0.999999999999974,
+              "cosine_min": 0.9999999999999569,
+              "max_abs": 6.411681862522611e-08,
+              "max_rel": 0.0027455848151161197,
+              "mean_abs": 1.0147364466300755e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999779,
+              "cosine_median": 0.9999999999999789,
+              "cosine_min": 0.999999999999974,
+              "max_abs": 1.1209619721341824e-06,
+              "max_rel": 5.6617625168744616e-05,
+              "mean_abs": 7.247679300210386e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999778,
+              "cosine_median": 0.9999999999999788,
+              "cosine_min": 0.999999999999974,
+              "max_abs": 4.467125346908386e-08,
+              "max_rel": 5.6617625168744616e-05,
+              "mean_abs": 9.338969111345626e-09,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 1.0,
+              "cosine_median": 1.0,
+              "cosine_min": 0.9999999999999998,
+              "max_abs": 2.3281662819840676e-08,
+              "max_rel": 2.3588899938357857e-08,
+              "mean_abs": 7.344847661495957e-09,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            64
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.05263157894736842,
+          "bacc_gpu": 0.05263157894736842,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer2",
+          "layer_module_path": "model.layer2",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999999518,
+              "cosine_median": 0.9999999999999559,
+              "cosine_min": 0.9999999999999072,
+              "max_abs": 4.470348358154297e-07,
+              "max_rel": 0.000100550156929739,
+              "mean_abs": 3.8002734736863886e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999999518,
+              "cosine_median": 0.9999999999999558,
+              "cosine_min": 0.9999999999999073,
+              "max_abs": 2.0621334073656072e-07,
+              "max_rel": 0.00010049635394652809,
+              "mean_abs": 1.819281066722815e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.99999999999995,
+              "cosine_median": 0.9999999999999551,
+              "cosine_min": 0.9999999999999071,
+              "max_abs": 9.619096227875268e-08,
+              "max_rel": 0.02522964620094139,
+              "mean_abs": 1.394933881285262e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999695,
+              "cosine_median": 0.9999999999999769,
+              "cosine_min": 0.9999999999999429,
+              "max_abs": 1.1547678480383627e-06,
+              "max_rel": 0.0001316881983049585,
+              "mean_abs": 7.165864997575108e-08,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999695,
+              "cosine_median": 0.9999999999999769,
+              "cosine_min": 0.9999999999999429,
+              "max_abs": 7.984520482284818e-08,
+              "max_rel": 0.0001316881983049585,
+              "mean_abs": 1.0752469618479711e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 1.0,
+              "cosine_median": 1.0,
+              "cosine_min": 0.9999999999999998,
+              "max_abs": 3.855106522898666e-08,
+              "max_rel": 4.074619581396745e-08,
+              "mean_abs": 1.0655130648455635e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            128
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.12210526315789474,
+          "bacc_gpu": 0.12210526315789474,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer3",
+          "layer_module_path": "model.layer3",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999998889,
+              "cosine_median": 0.9999999999998945,
+              "cosine_min": 0.9999999999998033,
+              "max_abs": 5.960464477539062e-07,
+              "max_rel": 0.0002708674500787465,
+              "mean_abs": 4.946055920385106e-08,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.999999999999889,
+              "cosine_median": 0.9999999999998945,
+              "cosine_min": 0.9999999999998033,
+              "max_abs": 2.02974093893582e-07,
+              "max_rel": 0.0002710735723751081,
+              "mean_abs": 2.0821570461641984e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999998779,
+              "cosine_median": 0.9999999999998823,
+              "cosine_min": 0.9999999999997939,
+              "max_abs": 1.459825495347955e-07,
+              "max_rel": 0.0028565624179760583,
+              "mean_abs": 2.1823200436655606e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999999363,
+              "cosine_median": 0.9999999999999463,
+              "cosine_min": 0.999999999999891,
+              "max_abs": 1.8033788882210189e-06,
+              "max_rel": 0.00020473542881398795,
+              "mean_abs": 1.0255180503192405e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999999363,
+              "cosine_median": 0.9999999999999463,
+              "cosine_min": 0.999999999999891,
+              "max_abs": 9.592684430126397e-08,
+              "max_rel": 0.00020473542881398795,
+              "mean_abs": 1.565605191912153e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 1.0,
+              "cosine_median": 0.9999999999999999,
+              "cosine_min": 0.9999999999999998,
+              "max_abs": 8.05117573721148e-08,
+              "max_rel": 8.742896349726745e-08,
+              "mean_abs": 3.321281586820407e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            256
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.04,
+          "bacc_gpu": 0.04,
+          "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+          "layer": "layer4",
+          "layer_module_path": "model.layer4",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999990772,
+              "cosine_median": 0.9999999999991354,
+              "cosine_min": 0.9999999999984797,
+              "max_abs": 1.4781951904296875e-05,
+              "max_rel": 0.0388107607040603,
+              "mean_abs": 6.893706195054694e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999990773,
+              "cosine_median": 0.9999999999991355,
+              "cosine_min": 0.9999999999984797,
+              "max_abs": 6.265870465815837e-07,
+              "max_rel": 0.03881017440758487,
+              "mean_abs": 3.594916103030701e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999991029,
+              "cosine_median": 0.9999999999992,
+              "cosine_min": 0.999999999998302,
+              "max_abs": 5.045940949469779e-07,
+              "max_rel": 0.019871757837326223,
+              "mean_abs": 5.9077482331458215e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999996765,
+              "cosine_median": 0.9999999999996242,
+              "cosine_min": 0.9999999999995584,
+              "max_abs": 2.9282224544013857e-06,
+              "max_rel": 9.63860151429132e-05,
+              "mean_abs": 1.848590700708635e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999996765,
+              "cosine_median": 0.9999999999996242,
+              "cosine_min": 0.9999999999995584,
+              "max_abs": 1.9827877536029992e-07,
+              "max_rel": 9.63860151429132e-05,
+              "mean_abs": 3.5203664360830875e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.999999999999996,
+              "cosine_median": 0.9999999999999974,
+              "cosine_min": 0.9999999999999724,
+              "max_abs": 5.635580373475335e-07,
+              "max_rel": 6.490148778970603e-07,
+              "mean_abs": 1.279947396707823e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            512
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "condition_id": "dermamnist__vit_b_16_imagenet1k_v1",
+      "dataset": "dermamnist",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "layers": [
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.031578947368421054,
+          "bacc_gpu": 0.031578947368421054,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B3",
+          "layer_module_path": "model.encoder.layers[2]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999981075,
+              "cosine_median": 0.9999999999980955,
+              "cosine_min": 0.9999999999978437,
+              "max_abs": 2.637505531311035e-06,
+              "max_rel": 0.06533466533466534,
+              "mean_abs": 3.6590275698245023e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999981076,
+              "cosine_median": 0.9999999999980955,
+              "cosine_min": 0.9999999999978438,
+              "max_abs": 3.5865621304115303e-07,
+              "max_rel": 0.06533467308321582,
+              "mean_abs": 5.047711159022692e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999984095,
+              "cosine_median": 0.9999999999984139,
+              "cosine_min": 0.9999999999981563,
+              "max_abs": 4.7514737663151285e-07,
+              "max_rel": 0.06409809103600149,
+              "mean_abs": 7.97140927967958e-08,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999985091,
+              "cosine_median": 0.9999999999985121,
+              "cosine_min": 0.9999999999984549,
+              "max_abs": 1.0961459579683641e-05,
+              "max_rel": 0.05095423200718781,
+              "mean_abs": 6.100692090836999e-07,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999985092,
+              "cosine_median": 0.9999999999985122,
+              "cosine_min": 0.9999999999984549,
+              "max_abs": 4.5694261750078846e-07,
+              "max_rel": 0.05095423200718781,
+              "mean_abs": 7.732971598888597e-08,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999998,
+              "cosine_median": 0.9999999999999998,
+              "cosine_min": 0.9999999999999994,
+              "max_abs": 1.6874228370156175e-07,
+              "max_rel": 1.7034658364187572e-07,
+              "mean_abs": 9.127806562068269e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.3291228070175439,
+          "bacc_gpu": 0.3291228070175439,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B6",
+          "layer_module_path": "model.encoder.layers[5]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999955618,
+              "cosine_median": 0.9999999999955524,
+              "cosine_min": 0.9999999999950058,
+              "max_abs": 4.813075065612793e-06,
+              "max_rel": 0.09009287925696595,
+              "mean_abs": 6.973501503656129e-07,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999955617,
+              "cosine_median": 0.9999999999955524,
+              "cosine_min": 0.9999999999950061,
+              "max_abs": 5.744173739580249e-07,
+              "max_rel": 0.09009301623765818,
+              "mean_abs": 8.134717317821639e-08,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999950924,
+              "cosine_median": 0.9999999999950928,
+              "cosine_min": 0.9999999999943378,
+              "max_abs": 8.937430108629796e-07,
+              "max_rel": 0.004485381112285719,
+              "mean_abs": 1.401819855052103e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999953635,
+              "cosine_median": 0.9999999999953535,
+              "cosine_min": 0.9999999999949318,
+              "max_abs": 1.6411760342061044e-05,
+              "max_rel": 0.005740016615479996,
+              "mean_abs": 1.0417988271580835e-06,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999953635,
+              "cosine_median": 0.9999999999953535,
+              "cosine_min": 0.9999999999949318,
+              "max_abs": 6.585851829513101e-07,
+              "max_rel": 0.005740016615479996,
+              "mean_abs": 1.3722720769922628e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999993,
+              "cosine_median": 0.9999999999999994,
+              "cosine_min": 0.9999999999999976,
+              "max_abs": 3.0482522661579026e-07,
+              "max_rel": 3.197366566708748e-07,
+              "mean_abs": 8.744387142590321e-08,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.2098245614035088,
+          "bacc_gpu": 0.2098245614035088,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B9",
+          "layer_module_path": "model.encoder.layers[8]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999863746,
+              "cosine_median": 0.9999999999861574,
+              "cosine_min": 0.9999999999800085,
+              "max_abs": 6.616115570068359e-06,
+              "max_rel": 0.4528301886792453,
+              "mean_abs": 1.1071428787090554e-06,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999863746,
+              "cosine_median": 0.9999999999861574,
+              "cosine_min": 0.9999999999800085,
+              "max_abs": 9.471583801469452e-07,
+              "max_rel": 0.45283037408388666,
+              "mean_abs": 1.483071904720137e-07,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999856033,
+              "cosine_median": 0.9999999999861715,
+              "cosine_min": 0.9999999999795853,
+              "max_abs": 1.4313052332458852e-06,
+              "max_rel": 0.17059549521561845,
+              "mean_abs": 2.343757717472961e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999875361,
+              "cosine_median": 0.9999999999881772,
+              "cosine_min": 0.9999999999843696,
+              "max_abs": 2.4311731066872788e-05,
+              "max_rel": 0.001172096569322169,
+              "mean_abs": 1.4963915826928814e-06,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.999999999987536,
+              "cosine_median": 0.9999999999881772,
+              "cosine_min": 0.9999999999843696,
+              "max_abs": 1.2799944693600226e-06,
+              "max_rel": 0.001172096569322169,
+              "mean_abs": 2.1083839903172982e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999999558,
+              "cosine_median": 0.9999999999999678,
+              "cosine_min": 0.9999999999997995,
+              "max_abs": 1.0196300485043608e-06,
+              "max_rel": 1.4314264722614918e-06,
+              "mean_abs": 2.3044077788764855e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        },
+        {
+          "bacc_abs_diff": 0.0,
+          "bacc_cpu": 0.1431578947368421,
+          "bacc_gpu": 0.1431578947368421,
+          "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+          "layer": "B12",
+          "layer_module_path": "model.encoder.layers[11]",
+          "predictions_identical": true,
+          "stages": [
+            {
+              "cosine_mean": 0.9999999999820731,
+              "cosine_median": 0.9999999999827949,
+              "cosine_min": 0.9999999999696877,
+              "max_abs": 1.7881393432617188e-05,
+              "max_rel": 0.19845594913714804,
+              "mean_abs": 2.040121463172303e-06,
+              "stage": "raw"
+            },
+            {
+              "cosine_mean": 0.9999999999820732,
+              "cosine_median": 0.9999999999827949,
+              "cosine_min": 0.9999999999696876,
+              "max_abs": 1.498968616509e-06,
+              "max_rel": 0.1984559368298292,
+              "mean_abs": 1.6936315454846292e-07,
+              "stage": "normalized"
+            },
+            {
+              "cosine_mean": 0.9999999999816541,
+              "cosine_median": 0.9999999999824581,
+              "cosine_min": 0.9999999999662237,
+              "max_abs": 2.2104761334719447e-06,
+              "max_rel": 0.09335418605699215,
+              "mean_abs": 2.662772769177179e-07,
+              "stage": "rff"
+            },
+            {
+              "cosine_mean": 0.9999999999803668,
+              "cosine_median": 0.9999999999824813,
+              "cosine_min": 0.9999999999660714,
+              "max_abs": 2.038600046949668e-05,
+              "max_rel": 0.006192938428726989,
+              "mean_abs": 1.5645376841089002e-06,
+              "stage": "class_sum"
+            },
+            {
+              "cosine_mean": 0.9999999999803669,
+              "cosine_median": 0.9999999999824813,
+              "cosine_min": 0.9999999999660714,
+              "max_abs": 1.7210487533972536e-06,
+              "max_rel": 0.006192938428726989,
+              "mean_abs": 2.590381508255084e-07,
+              "stage": "prototype"
+            },
+            {
+              "cosine_mean": 0.9999999999998872,
+              "cosine_median": 0.9999999999998983,
+              "cosine_min": 0.9999999999996373,
+              "max_abs": 2.1285413485117033e-06,
+              "max_rel": 3.45731526284735e-06,
+              "mean_abs": 8.099402766699459e-07,
+              "stage": "classifier_score"
+            },
+            {
+              "agreement": 1.0,
+              "max_abs": 0.0,
+              "stage": "prediction"
+            }
+          ],
+          "tensor_shape": [
+            32,
+            768
+          ]
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "conditions_passed": 8,
+  "conditions_total": 8,
+  "environment_cpu": {
+    "cuda_available": false,
+    "cuda_runtime_version": null,
+    "cudnn_version": null,
+    "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+    "numpy_version": "2.4.6",
+    "os": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "python_executable": "D:\\ProgramData\\anaconda3\\python.exe",
+    "python_version": "3.11.7",
+    "torch_num_threads": 6,
+    "torch_version": "2.12.1+cpu",
+    "torchvision_version": "0.27.1+cpu"
+  },
+  "environment_cuda": {
+    "cuda_available": true,
+    "cuda_runtime_version": "12.8",
+    "cudnn_version": 90701,
+    "driver_version": "616.56",
+    "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+    "gpu_capability": [
+      8,
+      9
+    ],
+    "gpu_free_mib": 6701.0,
+    "gpu_model": "NVIDIA GeForce RTX 4060",
+    "gpu_total_mib": 8187.5,
+    "numpy_version": "2.3.5",
+    "os": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "python_executable": "D:\\ProgramData\\anaconda3\\envs\\osf\\python.exe",
+    "python_version": "3.11.16",
+    "torch_num_threads": 6,
+    "torch_version": "2.7.0+cu128",
+    "torchvision_version": "0.22.0+cu128"
+  },
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "parity_pass": true,
+  "report_type": "CMR_V1_X2_CPU_GPU_PARITY",
+  "rff_identity": {
+    "byte_identical_on_regeneration": true,
+    "dimension": 256,
+    "maps": [
+      {
+        "b_sha256": "90286402ec34ec6342d49f42d844b19a9a2dfbdaa3ca2a4aeafa39c5ea0a9b5e",
+        "derived_seed": 2593967492,
+        "dtype": "float64",
+        "encoder": "resnet18_imagenet1k_v1",
+        "layer": "layer1",
+        "regeneration_identical": true,
+        "shape": [
+          256,
+          64
+        ],
+        "w_sha256": "b976c18efb8afce39ea6d4856bf319a0ce53c970ec9b5fc1e74f005b20db3a72"
+      },
+      {
+        "b_sha256": "cb4cbda5704a9e33c2675f48297ed65bb5de9ddc48e0e0a16d9bd91c188bdd1f",
+        "derived_seed": 3655982490,
+        "dtype": "float64",
+        "encoder": "resnet18_imagenet1k_v1",
+        "layer": "layer2",
+        "regeneration_identical": true,
+        "shape": [
+          256,
+          64
+        ],
+        "w_sha256": "94c1999cba999af9cf1123af862e7dc55054ae91251781b740a7b0e820911bba"
+      },
+      {
+        "b_sha256": "49eaf46e368576f0b47db6c4e30e725d44a45f6602fa308513dde65558498a2b",
+        "derived_seed": 704796591,
+        "dtype": "float64",
+        "encoder": "resnet18_imagenet1k_v1",
+        "layer": "layer3",
+        "regeneration_identical": true,
+        "shape": [
+          256,
+          64
+        ],
+        "w_sha256": "588d8637bd529b0edcc0d6f61e7efd5ea6a8874f03e570e0419bda88ef5a4a5d"
+      },
+      {
+        "b_sha256": "34a106f94e9cc43514feab9a29c3874607381307a533b709a2e6fc7d9e0bc3d6",
+        "derived_seed": 1652377611,
+        "dtype": "float64",
+        "encoder": "resnet18_imagenet1k_v1",
+        "layer": "layer4",
+        "regeneration_identical": true,
+        "shape": [
+          256,
+          64
+        ],
+        "w_sha256": "0b0b63fa8044b88a2db46ad11361932c7b004bf4ef7bd4d9612add635388f227"
+      },
+      {
+        "b_sha256": "778bf7cb00369ead22b9b6eff2f00dc19e5cc68161e939b4678526d995d85f93",
+        "derived_seed": 2431622510,
+        "dtype": "float64",
+        "encoder": "vit_b_16_imagenet1k_v1",
+        "layer": "B3",
+        "regeneration_identical": true,
+        "shape": [
+          256,
+          768
+        ],
+        "w_sha256": "9ad5a0396c6485113d65478d55f3922ecf6d8c570a0f2fbe8b2234d4b0b7dd86"
+      },
+      {
+        "b_sha256": "5f29b2275c26088adfedbe1473a335615fe26886d01f94b9233b0659d4b79a38",
+        "derived_seed": 31367928,
+        "dtype": "float64",
+        "encoder": "vit_b_16_imagenet1k_v1",
+        "layer": "B6",
+        "regeneration_identical": true,
+        "shape": [
+          256,
+          768
+        ],
+        "w_sha256": "ab3c56a3c689a414c05b6651127f7d1096280cfa2f49cf636f07057d4f555086"
+      },
+      {
+        "b_sha256": "cba68ba7e7b6179217511ffd38c6ebedc52f3c9a227ac442e19dc5d9af6fda66",
+        "derived_seed": 136646290,
+        "dtype": "float64",
+        "encoder": "vit_b_16_imagenet1k_v1",
+        "layer": "B9",
+        "regeneration_identical": true,
+        "shape": [
+          256,
+          768
+        ],
+        "w_sha256": "7205d3d44da3f28f8527dc00381adb8b046aae1c89bf42a604782252762b11fa"
+      },
+      {
+        "b_sha256": "e0315d3c8fb30ee23798ab25a2b6907188ce37c272423dd776564994b46c8cc4",
+        "derived_seed": 3117873395,
+        "dtype": "float64",
+        "encoder": "vit_b_16_imagenet1k_v1",
+        "layer": "B12",
+        "regeneration_identical": true,
+        "shape": [
+          256,
+          768
+        ],
+        "w_sha256": "a827cdc3bd0a6a6c5970cd8f96b339ebc9c36e8ba4da04cec030f3abbacb7c0e"
+      }
+    ],
+    "master_seed": 20261001,
+    "sigma": 1.0
+  }
+}

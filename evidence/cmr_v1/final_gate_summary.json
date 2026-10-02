@@ -1,0 +1,177 @@
+{
+  "aggregation_recovery_max_abs": 1.2960299500264227e-11,
+  "aggregation_recovery_tolerance": 1e-08,
+  "all_values_finite": true,
+  "cpu_gpu_bacc_abs_diff": 0.0,
+  "cpu_gpu_prediction_agreement": 1.0,
+  "cuda_determinism_pass": true,
+  "cuda_migration_gates": {
+    "M1": true,
+    "M2": true,
+    "M3": true,
+    "M4": true,
+    "M5": true,
+    "M6": true,
+    "M7": true,
+    "M8": true
+  },
+  "cuda_migration_status": "PASS",
+  "final_cmr_decision": "CMR-D",
+  "git_head_before_closeout": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "inference_backend": "CUDA",
+  "layer_spread_range": [
+    0.11849455589278246,
+    0.4842
+  ],
+  "narrative": "Representation depth was strongly decision-relevant in all eight prespecified conditions, but the second mechanism failed its frozen cross-dataset action-identity breadth gate because all four ResNet-18 datasets selected layer4 as the unique best action. This frozen G2 failure triggered the prespecified CMR-D stop.",
+  "narrative_guardrail": "The machine label ACTION_FAMILY_NOT_DECISION_RELEVANT must not be read as 'the representation layer was not decision relevant': all 8/8 prespecified conditions were ACTION_RELEVANT with layer spreads 0.118-0.484. The failure is the frozen cross-dataset action-identity breadth criterion (X2-G2).",
+  "protocol_id": "CMR-V1",
+  "protocol_status": "FROZEN_BEFORE_CMR_OUTCOME_ACCESS",
+  "protocol_stop": true,
+  "protocol_version": "1.0.0-FROZEN",
+  "provenance": {
+    "consistency_audit": "runs/cmr_v1/x2_cuda_migration/x2_cmr_d_consistency_audit.json",
+    "determinism_report": "runs/cmr_v1/x2_cuda_migration/determinism_report.json",
+    "engineering_correction": "runs/cmr_v1/x2_cuda_migration/engineering_correction_rff_width.json",
+    "feature_bank_manifest": "configs/cmr_v1_feature_bank_manifest.json",
+    "feature_bank_manifest_sha256": "70483027bb84c48c66852b9c1ae60c0fdfd37d13b17ef40528832323af93ed97",
+    "feature_map_manifest": "configs/cmr_v1_feature_map_manifest.json",
+    "feature_map_manifest_sha256": "3b225c1cd6b7a83f8452bd7405dc6f1ee64b92510d66da618ea3bab1afd36d36",
+    "freeze_manifest_sha256": "77ab2bad46aa8d25630ccc1cb38d8aba44bc3c45fd2b772cdd37f4e39afb1545",
+    "gate_matrix_sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001",
+    "migration_gate_summary": "runs/cmr_v1/x2_cuda_migration/migration_gate_summary.json",
+    "parity_report": "runs/cmr_v1/x2_cuda_migration/parity_report.json",
+    "protocol_md_sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a",
+    "protocol_yaml_sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b",
+    "x2_condition_results": "runs/cmr_v1/x2/condition_results.csv",
+    "x2_gate_summary": "evidence/cmr_v1/x2/gate_summary.json",
+    "x2_run_summary": "runs/cmr_v1/x2/run_summary.json"
+  },
+  "read_only_consistency_audit_pass": true,
+  "rescue_prohibited": [
+    "change_gate_thresholds",
+    "relax_unique_best_margin",
+    "drop_resnet18",
+    "use_vit_only",
+    "replace_resnet_layer_set",
+    "replace_action_with_bandwidth",
+    "replace_action_with_ridge",
+    "replace_or_add_datasets",
+    "redefine_unique_best",
+    "continue_x3_x4_x5"
+  ],
+  "resnet_distinct_unique_best_count": 1,
+  "resnet_distinct_unique_best_required": 2,
+  "resnet_unique_best_layers": {
+    "cifar100": "layer4",
+    "dermamnist": "layer4",
+    "eurosat": "layer4",
+    "pathmnist": "layer4"
+  },
+  "source_files": {
+    "src/frontier/cmr_feature_extract.py": "403a7ef13756e9ee8efa8e830e183f3f69f5981876f3828356405271d575e1c0",
+    "src/frontier/cmr_kernel_layer.py": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+    "tests/test_cmr_v1_protocol.py": "0519e9d3f837f038c5eea8a7bd56eeaad4e1faa4c5611c26398881f880f60684",
+    "tests/test_cmr_v1_x2.py": "a66b6ed4630a4b4882f46be69a5917ae5ce7284572318583eb8ab9ae33b138bb",
+    "tools/audit_cmr_v1_x2_cmr_d_consistency.py": "18d419578bcbf0aafc1487658b35d89b17fd591f05e64a531f1a8a7d3c786eaf",
+    "tools/cmr_x2_cuda_migration.py": "db3d76466235af691bfd6c651ce158573146c5858a1359b986966e9792f8479f",
+    "tools/run_cmr_v1.py": "bd54354a9960550692ea68ff664542696095f5f3032ec96b095e5dee0067039f"
+  },
+  "source_provenance_gap_disclosure": {
+    "current_tree_sources_not_the_formal_sources": {
+      "src/frontier/cmr_feature_extract.py": {
+        "current_line_count": 23,
+        "current_sha256": "403a7ef13756e9ee8efa8e830e183f3f69f5981876f3828356405271d575e1c0",
+        "note": "The committed file path exists, but its content is not the source recorded by the frozen artifacts. Only a behaviour-level shim from preserved Python 3.11 bytecode was ever recovered; no source-level recovery exists.",
+        "overwrite_time": "2026-10-02 20:47:40",
+        "recorded_line_count": 437,
+        "recorded_sha256": "ade3cc45822978391d4eb00070608a54650db97e436051b5eb4e32d1b6b358b1"
+      },
+      "tools/run_cmr_v1.py": {
+        "current_sha256": "bd54354a9960550692ea68ff664542696095f5f3032ec96b095e5dee0067039f",
+        "note": "The originally committed content was replaced after the frozen formal run.",
+        "overwrite_time": "2026-10-02 17:19:58",
+        "recorded_sha256": "d659eb274b3d089fbdc668fe322cc0b4c28c93a14ef6dcbc744f48507ca6c88d"
+      }
+    },
+    "disclosure_decision": "Recorded and disclosed rather than silently repaired; no rescue re-run, no source substitution and no artifact rewriting were performed.",
+    "not_reproducible_from_the_current_tree": "Exact re-derivation of the frozen feature caches from the current tree's feature-extraction source is not guaranteed.",
+    "pre_existing_recovery_artifacts": [
+      "evidence/cmr_v1/x2/source_recovery/accidental_replacement.txt",
+      "evidence/cmr_v1/x2/source_recovery/original_cmr_feature_extract.cpython-311.pyc",
+      "evidence/cmr_v1/x2/source_recovery/recovery_status.json"
+    ],
+    "recovery_artifacts_note": "These were not created by the closeout. They are timestamped 2026-10-02 20:47-20:50, hours after the frozen formal run at 17:17-17:20, and they record original_source_recovered=false.",
+    "sources_that_do_match": {
+      "src/frontier/cmr_kernel_layer.py": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3 (matches the feature-map manifest)",
+      "tests/test_cmr_v1_protocol.py": "21afacda5888136544dc410adfa13cf674745b1d9ad043eba048206698a154b5 (matches)",
+      "tests/test_cmr_v1_x1.py": "ebf9f921dda42857fe55e11c4e015a30d9ed3f30bc31f2c3d88623aa430305a6 (matches)",
+      "tests/test_cmr_v1_x2.py": "f825d2d0067612ec7ab8c87f7b198660d3e412eb6c6bb519db3343e0be9c4bfb (matches)"
+    },
+    "status": "KNOWN_PROVENANCE_GAP_DISCLOSED",
+    "summary": "The frozen formal X2 artifacts record source hashes that the current working tree does not contain. The scientific results were not changed, recomputed or reinterpreted; this is a disclosed implementation provenance gap.",
+    "why_the_results_are_still_frozen_and_accrued": "The read-only consistency audit re-derived every reported number from the frozen artifacts and passes; both backends reproduce the frozen gate outcome; CPU and CUDA agreed exactly on all eight conditions."
+  },
+  "source_provenance_status": "KNOWN_PROVENANCE_GAP_DISCLOSED",
+  "summary_type": "CMR_V1_FINAL_GATE_SUMMARY",
+  "vit_distinct_unique_best_count": 3,
+  "vit_distinct_unique_best_required": 2,
+  "vit_unique_best_layers": {
+    "cifar100": "B12",
+    "dermamnist": "B9",
+    "eurosat": "B9",
+    "pathmnist": "B6"
+  },
+  "x1_all_gates_pass": true,
+  "x1_decision": "X1_PASS_EXACT_KERNEL_PROTOTYPE_LAYER_COLLISION",
+  "x2_action_relevant_count": 8,
+  "x2_condition_count": 8,
+  "x2_decision": "ACTION_FAMILY_NOT_DECISION_RELEVANT",
+  "x2_gate_result": "FAIL",
+  "x2_gates": {
+    "X2-G1": {
+      "action_relevant_count": 8,
+      "name": "action-relevant structural conditions",
+      "passed": true,
+      "required": 6,
+      "spread_threshold": 0.01,
+      "structural_conditions": 8
+    },
+    "X2-G2": {
+      "distinct_unique_best": [
+        "layer4"
+      ],
+      "margin_threshold": 0.002,
+      "name": "ResNet-18 UNIQUE_BEST layer breadth",
+      "passed": false,
+      "required": 2
+    },
+    "X2-G3": {
+      "distinct_unique_best": [
+        "B12",
+        "B6",
+        "B9"
+      ],
+      "margin_threshold": 0.002,
+      "name": "ViT-B/16 UNIQUE_BEST block breadth",
+      "passed": true,
+      "required": 2
+    },
+    "X2-G4": {
+      "max_abs": 1.2960299500264227e-11,
+      "name": "aggregation recovery",
+      "passed": true,
+      "tolerance": 1e-08
+    },
+    "X2-G5": {
+      "name": "finiteness",
+      "passed": true
+    }
+  },
+  "x3_authorized": false,
+  "x3_status": "NOT_RUN_PROTOCOL_STOP",
+  "x4_authorized": false,
+  "x4_status": "NOT_RUN_PROTOCOL_STOP",
+  "x5_authorized": false,
+  "x5_status": "NOT_RUN_PROTOCOL_STOP"
+}

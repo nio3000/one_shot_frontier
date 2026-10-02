@@ -1,0 +1,21 @@
+{
+  "status": "ORIGINAL_SOURCE_RECOVERY_PENDING",
+  "expected_original_source_sha256": "ade3cc45822978391d4eb00070608a54650db97e436051b5eb4e32d1b6b358b1",
+  "original_bytecode_sha256": "164d597bd096e3643820f68754e93dd8ecc90d4381ad6ed4021c1412c8108505",
+  "replacement_sha256": "f2b5b79528285a59d9e9c64e7f328d9a7f504f069660b1d0cd20e1a771730198",
+  "reason": "The resumed turn overwrote a preexisting untracked extraction source before checking current state. Formal outcome artifacts were preserved. Original compiled module passed all 61 existing tests without reevaluating real outcomes.",
+  "formal_rerun_performed": false,
+  "original_source_recovered": false,
+  "temporary_behavior_recovery": "Original preserved bytecode is loaded by a hash-checked Python 3.11 shim; this is not a source-provenance recovery.",
+  "validation": "61 passed; no real-outcome evaluation rerun",
+  "formal_artifact_hash_checks_pass": true,
+  "frozen_rff_array_hash_checks_pass": true,
+  "feature_bank_cache_hash_checks_pass": true,
+  "historical_unrelated_files_checked": 41,
+  "historical_unrelated_files_changed": [],
+  "runner_expected_source_sha256": "d659eb274b3d089fbdc668fe322cc0b4c28c93a14ef6dcbc744f48507ca6c88d",
+  "runner_current_source_sha256": "bd54354a9960550692ea68ff664542696095f5f3032ec96b095e5dee0067039f",
+  "runner_source_provenance_match": false,
+  "git_diff_check_pass": true,
+  "x2_commit_performed": false
+}

@@ -1,0 +1,40 @@
+{
+  "changed_implementation_fields": [
+    "RFF input width per layer",
+    "RFF W/b arrays (regenerated from the same frozen seeds)"
+  ],
+  "correct_input_dimensions": {
+    "resnet18_imagenet1k_v1": {
+      "layer1": 64,
+      "layer2": 128,
+      "layer3": 256,
+      "layer4": 512
+    },
+    "vit_b_16_imagenet1k_v1": {
+      "B12": 768,
+      "B3": 768,
+      "B6": 768,
+      "B9": 768
+    }
+  },
+  "detected_stage": "X2 formal run attempt 1 (CUDA)",
+  "fix": "RFF input width is now derived from frontier.cmr_feature_extract.X2_RAW_LAYER_DIM (the frozen action family); a verify_rff_dimensions() guard fails closed on any stored/declared/frozen width mismatch",
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "outcome_access": "NONE - the run aborted with a shape error before any X2 BACC was computed",
+  "record_type": "CMR_V1_X2_ENGINEERING_CORRECTION",
+  "root_cause": "tools/run_cmr_v1.py build_feature_map_manifest used a hard-coded RFF input width (512 for ResNet-18, 768 for ViT) instead of the frozen per-layer width from the frozen action family",
+  "symptom": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (50000x64 and 512x256)",
+  "unchanged_protocol_fields": [
+    "datasets",
+    "splits",
+    "encoders",
+    "pretrained weights",
+    "preprocessing",
+    "candidate layers",
+    "RFF dimension m",
+    "RFF sigma",
+    "RFF seed derivation",
+    "thresholds",
+    "final decision matrix"
+  ]
+}

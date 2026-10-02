@@ -1,25 +1,30 @@
-"""CMR-V1 X1 - exact kernel-prototype representation-layer collision.
+"""CMR-V1 kernel-prototype computations for the frozen X1 and X2 stages.
 
 Frozen authority (read-only; never tuned by this implementation):
 
-- ``docs/governance/nature/CROSS_MECHANISM_REPLICATION_PROTOCOL_V1.md`` (section 7);
-- ``configs/cross_mechanism_replication_protocol_v1.yaml`` (key ``x1``);
-- ``docs/phases/cmr_v1/CMR_V1_GATE_MATRIX.csv`` (stage X1).
+- ``docs/governance/nature/CROSS_MECHANISM_REPLICATION_PROTOCOL_V1.md`` (sections 5 and 7-8);
+- ``configs/cross_mechanism_replication_protocol_v1.yaml`` (keys ``x1``, ``x2``, ``rff``);
+- ``docs/phases/cmr_v1/CMR_V1_GATE_MATRIX.csv`` (stages X1 and X2).
 
 The X1 witness is analytic and exact: two class-conditional finite Fourier-feature
 patterns whose class counts and class vector sums collide exactly, while the
 downstream representation-layer risk is inverted between the two tasks.
 
-Scope guard: this module implements only X1. It touches no real dataset, no
-encoder, no random Fourier map and no X2-X5 machinery. All arithmetic uses
-``float64``; the frozen numeric tolerance ``1e-12`` must never be relaxed.
+X2 machinery in this module is arithmetic only: frozen Gaussian-RBF maps, the
+one-shot class-sum message, prototype reconstruction and the frozen X2 gates. It
+performs no dataset access and no encoder forward pass; feature extraction lives
+in :mod:`frontier.cmr_feature_extract`. All arithmetic uses ``float64``; the
+frozen X1 tolerance ``1e-12`` must never be relaxed.
 """
 
 from __future__ import annotations
 
 from fractions import Fraction
+import hashlib
 import json
 import math
+from os import PathLike
+from pathlib import Path
 from typing import Any, Mapping
 
 import numpy as np
@@ -581,3 +586,444 @@ def evaluate_x1_exact_collision() -> dict[str, Any]:
         "core_gates_pass": bool(all(gate["passed"] for gate in gates.values())),
     }
     return to_jsonable(result)
+
+
+# =============================================================================
+# X2 - action relevance of the frozen representation-layer action family
+# =============================================================================
+# Frozen action family (protocol section 5.1). No layer may be added, removed or
+# substituted after protocol freeze; these tuples are checked against the frozen
+# protocol YAML at load time by :func:`load_x2_protocol_constants`.
+X2_ENCODER_LAYERS: dict[str, tuple[str, ...]] = {
+    "resnet18_imagenet1k_v1": ("layer1", "layer2", "layer3", "layer4"),
+    "vit_b_16_imagenet1k_v1": ("B3", "B6", "B9", "B12"),
+}
+X2_DATASETS: tuple[str, ...] = ("cifar100", "eurosat", "pathmnist", "dermamnist")
+X2_CONDITIONS: tuple[tuple[str, str], ...] = tuple(
+    (dataset, encoder) for dataset in X2_DATASETS for encoder in X2_ENCODER_LAYERS
+)
+
+X2_DECISION_PASS = "X2_PASS_ACTION_FAMILY_DECISION_RELEVANT"
+X2_DECISION_FAIL = "ACTION_FAMILY_NOT_DECISION_RELEVANT"
+X2_FAIL_FINAL_CMR_DECISION = "CMR-D"
+
+X2_RFF_MASTER_SEED = 20261001
+X2_RFF_DIMENSION = 256
+X2_RFF_SIGMA = 1.0
+X2_AGGREGATION_TOLERANCE = 1e-8
+X2_ACTION_RELEVANT_SPREAD_MIN = 0.01
+X2_UNIQUE_BEST_MARGIN_MIN = 0.002
+
+# Repository-relative frozen protocol authority (existence is asserted, never modified).
+CMR_PROTOCOL_YAML_REL = "configs/cross_mechanism_replication_protocol_v1.yaml"
+
+
+def rff_seed(encoder_id: str, layer_id: str, master_seed: int = X2_RFF_MASTER_SEED) -> int:
+    """Frozen per-layer RFF seed derivation (protocol section 5.2).
+
+    ``sha256(f"{master_seed}|{encoder_id}|{layer_id}")`` -> first 8 bytes ->
+    big-endian -> modulo ``2**32``.
+    """
+    if encoder_id not in X2_ENCODER_LAYERS:
+        raise ValueError(f"encoder outside frozen action family: {encoder_id!r}")
+    if layer_id not in X2_ENCODER_LAYERS[encoder_id]:
+        raise ValueError(f"layer outside frozen action family: {layer_id!r}")
+    digest = hashlib.sha256(f"{master_seed}|{encoder_id}|{layer_id}".encode("utf-8")).digest()
+    return int.from_bytes(digest[:8], "big") % (2**32)
+
+
+def generate_rff(
+    encoder_id: str,
+    layer_id: str,
+    input_dim: int,
+    master_seed: int = X2_RFF_MASTER_SEED,
+    dimension: int = X2_RFF_DIMENSION,
+    sigma: float = X2_RFF_SIGMA,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Frozen Gaussian-RBF map: ``W ~ N(0, sigma^-2)``, ``b ~ U(0, 2*pi)``, float64."""
+    if int(input_dim) <= 0:
+        raise ValueError("input_dim must be positive")
+    generator = np.random.Generator(np.random.PCG64(rff_seed(encoder_id, layer_id, master_seed)))
+    w = generator.normal(0.0, float(sigma) ** -1.0, size=(int(dimension), int(input_dim)))
+    b = generator.uniform(0.0, 2.0 * np.pi, size=int(dimension))
+    return (
+        np.ascontiguousarray(w, dtype=FLOAT_DTYPE),
+        np.ascontiguousarray(b, dtype=FLOAT_DTYPE),
+    )
+
+
+def array_sha256(array: np.ndarray) -> str:
+    """Content hash of a frozen numeric array (dtype, shape, C-order bytes)."""
+    arr = np.ascontiguousarray(array)
+    digest = hashlib.sha256()
+    digest.update(str(arr.dtype).encode("utf-8"))
+    digest.update(str(arr.shape).encode("utf-8"))
+    digest.update(arr.tobytes())
+    return digest.hexdigest()
+
+
+def normalize_layer_features(features: np.ndarray) -> np.ndarray:
+    """Row-wise L2 normalization of frozen layer features in ``float64``."""
+    x = np.asarray(features, dtype=FLOAT_DTYPE)
+    if x.ndim != 2:
+        raise ValueError("layer features must be a 2-D array")
+    norms = np.linalg.norm(x, axis=1, keepdims=True)
+    if not np.isfinite(x).all() or not np.isfinite(norms).all() or np.any(norms <= 0.0):
+        raise ValueError("non-finite or zero-norm layer feature")
+    return x / norms
+
+
+def apply_rff(
+    features: np.ndarray, w: np.ndarray, b: np.ndarray, dimension: int = X2_RFF_DIMENSION
+) -> np.ndarray:
+    """Apply the frozen map: ``sqrt(2/m) * cos(W u + b)``."""
+    x = np.asarray(features, dtype=FLOAT_DTYPE)
+    w = np.asarray(w, dtype=FLOAT_DTYPE)
+    b = np.asarray(b, dtype=FLOAT_DTYPE)
+    if x.ndim != 2:
+        raise ValueError("features must be a 2-D array")
+    if w.shape != (int(dimension), x.shape[1]) or b.shape != (int(dimension),):
+        raise ValueError(
+            f"frozen RFF shape mismatch: W {w.shape} b {b.shape} for input {x.shape[1]}"
+        )
+    return np.sqrt(2.0 / float(dimension)) * np.cos(x @ w.T + b)
+
+
+def aggregate_client_messages(
+    features: np.ndarray,
+    labels: np.ndarray,
+    clients: np.ndarray,
+    n_clients: int,
+    tolerance: float = X2_AGGREGATION_TOLERANCE,
+) -> tuple[dict[int, dict[str, Any]], dict[str, Any]]:
+    """One-shot client aggregation and its centralized recovery check.
+
+    Only class counts and class vector sums are transmitted; the reconstruction
+    of the global class sums from client messages must agree with the
+    centralized class sums to ``tolerance``.
+    """
+    labels = np.asarray(labels, dtype=np.int64).reshape(-1)
+    clients = np.asarray(clients, dtype=np.int64).reshape(-1)
+    x = np.asarray(features, dtype=FLOAT_DTYPE)
+    if x.ndim != 2 or x.shape[0] != labels.shape[0]:
+        raise ValueError("features/labels shape mismatch")
+    if clients.shape != labels.shape:
+        raise ValueError("client assignment must cover every record exactly once")
+    if np.any((clients < 0) | (clients >= int(n_clients))):
+        raise ValueError("invalid client assignment")
+    centralized = class_message(x, labels)
+    aggregated = {
+        int(c): {"count": 0, "vector_sum": np.zeros_like(entry["vector_sum"])}
+        for c, entry in centralized.items()
+    }
+    for client in range(int(n_clients)):
+        mask = clients == client
+        if not np.any(mask):
+            continue
+        for c, entry in class_message(x[mask], labels[mask]).items():
+            aggregated[int(c)]["count"] += int(entry["count"])
+            aggregated[int(c)]["vector_sum"] = (
+                aggregated[int(c)]["vector_sum"] + entry["vector_sum"]
+            )
+    counts_equal = all(
+        int(aggregated[int(c)]["count"]) == int(centralized[int(c)]["count"])
+        for c in centralized
+    )
+    max_abs = max(
+        float(
+            np.max(
+                np.abs(
+                    aggregated[int(c)]["vector_sum"] - centralized[int(c)]["vector_sum"]
+                )
+            )
+        )
+        for c in centralized
+    )
+    recovery = {
+        "counts_equal": bool(counts_equal),
+        "max_abs": max_abs,
+        "tolerance": float(tolerance),
+        "passed": bool(counts_equal and max_abs <= float(tolerance)),
+    }
+    return aggregated, recovery
+
+
+def predict_prototype_batch(
+    features: np.ndarray,
+    prototypes: Mapping[int, np.ndarray],
+    batch_size: int = 4096,
+) -> np.ndarray:
+    """Prototype classifier ``argmax_c <phi(x), mu_c>``; ties use smallest class ID.
+
+    Classes are evaluated in ascending canonical order, so ``np.argmax`` resolves
+    an exact score tie to the smallest canonical class ID.
+    """
+    if not prototypes:
+        raise ValueError("no prototypes supplied")
+    classes = np.asarray(sorted(int(c) for c in prototypes), dtype=np.int64)
+    means = np.stack(
+        [np.asarray(prototypes[int(c)], dtype=FLOAT_DTYPE) for c in classes]
+    ).astype(FLOAT_DTYPE)
+    x = np.asarray(features, dtype=FLOAT_DTYPE)
+    if x.ndim != 2 or x.shape[1] != means.shape[1]:
+        raise ValueError("feature/prototype dimension mismatch")
+    predictions = np.empty(x.shape[0], dtype=np.int64)
+    for start in range(0, x.shape[0], int(batch_size)):
+        stop = min(start + int(batch_size), x.shape[0])
+        scores = x[start:stop] @ means.T
+        predictions[start:stop] = classes[np.argmax(scores, axis=1)]
+    return predictions
+
+
+def bacc_from_predictions(labels: np.ndarray, predictions: np.ndarray) -> float:
+    """Balanced accuracy = unweighted mean of per-class recall."""
+    y = np.asarray(labels, dtype=np.int64).reshape(-1)
+    p = np.asarray(predictions, dtype=np.int64).reshape(-1)
+    if y.shape != p.shape:
+        raise ValueError("labels/predictions shape mismatch")
+    classes = sorted(set(int(v) for v in y.tolist()))
+    if not classes:
+        raise ValueError("no labels supplied")
+    recalls = [float(np.mean(p[y == c] == c)) for c in classes]
+    return float(np.mean(np.asarray(recalls, dtype=FLOAT_DTYPE)))
+
+
+def summarize_x2_condition(
+    dataset: str,
+    encoder: str,
+    bacc_by_layer: Mapping[str, float],
+    recovery: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Per-condition X2 summary: spread, best/second-best, UNIQUE_BEST, recovery."""
+    if encoder not in X2_ENCODER_LAYERS:
+        raise ValueError(f"encoder outside frozen action family: {encoder!r}")
+    actions = X2_ENCODER_LAYERS[encoder]
+    if set(bacc_by_layer) != set(actions):
+        raise ValueError("incomplete frozen action family for the condition")
+    bacc = {layer: float(bacc_by_layer[layer]) for layer in actions}
+    # Deterministic ordering: descending BACC, then frozen action-family order.
+    order = sorted(actions, key=lambda layer: (-bacc[layer], actions.index(layer)))
+    best, second = order[0], order[1]
+    margin = float(bacc[best] - bacc[second])
+    spread = float(max(bacc.values()) - min(bacc.values()))
+    finite = bool(np.isfinite(np.asarray(list(bacc.values()) + [float(recovery["max_abs"])])).all())
+    return {
+        "dataset": dataset,
+        "encoder": encoder,
+        "balanced_accuracy": bacc,
+        "best_layer": best,
+        "second_best_layer": second,
+        "best_margin": margin,
+        "layer_spread": spread,
+        "action_relevant": bool(finite and spread >= X2_ACTION_RELEVANT_SPREAD_MIN),
+        "unique_best": best if (finite and margin >= X2_UNIQUE_BEST_MARGIN_MIN) else None,
+        "aggregation_recovery_max_abs": float(recovery["max_abs"]),
+        "aggregation_recovery_pass": bool(recovery["passed"]),
+        "finite_pass": finite,
+    }
+
+
+def evaluate_x2_gates(conditions: list[Mapping[str, Any]] | tuple[Mapping[str, Any], ...]) -> dict[str, Any]:
+    """Frozen X2 gate evaluation (protocol section 8.5).
+
+    Conditions: X2-G1 >= 6/8 action-relevant, X2-G2 >= 2 distinct ResNet
+    UNIQUE_BEST layers, X2-G3 >= 2 distinct ViT UNIQUE_BEST blocks, X2-G4 all
+    aggregation recoveries pass, X2-G5 all values finite.
+    """
+    expected = set(X2_CONDITIONS)
+    observed = {(str(c["dataset"]), str(c["encoder"])) for c in conditions}
+    if len(conditions) != len(expected) or observed != expected:
+        missing = sorted(expected - observed)
+        extra = sorted(observed - expected)
+        raise ValueError(
+            "X2 requires exactly the eight frozen structural conditions; "
+            f"missing={missing} extra={extra}"
+        )
+    relevant = int(sum(1 for c in conditions if c["action_relevant"]))
+    winners: dict[str, list[str]] = {}
+    for encoder in X2_ENCODER_LAYERS:
+        winners[encoder] = sorted(
+            {
+                str(c["unique_best"])
+                for c in conditions
+                if str(c["encoder"]) == encoder and c["unique_best"] is not None
+            }
+        )
+    max_abs = max(float(c["aggregation_recovery_max_abs"]) for c in conditions)
+    gates = {
+        "X2-G1": {
+            "name": "action-relevant structural conditions",
+            "passed": bool(relevant >= 6),
+            "action_relevant_count": relevant,
+            "required": 6,
+            "structural_conditions": len(expected),
+            "spread_threshold": X2_ACTION_RELEVANT_SPREAD_MIN,
+        },
+        "X2-G2": {
+            "name": "ResNet-18 UNIQUE_BEST layer breadth",
+            "passed": bool(len(winners["resnet18_imagenet1k_v1"]) >= 2),
+            "distinct_unique_best": winners["resnet18_imagenet1k_v1"],
+            "required": 2,
+            "margin_threshold": X2_UNIQUE_BEST_MARGIN_MIN,
+        },
+        "X2-G3": {
+            "name": "ViT-B/16 UNIQUE_BEST block breadth",
+            "passed": bool(len(winners["vit_b_16_imagenet1k_v1"]) >= 2),
+            "distinct_unique_best": winners["vit_b_16_imagenet1k_v1"],
+            "required": 2,
+            "margin_threshold": X2_UNIQUE_BEST_MARGIN_MIN,
+        },
+        "X2-G4": {
+            "name": "aggregation recovery",
+            "passed": bool(all(bool(c["aggregation_recovery_pass"]) for c in conditions)),
+            "max_abs": max_abs,
+            "tolerance": X2_AGGREGATION_TOLERANCE,
+        },
+        "X2-G5": {
+            "name": "finiteness",
+            "passed": bool(all(bool(c["finite_pass"]) for c in conditions)),
+        },
+    }
+    passed = all(bool(gate["passed"]) for gate in gates.values())
+    return {
+        "gates": gates,
+        "all_gates_pass": passed,
+        "decision": X2_DECISION_PASS if passed else X2_DECISION_FAIL,
+        "final_cmr_decision": None if passed else X2_FAIL_FINAL_CMR_DECISION,
+        "stop": (not passed),
+    }
+
+
+def load_x2_protocol_constants(protocol_yaml: PathLike | None = None) -> dict[str, Any]:
+    """Read and cross-check the frozen X2 authority from the protocol YAML.
+
+    Fails closed on any drift of datasets, encoders, layers, RFF settings,
+    thresholds, client partition, primary metric or final decision matrix.
+    """
+
+    def _repo_root() -> Path:
+        for candidate in Path(__file__).resolve().parents:
+            if (candidate / CMR_PROTOCOL_YAML_REL).is_file():
+                return candidate
+        raise FileNotFoundError(f"cannot locate {CMR_PROTOCOL_YAML_REL}")
+
+    path = Path(protocol_yaml) if protocol_yaml is not None else _repo_root() / CMR_PROTOCOL_YAML_REL
+    if not path.is_file():
+        raise FileNotFoundError(path)
+    import yaml
+
+    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    protocol = document["protocol"]
+    x2 = document["x2"]
+    rff = document["rff"]
+    encoders = document["encoders"]
+    classifier = document["classifier"]
+    target = document["scientific_target"]
+    seed_derivation = rff["seed_derivation"]
+    partition = x2["client_partition"]
+
+    failures: list[str] = []
+    if protocol["id"] != PROTOCOL_ID:
+        failures.append("protocol.id")
+    if protocol["version"] != PROTOCOL_VERSION:
+        failures.append("protocol.version")
+    if protocol["status"] != PROTOCOL_STATUS:
+        failures.append("protocol.status")
+    if tuple(x2["datasets"]) != X2_DATASETS:
+        failures.append("x2.datasets")
+    if tuple(x2["encoders"]) != tuple(X2_ENCODER_LAYERS):
+        failures.append("x2.encoders")
+    if int(x2["structural_conditions"]) != len(X2_CONDITIONS):
+        failures.append("x2.structural_conditions")
+    for encoder_id, layer_tuple in X2_ENCODER_LAYERS.items():
+        if tuple(encoders[encoder_id]["layers"]) != layer_tuple:
+            failures.append(f"encoders.{encoder_id}.layers")
+    if encoders["normalization"] != "l2":
+        failures.append("encoders.normalization")
+    if int(rff["dimension"]) != X2_RFF_DIMENSION:
+        failures.append("rff.dimension")
+    if float(rff["sigma"]) != X2_RFF_SIGMA:
+        failures.append("rff.sigma")
+    if int(rff["master_seed"]) != X2_RFF_MASTER_SEED:
+        failures.append("rff.master_seed")
+    if rff["generation_dtype"] != FLOAT_DTYPE_NAME:
+        failures.append("rff.generation_dtype")
+    if rff["rng"] != "numpy_Generator_PCG64":
+        failures.append("rff.rng")
+    if seed_derivation["string_template"] != "20261001|<encoder_id>|<layer_id>":
+        failures.append("rff.seed_derivation.string_template")
+    if seed_derivation["hash"] != "sha256" or str(seed_derivation["bytes"]) != "first_8":
+        failures.append("rff.seed_derivation.hash_or_bytes")
+    if seed_derivation["byte_order"] != "big":
+        failures.append("rff.seed_derivation.byte_order")
+    if int(seed_derivation["modulus"]) != 2**32:
+        failures.append("rff.seed_derivation.modulus")
+    if int(partition["n_clients"]) != 20:
+        failures.append("x2.client_partition.n_clients")
+    if float(partition["dirichlet_alpha"]) != 0.10:
+        failures.append("x2.client_partition.dirichlet_alpha")
+    if int(partition["seed"]) != 20260908:
+        failures.append("x2.client_partition.seed")
+    if bool(partition["scientific_axis"]) is not False:
+        failures.append("x2.client_partition.scientific_axis")
+    if float(x2["action_relevant_spread_min"]) != X2_ACTION_RELEVANT_SPREAD_MIN:
+        failures.append("x2.action_relevant_spread_min")
+    if float(x2["unique_best_margin_min"]) != X2_UNIQUE_BEST_MARGIN_MIN:
+        failures.append("x2.unique_best_margin_min")
+    if int(x2["gate"]["min_action_relevant_conditions"]) != 6:
+        failures.append("x2.gate.min_action_relevant_conditions")
+    if int(x2["gate"]["resnet_min_distinct_unique_best_layers"]) != 2:
+        failures.append("x2.gate.resnet_min_distinct_unique_best_layers")
+    if int(x2["gate"]["vit_min_distinct_unique_best_layers"]) != 2:
+        failures.append("x2.gate.vit_min_distinct_unique_best_layers")
+    if bool(x2["gate"]["require_all_aggregation_recovery"]) is not True:
+        failures.append("x2.gate.require_all_aggregation_recovery")
+    if bool(x2["gate"]["require_all_finite"]) is not True:
+        failures.append("x2.gate.require_all_finite")
+    if x2["fail_decision"] != X2_DECISION_FAIL:
+        failures.append("x2.fail_decision")
+    if bool(x2["fail_stops_protocol"]) is not True:
+        failures.append("x2.fail_stops_protocol")
+    if target["downstream_action"] != "representation_layer":
+        failures.append("scientific_target.downstream_action")
+    if target["primary_metric"] != "balanced_accuracy":
+        failures.append("scientific_target.primary_metric")
+    if float(document["message"]["aggregation_recovery_abs_tolerance"]) != X2_AGGREGATION_TOLERANCE:
+        failures.append("message.aggregation_recovery_abs_tolerance")
+    if classifier["class_tie_break"] != "smallest_canonical_class_id":
+        failures.append("classifier.class_tie_break")
+    if classifier["score"] != "inner_product":
+        failures.append("classifier.score")
+    if "X2_FAIL" not in document["final_decision"]["CMR-D"]["require_any"][0]:
+        failures.append("final_decision.CMR-D.require_any")
+    if failures:
+        raise RuntimeError(f"frozen CMR-V1 x2 authority drift: {sorted(set(failures))}")
+    return {
+        "protocol_id": protocol["id"],
+        "protocol_version": protocol["version"],
+        "protocol_status": protocol["status"],
+        "protocol_yaml_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        "datasets": list(X2_DATASETS),
+        "encoders": {k: list(v) for k, v in X2_ENCODER_LAYERS.items()},
+        "rff": {
+            "dimension": X2_RFF_DIMENSION,
+            "sigma": X2_RFF_SIGMA,
+            "master_seed": X2_RFF_MASTER_SEED,
+            "generation_dtype": FLOAT_DTYPE_NAME,
+            "rng": rff["rng"],
+        },
+        "x2": {
+            "action_relevant_spread_min": X2_ACTION_RELEVANT_SPREAD_MIN,
+            "unique_best_margin_min": X2_UNIQUE_BEST_MARGIN_MIN,
+            "min_action_relevant_conditions": 6,
+            "aggregation_tolerance": X2_AGGREGATION_TOLERANCE,
+            "client_partition": {
+                "n_clients": 20,
+                "dirichlet_alpha": 0.10,
+                "seed": 20260908,
+            },
+        },
+        "prohibited_after_x2_outcome_access": list(
+            document["prohibited_after_x2_outcome_access"]
+        ),
+    }

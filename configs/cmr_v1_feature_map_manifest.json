@@ -1,0 +1,212 @@
+{
+  "frozen_before_x2_outcome_access": true,
+  "generation_code": "src/frontier/cmr_kernel_layer.py",
+  "generation_code_sha256": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "manifest_type": "CMR_V1_FEATURE_MAP_MANIFEST",
+  "maps": [
+    {
+      "array_path": "data/cmr_v1/x2/rff/resnet18_imagenet1k_v1__layer1.npz",
+      "b_sha256": "90286402ec34ec6342d49f42d844b19a9a2dfbdaa3ca2a4aeafa39c5ea0a9b5e",
+      "datasets_using_this_map": [
+        "cifar100",
+        "eurosat",
+        "pathmnist",
+        "dermamnist"
+      ],
+      "derived_seed": 2593967492,
+      "dtype": "float64",
+      "encoder": "resnet18_imagenet1k_v1",
+      "generation_code_sha256": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+      "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+      "input_dimension": 64,
+      "layer": "layer1",
+      "master_seed": 20261001,
+      "output_dimension": 256,
+      "seed_derivation_string": "20261001|resnet18_imagenet1k_v1|layer1",
+      "sigma": 1.0,
+      "w_sha256": "b976c18efb8afce39ea6d4856bf319a0ce53c970ec9b5fc1e74f005b20db3a72"
+    },
+    {
+      "array_path": "data/cmr_v1/x2/rff/resnet18_imagenet1k_v1__layer2.npz",
+      "b_sha256": "bf397e99dd9d4c18d28f7aaaadc2a1ac3e39453895d7201a73f6e2a462beb129",
+      "datasets_using_this_map": [
+        "cifar100",
+        "eurosat",
+        "pathmnist",
+        "dermamnist"
+      ],
+      "derived_seed": 3655982490,
+      "dtype": "float64",
+      "encoder": "resnet18_imagenet1k_v1",
+      "generation_code_sha256": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+      "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+      "input_dimension": 128,
+      "layer": "layer2",
+      "master_seed": 20261001,
+      "output_dimension": 256,
+      "seed_derivation_string": "20261001|resnet18_imagenet1k_v1|layer2",
+      "sigma": 1.0,
+      "w_sha256": "b541d5b7d670589fce3bdea293f9e75e63f4c4b6eb80e2e6d97fabe890eed019"
+    },
+    {
+      "array_path": "data/cmr_v1/x2/rff/resnet18_imagenet1k_v1__layer3.npz",
+      "b_sha256": "35b2172a7788f0e526611341d7eab62dd8da65d67412741ab9957247f520e1b9",
+      "datasets_using_this_map": [
+        "cifar100",
+        "eurosat",
+        "pathmnist",
+        "dermamnist"
+      ],
+      "derived_seed": 704796591,
+      "dtype": "float64",
+      "encoder": "resnet18_imagenet1k_v1",
+      "generation_code_sha256": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+      "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+      "input_dimension": 256,
+      "layer": "layer3",
+      "master_seed": 20261001,
+      "output_dimension": 256,
+      "seed_derivation_string": "20261001|resnet18_imagenet1k_v1|layer3",
+      "sigma": 1.0,
+      "w_sha256": "2c66a11a5999f5d52827fc1f0af3fb003cbc7eb961498ac9b9bd8058caebe214"
+    },
+    {
+      "array_path": "data/cmr_v1/x2/rff/resnet18_imagenet1k_v1__layer4.npz",
+      "b_sha256": "8a020baa20d558dd0634e963c37635f217c6192490baf0db0599a8389333375d",
+      "datasets_using_this_map": [
+        "cifar100",
+        "eurosat",
+        "pathmnist",
+        "dermamnist"
+      ],
+      "derived_seed": 1652377611,
+      "dtype": "float64",
+      "encoder": "resnet18_imagenet1k_v1",
+      "generation_code_sha256": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+      "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+      "input_dimension": 512,
+      "layer": "layer4",
+      "master_seed": 20261001,
+      "output_dimension": 256,
+      "seed_derivation_string": "20261001|resnet18_imagenet1k_v1|layer4",
+      "sigma": 1.0,
+      "w_sha256": "567171ece37561b5d69aa10711be4da65cce393459d80d888fe0291f99f3762b"
+    },
+    {
+      "array_path": "data/cmr_v1/x2/rff/vit_b_16_imagenet1k_v1__B3.npz",
+      "b_sha256": "778bf7cb00369ead22b9b6eff2f00dc19e5cc68161e939b4678526d995d85f93",
+      "datasets_using_this_map": [
+        "cifar100",
+        "eurosat",
+        "pathmnist",
+        "dermamnist"
+      ],
+      "derived_seed": 2431622510,
+      "dtype": "float64",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "generation_code_sha256": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+      "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+      "input_dimension": 768,
+      "layer": "B3",
+      "master_seed": 20261001,
+      "output_dimension": 256,
+      "seed_derivation_string": "20261001|vit_b_16_imagenet1k_v1|B3",
+      "sigma": 1.0,
+      "w_sha256": "9ad5a0396c6485113d65478d55f3922ecf6d8c570a0f2fbe8b2234d4b0b7dd86"
+    },
+    {
+      "array_path": "data/cmr_v1/x2/rff/vit_b_16_imagenet1k_v1__B6.npz",
+      "b_sha256": "5f29b2275c26088adfedbe1473a335615fe26886d01f94b9233b0659d4b79a38",
+      "datasets_using_this_map": [
+        "cifar100",
+        "eurosat",
+        "pathmnist",
+        "dermamnist"
+      ],
+      "derived_seed": 31367928,
+      "dtype": "float64",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "generation_code_sha256": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+      "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+      "input_dimension": 768,
+      "layer": "B6",
+      "master_seed": 20261001,
+      "output_dimension": 256,
+      "seed_derivation_string": "20261001|vit_b_16_imagenet1k_v1|B6",
+      "sigma": 1.0,
+      "w_sha256": "ab3c56a3c689a414c05b6651127f7d1096280cfa2f49cf636f07057d4f555086"
+    },
+    {
+      "array_path": "data/cmr_v1/x2/rff/vit_b_16_imagenet1k_v1__B9.npz",
+      "b_sha256": "cba68ba7e7b6179217511ffd38c6ebedc52f3c9a227ac442e19dc5d9af6fda66",
+      "datasets_using_this_map": [
+        "cifar100",
+        "eurosat",
+        "pathmnist",
+        "dermamnist"
+      ],
+      "derived_seed": 136646290,
+      "dtype": "float64",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "generation_code_sha256": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+      "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+      "input_dimension": 768,
+      "layer": "B9",
+      "master_seed": 20261001,
+      "output_dimension": 256,
+      "seed_derivation_string": "20261001|vit_b_16_imagenet1k_v1|B9",
+      "sigma": 1.0,
+      "w_sha256": "7205d3d44da3f28f8527dc00381adb8b046aae1c89bf42a604782252762b11fa"
+    },
+    {
+      "array_path": "data/cmr_v1/x2/rff/vit_b_16_imagenet1k_v1__B12.npz",
+      "b_sha256": "e0315d3c8fb30ee23798ab25a2b6907188ce37c272423dd776564994b46c8cc4",
+      "datasets_using_this_map": [
+        "cifar100",
+        "eurosat",
+        "pathmnist",
+        "dermamnist"
+      ],
+      "derived_seed": 3117873395,
+      "dtype": "float64",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "generation_code_sha256": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3",
+      "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+      "input_dimension": 768,
+      "layer": "B12",
+      "master_seed": 20261001,
+      "output_dimension": 256,
+      "seed_derivation_string": "20261001|vit_b_16_imagenet1k_v1|B12",
+      "sigma": 1.0,
+      "w_sha256": "a827cdc3bd0a6a6c5970cd8f96b339ebc9c36e8ba4da04cec030f3abbacb7c0e"
+    }
+  ],
+  "protocol_id": "CMR-V1",
+  "protocol_status": "FROZEN_BEFORE_CMR_OUTCOME_ACCESS",
+  "protocol_version": "1.0.0-FROZEN",
+  "rff": {
+    "dimension": 256,
+    "formula": "sqrt(2/m) * cos(W u + b)",
+    "generation_dtype": "float64",
+    "master_seed": 20261001,
+    "rng": "numpy_Generator_PCG64",
+    "seed_derivation": {
+      "byte_order": "big",
+      "bytes": "first_8",
+      "hash": "sha256",
+      "modulus": 4294967296,
+      "string_template": "20261001|<encoder_id>|<layer_id>"
+    },
+    "sigma": 1.0,
+    "type": "gaussian_rbf_random_fourier_features"
+  },
+  "stage": "X2",
+  "tuning_prohibited": [
+    "bandwidth",
+    "dimension",
+    "seed",
+    "multi_seed_selection",
+    "post_outcome_regeneration"
+  ]
+}

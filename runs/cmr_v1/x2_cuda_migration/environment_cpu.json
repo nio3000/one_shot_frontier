@@ -1,0 +1,47 @@
+{
+  "cpu_cache_classification": "CPU_PREMIGRATION_REFERENCE_ONLY",
+  "cpu_premigration_cache": {
+    "conditions": [
+      {
+        "bytes": 115694138,
+        "condition_id": "cifar100__resnet18_imagenet1k_v1",
+        "path": "data/cmr_v1/x2/features/cifar100__resnet18_imagenet1k_v1.npz",
+        "sha256": "6814655a5e7af658ec1b9b65ca7d330f5ade467b2e927781a480fa753083b8eb",
+        "status": "CPU_PREMIGRATION_REFERENCE_ONLY"
+      }
+    ],
+    "root": "data/cmr_v1/x2",
+    "status": "CPU_PREMIGRATION_REFERENCE_ONLY",
+    "use": "engineering/pre-migration reference only; never the formal X2 feature bank"
+  },
+  "device": "cpu",
+  "environment": {
+    "cuda_available": false,
+    "cuda_runtime_version": null,
+    "cudnn_version": null,
+    "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+    "numpy_version": "2.4.6",
+    "os": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "python_executable": "D:\\ProgramData\\anaconda3\\python.exe",
+    "python_version": "3.11.7",
+    "torch_num_threads": 6,
+    "torch_version": "2.12.1+cpu",
+    "torchvision_version": "0.27.1+cpu"
+  },
+  "protocol": {
+    "id": "CMR-V1",
+    "status": "FROZEN_BEFORE_CMR_OUTCOME_ACCESS",
+    "version": "1.0.0-FROZEN"
+  },
+  "protocol_files": {
+    "gate_matrix_sha256": "91e4834f5f671062c6f45ed87b6ef72235aeada0eef187eb8df33f66c0940001",
+    "protocol_md_sha256": "58132ae03f3ab70bb82443a30d7c313a39d068eeb2fb2533d68b5a4b2ab1025a",
+    "protocol_yaml_sha256": "8004ae02b690163ce41494fbf6f5464c6aee1712709d05428727fa9d658a1e4b"
+  },
+  "role": "CPU_REFERENCE_BACKEND",
+  "source_files": {
+    "src/frontier/cmr_feature_extract.py": "ade3cc45822978391d4eb00070608a54650db97e436051b5eb4e32d1b6b358b1",
+    "src/frontier/cmr_kernel_layer.py": "bfd9cd4184b4945cb44e145186ed039168667953a25e7e1b4f1b35e010062fd3"
+  }
+}

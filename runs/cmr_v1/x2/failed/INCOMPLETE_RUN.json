@@ -1,0 +1,8 @@
+{
+  "detail": "frozen RFF input width bug; fixed by deriving widths from the frozen action family",
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "note": "Engineering failure before a complete formal X2 evaluation. No gate may be changed; a rerun must use identical frozen authority.",
+  "outcome_access_completed": false,
+  "reason": "ENGINEERING_FAILURE_NO_OUTCOME_ACCESS",
+  "run_type": "CMR_V1_X2_INCOMPLETE"
+}

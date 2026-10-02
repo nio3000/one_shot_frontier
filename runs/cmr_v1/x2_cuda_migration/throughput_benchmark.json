@@ -1,0 +1,175 @@
+{
+  "benchmark_type": "CMR_V1_X2_ENGINEERING_THROUGHPUT",
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "note": "engineering throughput only; batch size is never selected by model performance",
+  "results": [
+    {
+      "batch_size": 32,
+      "device": "cpu",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 53.34349044181079,
+      "records": 1024,
+      "seconds": 19.196344137191772,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 64,
+      "device": "cpu",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 54.23695425574986,
+      "records": 1024,
+      "seconds": 18.88011622428894,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 128,
+      "device": "cpu",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 52.01220773957475,
+      "records": 1024,
+      "seconds": 19.68768572807312,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 256,
+      "device": "cpu",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 47.608018022770416,
+      "records": 1024,
+      "seconds": 21.508981943130493,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 32,
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 324.8216772890592,
+      "peak_vram_mib": 257.1,
+      "records": 1024,
+      "seconds": 3.152498960494995,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 64,
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 346.2189535966337,
+      "peak_vram_mib": 471.4,
+      "records": 1024,
+      "seconds": 2.9576659202575684,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 128,
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 347.90100257813214,
+      "peak_vram_mib": 900.2,
+      "records": 1024,
+      "seconds": 2.943366050720215,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 256,
+      "device": "cuda",
+      "encoder": "resnet18_imagenet1k_v1",
+      "images_per_second": 350.99816596954116,
+      "peak_vram_mib": 1757.7,
+      "records": 1024,
+      "seconds": 2.9173941612243652,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 8,
+      "device": "cpu",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 7.3984998935443365,
+      "records": 1024,
+      "seconds": 138.40643572807312,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 16,
+      "device": "cpu",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 7.696982774472993,
+      "records": 1024,
+      "seconds": 133.03914403915405,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 32,
+      "device": "cpu",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 7.269862787412617,
+      "records": 1024,
+      "seconds": 140.85547828674316,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 64,
+      "device": "cpu",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 7.096578230451159,
+      "records": 1024,
+      "seconds": 144.2948935031891,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 8,
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 145.88428085414046,
+      "peak_vram_mib": 414.1,
+      "records": 1024,
+      "seconds": 7.019262075424194,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 16,
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 151.4362202726585,
+      "peak_vram_mib": 492.4,
+      "records": 1024,
+      "seconds": 6.761922597885132,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 32,
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 151.41010933691032,
+      "peak_vram_mib": 649.5,
+      "records": 1024,
+      "seconds": 6.763088703155518,
+      "status": "OK",
+      "workers": 0
+    },
+    {
+      "batch_size": 64,
+      "device": "cuda",
+      "encoder": "vit_b_16_imagenet1k_v1",
+      "images_per_second": 149.4712972380313,
+      "peak_vram_mib": 963.9,
+      "records": 1024,
+      "seconds": 6.850813627243042,
+      "status": "OK",
+      "workers": 0
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "backend": "cuda",
+  "device_probe": "cuda",
+  "environment": {
+    "cuda_available": true,
+    "cuda_runtime_version": "12.8",
+    "cudnn_version": 90701,
+    "driver_version": "616.56",
+    "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+    "gpu_capability": [
+      8,
+      9
+    ],
+    "gpu_free_mib": 6750.3,
+    "gpu_model": "NVIDIA GeForce RTX 4060",
+    "gpu_total_mib": 8187.5,
+    "numpy_version": "2.3.5",
+    "os": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "python_executable": "D:\\ProgramData\\anaconda3\\envs\\osf\\python.exe",
+    "python_version": "3.11.16",
+    "torch_num_threads": 6,
+    "torch_version": "2.7.0+cu128",
+    "torchvision_version": "0.22.0+cu128"
+  },
+  "git_head": "135f19d6c5146081740a990f82a18ce3fc3ecb83",
+  "layer_hooks": {
+    "resnet18_imagenet1k_v1": {
+      "layer1": {
+        "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+        "module_path": "model.layer1",
+        "module_type": "Sequential"
+      },
+      "layer2": {
+        "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+        "module_path": "model.layer2",
+        "module_type": "Sequential"
+      },
+      "layer3": {
+        "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+        "module_path": "model.layer3",
+        "module_type": "Sequential"
+      },
+      "layer4": {
+        "extraction_location": "post-stage tensor -> adaptive_avg_pool2d(1) -> flatten",
+        "module_path": "model.layer4",
+        "module_type": "Sequential"
+      }
+    },
+    "vit_b_16_imagenet1k_v1": {
+      "B12": {
+        "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+        "module_path": "model.encoder.layers[11]",
+        "module_type": "EncoderBlock"
+      },
+      "B3": {
+        "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+        "module_path": "model.encoder.layers[2]",
+        "module_type": "EncoderBlock"
+      },
+      "B6": {
+        "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+        "module_path": "model.encoder.layers[5]",
+        "module_type": "EncoderBlock"
+      },
+      "B9": {
+        "extraction_location": "post-block CLS token (token index 0) BEFORE encoder.ln (final LayerNorm)",
+        "module_path": "model.encoder.layers[8]",
+        "module_type": "EncoderBlock"
+      }
+    }
+  },
+  "preprocessing": {
+    "resnet18_imagenet1k_v1": {
+      "preprocessing_id": "torchvision_weights_transforms::ResNet18_Weights.IMAGENET1K_V1",
+      "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+      "transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331"
+    },
+    "vit_b_16_imagenet1k_v1": {
+      "preprocessing_id": "torchvision_weights_transforms::ViT_B_16_Weights.IMAGENET1K_V1",
+      "transform_repr": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+      "transform_sha256": "fb211ca08c603baf244ae63bb7dcca35441b73d4773540f373f2fd89abbab331"
+    }
+  },
+  "weights": {
+    "resnet18_imagenet1k_v1": {
+      "dtype": "torch.float32",
+      "parameter_count": 11176512,
+      "state_sha256": "265e8731e35794cf541d09323b6c506ca37d5f1e6ed308644182bb37d24e4080",
+      "weights_enum": "ResNet18_Weights.IMAGENET1K_V1"
+    },
+    "vit_b_16_imagenet1k_v1": {
+      "dtype": "torch.float32",
+      "parameter_count": 85798656,
+      "state_sha256": "ec73907db68f37496e98585432a9cc14fe94adf71b49632b4deac062d6c907aa",
+      "weights_enum": "ViT_B_16_Weights.IMAGENET1K_V1"
+    }
+  }
+}

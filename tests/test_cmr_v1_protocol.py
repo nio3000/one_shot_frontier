@@ -1,9 +1,18 @@
 """CMR-V1 protocol-freeze tests (T10-T11).
 
 T10: frozen protocol identity (id / version / status) and frozen file hashes.
-T11: no X2-X5 outcome artifact exists while X1 is the only authorized stage.
+T11: X3-X5 outcome artifacts never exist, and X2 artifacts exist only once the
+     X2 stage has been formally started with the frozen protocol.
 
 Frozen authority: ``docs/phases/cmr_v1/CMR_V1_FREEZE_MANIFEST.json``.
+
+Stage-transition note (recorded, not a protocol change): T11 originally asserted
+that *no* X2-X5 artifact existed while X1 was the only authorized stage. The X2
+stage is now authorized, so T11 keeps the X3-X5 prohibition unconditional and
+makes the X2 prohibition conditional on X2 not having started (identified by the
+absence of ``configs/cmr_v1_feature_map_manifest.json``, which the frozen X2
+stage writes before any X2 BACC is computed). No scientific threshold, layer,
+seed or gate is affected.
 """
 
 from __future__ import annotations
@@ -11,6 +20,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import subprocess
 import sys
 from pathlib import Path
 
@@ -34,6 +44,8 @@ PROTOCOL_YAML = ROOT / "configs/cross_mechanism_replication_protocol_v1.yaml"
 GATE_MATRIX = ROOT / "docs/phases/cmr_v1/CMR_V1_GATE_MATRIX.csv"
 FREEZE_MANIFEST = ROOT / "docs/phases/cmr_v1/CMR_V1_FREEZE_MANIFEST.json"
 IMPL_PROMPT = ROOT / "docs/phases/cmr_v1/CMR_V1_CODEX_X1_IMPLEMENTATION_PROMPT.md"
+
+FEATURE_MAP_MANIFEST = ROOT / "configs/cmr_v1_feature_map_manifest.json"
 
 
 def _sha256(path: Path) -> str:
@@ -98,28 +110,76 @@ def test_t10_x1_yaml_matches_module_constants():
     assert bool(x1["hard_gate"]) is True
 
 
-# -- T11: no X2-X5 outcome artifacts -------------------------------------------
-def test_t11_no_x2_to_x5_outcome_artifacts():
-    forbidden = [
-        ROOT / "runs/cmr_v1/x2",
-        ROOT / "runs/cmr_v1/x3",
-        ROOT / "runs/cmr_v1/x4",
-        ROOT / "runs/cmr_v1/x5",
-        ROOT / "evidence/cmr_v1/x2",
-        ROOT / "evidence/cmr_v1/x3",
-        ROOT / "evidence/cmr_v1/x4",
-        ROOT / "evidence/cmr_v1/x5",
-        ROOT / "configs/cmr_v1_feature_map_manifest.json",
-        ROOT / "configs/cmr_v1_feature_bank_manifest.json",
-        ROOT / "configs/cmr_v1_wilds_pair_manifest.json",
-        ROOT / "configs/cmr_v1_wilds_unblind_authorization.json",
-        ROOT / "configs/cmr_v1_external_raw_manifest.json",
-        ROOT / "configs/cmr_v1_external_pair_manifest.json",
-        ROOT / "configs/cmr_v1_external_unblind_authorization.json",
-    ]
+# -- T11: stage artifact discipline --------------------------------------------
+# Stage-transition note (recorded, not a protocol change): before the CMR-D
+# closeout, ``evidence/cmr_v1/final_gate_summary.json`` was on this list because
+# only a full CMR-A/B/C run could produce it. X2 failed its frozen X2-G2 gate and
+# the protocol stopped at CMR-D, whose closeout requires exactly that artifact, so
+# it is no longer an X3-X5 stage marker. The X3, X4 and X5 prohibitions below are
+# unchanged and still unconditional.
+X3_X4_X5_PATHS = (
+    "runs/cmr_v1/x3",
+    "runs/cmr_v1/x4",
+    "runs/cmr_v1/x5",
+    "evidence/cmr_v1/x3",
+    "evidence/cmr_v1/x4",
+    "evidence/cmr_v1/x5",
+    "configs/cmr_v1_wilds_pair_manifest.json",
+    "configs/cmr_v1_wilds_unblind_authorization.json",
+    "configs/cmr_v1_external_raw_manifest.json",
+    "configs/cmr_v1_external_pair_manifest.json",
+    "configs/cmr_v1_external_unblind_authorization.json",
+)
+
+X2_STAGE_PATHS = (
+    "runs/cmr_v1/x2",
+    "evidence/cmr_v1/x2",
+    "configs/cmr_v1_feature_map_manifest.json",
+    "configs/cmr_v1_feature_bank_manifest.json",
+)
+
+
+def _git(*arguments: str) -> str:
+    return subprocess.run(
+        ["git", *arguments],
+        cwd=str(ROOT),
+        capture_output=True,
+        text=True,
+        check=False,
+    ).stdout
+
+
+def test_t11_no_x3_to_x5_artifact_exists_or_was_ever_committed():
     existing = [
-        str(path.relative_to(ROOT)).replace("\\", "/")
-        for path in forbidden
-        if path.exists()
+        relative
+        for relative in X3_X4_X5_PATHS
+        if (ROOT / relative).exists()
     ]
-    assert existing == [], f"X2-X5 artifacts present at X1 time: {existing}"
+    assert existing == [], f"X3-X5 artifacts present: {existing}"
+    tracked = _git("ls-files", *X3_X4_X5_PATHS).split()
+    assert tracked == [], f"X3-X5 artifacts tracked by git: {tracked}"
+    history = _git("log", "--all", "--name-only", "--pretty=format:").splitlines()
+    committed = sorted(
+        {
+            line.strip()
+            for line in history
+            if line.strip().startswith(("runs/cmr_v1/x3", "runs/cmr_v1/x4", "runs/cmr_v1/x5",
+                                        "evidence/cmr_v1/x3", "evidence/cmr_v1/x4",
+                                        "evidence/cmr_v1/x5"))
+        }
+    )
+    assert committed == [], f"X3-X5 artifacts committed in history: {committed}"
+
+
+def test_t11_x2_artifacts_only_after_x2_stage_started():
+    x2_started = FEATURE_MAP_MANIFEST.exists()
+    if not x2_started:
+        existing = [relative for relative in X2_STAGE_PATHS if (ROOT / relative).exists()]
+        assert existing == [], f"X2 artifacts present before the X2 stage started: {existing}"
+        return
+    manifest = json.loads(FEATURE_MAP_MANIFEST.read_text(encoding="utf-8"))
+    assert manifest["manifest_type"] == "CMR_V1_FEATURE_MAP_MANIFEST"
+    assert manifest["protocol_id"] == PROTOCOL_ID
+    assert manifest["protocol_version"] == PROTOCOL_VERSION
+    assert manifest["frozen_before_x2_outcome_access"] is True
+    assert len(manifest["maps"]) == 8
