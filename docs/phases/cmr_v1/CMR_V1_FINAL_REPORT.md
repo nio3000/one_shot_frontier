@@ -237,13 +237,13 @@ What this means, stated without over-reading:
 - **The original Gaussian-mechanism results of the manuscript are unaffected.**
   CMR-D is scoped to the CMR-V1 replication design; it does not withdraw the
   manuscript's exact result, controlled evidence or natural evidence.
-- **The X2 layer-relevance measurements remain valid findings.** That the four
-  candidate layers differ substantially in downstream balanced accuracy — and that
-  ViT block identity varies across datasets — is a real, reproducible measurement
-  under the frozen protocol and CUDA backend.
-- **The CUDA migration is a validated engineering asset.** Parity, determinism and
-  provenance all pass; the migrated backend may serve future, separately frozen
-  studies.
+- **The X2 layer-relevance measurements remain valid frozen findings.** The substantial
+  layer-wise differences in downstream balanced accuracy, and the variation in optimal
+  ViT block identity across datasets, are internally corroborated by the frozen artifacts,
+  the read-only consistency audit, and the recorded CPU–CUDA parity analysis.
+- **The CUDA migration remains a validated numerical backend transition.** CPU–CUDA
+  parity and decision-level determinism passed. Exact source-level reproduction of the
+  frozen extraction run is limited by the disclosed implementation-provenance gap in §12.1.
 - **No negative claim about layer selection in general is licensed.** CMR-D is a
   statement about one prespecified breadth criterion inside one frozen protocol.
 
@@ -351,7 +351,7 @@ Facts about the gap:
   frozen artifacts. **Exact re-derivation of the frozen feature caches from the
   current tree's feature-extraction source is therefore not guaranteed.**
 - What this does *not* affect: the read-only consistency audit of the frozen
-  artifacts passes; both backends reproduce the identical frozen gate outcome; CPU
+  artifacts passes; the recorded CPU and CUDA evaluations agreed exactly on the frozen gate outcome; CPU
   and CUDA agreed exactly on all eight conditions; the frozen RFF arrays, feature
   caches and formal manifests verify against their recorded hashes.
 - No rescue was performed: no re-run, no source substitution, no artifact
@@ -372,15 +372,25 @@ layer, seed, dataset or gate was touched.
 CMR-V1 is closed at the X2 hard scientific continuation gate.
 
 ```
-X1                        PASS / FROZEN
-X2                        FAIL (X2-G2) / FROZEN
-CMR_X2_DECISION           ACTION_FAMILY_NOT_DECISION_RELEVANT
-FINAL_CMR_DECISION        CMR-D
-PROTOCOL_STOP             true
-X3 / X4 / X5              NOT_RUN_PROTOCOL_STOP
-CUDA_MIGRATION_STATUS     PASS
-READ_ONLY_CONSISTENCY      PASS
+X1                          PASS / FROZEN
+X2                          FAIL (X2-G2) / FROZEN
+CMR_X2_DECISION             ACTION_FAMILY_NOT_DECISION_RELEVANT
+FINAL_CMR_DECISION          CMR-D
+PROTOCOL_STOP               true
+X3 / X4 / X5                NOT_RUN_PROTOCOL_STOP
+CUDA_MIGRATION_STATUS       PASS
+ARTIFACT_INTERNAL_CONSISTENCY   PASS
+CPU_GPU_NUMERICAL_PARITY        PASS
+DECISION_LEVEL_DETERMINISM      PASS
+SOURCE_LEVEL_REPRODUCIBILITY    INCOMPLETE / DISCLOSED
 ```
+
+The four reproducibility lines above are deliberately separate. Artefact internal
+consistency, CPU–CUDA numerical parity and decision-level determinism all pass on
+the frozen artefacts. Exact source-level reproduction of the frozen extraction run
+is incomplete and disclosed, because the two source files that produced it are no
+longer present in the repository (section 12.1). The limitation is recorded, not
+resolved.
 
 The X2 outcomes, gate results and CMR-D decision recorded here are frozen. The
 frozen protocol, gate thresholds, dataset set, encoder set, layer set and final
