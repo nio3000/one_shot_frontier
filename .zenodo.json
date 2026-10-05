@@ -1,0 +1,49 @@
+{
+  "title": "Reconstruction is not decision identifiability: an exact collision for one-shot communication",
+  "description": "<p>Scientific software and frozen reproducibility artifacts accompanying a study of the separation between model reconstructability, exact decision identifiability and local decision stability in one-shot communicated summaries.</p><p>The repository contains the frozen protocol chain for Phases 0-5, the feature-bank, pair and feature-map manifests, every gate summary, and the machine-readable artifacts behind the manuscript figures and supplementary analyses. It also contains a prospectively frozen cross-mechanism falsification study (CMR-V1) whose terminal decision was CMR-D with protocol stop; the later stages of that study were never run.</p><p>Raw third-party datasets, downloaded archives, local feature banks and pretrained model weights are not redistributed. Dataset access routes and model-weight provenance are documented in the repository README and in the per-phase manifests.</p><p><strong>Known limitation.</strong> CMR-V1 has an incomplete source-level reproducibility status that is confined to that study: artefact internal consistency, CPU-CUDA numerical parity and decision-level determinism all pass, but the two source files that produced the frozen extraction run are not present at their recorded hashes. CMR-V1 is reported as a supplementary negative replication and is not used to broaden the manuscript's claim. The Phase 0-5 evidence chain carries its own protocol snapshots and artifact hashes and is unaffected.</p>",
+  "creators": [
+    {
+      "name": "Li, Ning",
+      "affiliation": "Department of Biomedical Engineering, Changzhi Medical College, Changzhi 046000, Shanxi, China",
+      "orcid": "0009-0005-8071-0057"
+    },
+    {
+      "name": "Li, Fei",
+      "affiliation": "Department of Health Management, Changzhi Medical College, Changzhi 046000, Shanxi, China"
+    },
+    {
+      "name": "Hao, Wenyan",
+      "affiliation": "Department of Biomedical Engineering, Changzhi Medical College, Changzhi 046000, Shanxi, China"
+    },
+    {
+      "name": "Jin, Yejin",
+      "affiliation": "Department of Health Management, Changzhi Medical College, Changzhi 046000, Shanxi, China"
+    }
+  ],
+  "contributors": [],
+  "keywords": [
+    "one-shot federated learning",
+    "decision identifiability",
+    "statistical summaries",
+    "model reconstruction",
+    "finite-resolution communication",
+    "minimax regret",
+    "reproducibility"
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "upload_type": "software",
+  "version": "v1.0-nature-submission",
+  "language": "eng",
+  "notes": "Archival release metadata draft in the repository is ZENODO_METADATA_DRAFT.json; the authors should confirm that the DOI below is the one actually minted before citing it. An earlier unrelated tag v1.0 exists at aa04d80b4f9cb52f36c75a11a940595083f11cbe and is not the manuscript release.",
+  "related_identifiers": [
+    {
+      "relation": "isIdenticalTo",
+      "identifier": "https://github.com/nio3000/one_shot_frontier",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ],
+  "communities": [],
+  "prereserve_doi": true
+}

@@ -1,0 +1,62 @@
+cff-version: 1.2.0
+message: "If you use this code or the frozen reproducibility artifacts, please cite this repository. A persistent archival DOI is pending and will be added when the deposit is completed."
+title: "Reconstruction is not decision identifiability: an exact collision for one-shot communication"
+abstract: >-
+  Scientific software and frozen reproducibility artifacts accompanying a study of the
+  separation between model reconstructability, exact decision identifiability and local
+  decision stability in one-shot communicated summaries. The repository contains the
+  frozen protocol chain for Phases 0-5, feature-bank and pair manifests, every gate
+  summary, and a prospectively frozen cross-mechanism falsification study (CMR-V1) whose
+  terminal decision was CMR-D with protocol stop; the later stages of that study were
+  never run. Raw third-party datasets, downloaded archives, local feature banks and
+  pretrained model weights are not redistributed.
+type: software
+authors:
+  - family-names: Li
+    given-names: Ning
+    orcid: "https://orcid.org/0009-0005-8071-0057"
+    affiliation: "Department of Biomedical Engineering, Changzhi Medical College, Changzhi 046000, Shanxi, China"
+  - family-names: Li
+    given-names: Fei
+    affiliation: "Department of Health Management, Changzhi Medical College, Changzhi 046000, Shanxi, China"
+  - family-names: Hao
+    given-names: Wenyan
+    affiliation: "Department of Biomedical Engineering, Changzhi Medical College, Changzhi 046000, Shanxi, China"
+  - family-names: Jin
+    given-names: Yejin
+    affiliation: "Department of Health Management, Changzhi Medical College, Changzhi 046000, Shanxi, China"
+contact:
+  - family-names: Li
+    given-names: Ning
+    email: cfcfcfpl@163.com
+repository-code: "https://github.com/nio3000/one_shot_frontier"
+url: "https://github.com/nio3000/one_shot_frontier"
+license: MIT
+license-url: "https://github.com/nio3000/one_shot_frontier/blob/main/LICENSE"
+version: "v1.0-nature-submission"
+doi: PENDING
+date-released: PENDING
+commit: PENDING
+keywords:
+  - one-shot federated learning
+  - decision identifiability
+  - statistical summaries
+  - model reconstruction
+  - finite-resolution communication
+  - minimax regret
+  - reproducibility
+identifiers:
+  - type: other
+    value: "v1.0-nature-submission"
+    description: "Proposed archival release tag; the tag and its commit are recorded at release time. An earlier unrelated tag v1.0 exists at aa04d80b4f9cb52f36c75a11a940595083f11cbe and is not the manuscript release."
+notes: >-
+  CMR-V1 (the prospectively frozen cross-mechanism study) has an incomplete source-level
+  reproducibility status that is confined to that study: artefact internal consistency,
+  CPU-CUDA numerical parity and decision-level determinism all pass, but the two source
+  files that produced the frozen extraction run are not present at their recorded hashes.
+  CMR-V1 is a supplementary negative replication (terminal decision CMR-D, protocol stop,
+  X3-X5 never run) and is not used to broaden the manuscript's claim. The Phase 0-5
+  evidence chain has its own protocol snapshots and artifact hashes and is unaffected.
+  Fields left out of this file (ORCIDs for authors other than the first, DOI, release date,
+  commit) were not known at the time of writing and are deliberately omitted rather than
+  guessed.

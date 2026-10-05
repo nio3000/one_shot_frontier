@@ -1,0 +1,117 @@
+{
+  "audit_type": "LICENSE_COMPATIBILITY_AUDIT_READ_ONLY",
+  "binary_assets_tracked": [
+    {
+      "bytes": 29069,
+      "ext": ".pyc",
+      "path": "evidence/cmr_v1/x2/source_recovery/original_cmr_feature_extract.cpython-311.pyc"
+    },
+    {
+      "bytes": 2027636,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/cpu_reference/cifar100__resnet18_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 4189994,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/cpu_reference/cifar100__vit_b_16_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 1591636,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/cpu_reference/dermamnist__resnet18_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 3753994,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/cpu_reference/dermamnist__vit_b_16_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 1678836,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/cpu_reference/eurosat__resnet18_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 3841194,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/cpu_reference/eurosat__vit_b_16_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 1678836,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/cpu_reference/pathmnist__resnet18_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 3841194,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/cpu_reference/pathmnist__vit_b_16_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 1706532,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/cifar100__resnet18_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 3359477,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/cifar100__vit_b_16_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 1258303,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/dermamnist__resnet18_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 2944107,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/dermamnist__vit_b_16_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 1360699,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/eurosat__resnet18_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 3029007,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/eurosat__vit_b_16_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 1361968,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/pathmnist__resnet18_imagenet1k_v1.npz"
+    },
+    {
+      "bytes": 3026506,
+      "ext": ".npz",
+      "path": "runs/cmr_v1/x2_cuda_migration/gpu_reference/pathmnist__vit_b_16_imagenet1k_v1.npz"
+    }
+  ],
+  "extension_histogram": {
+    ".csv": 25,
+    ".json": 68,
+    ".md": 7,
+    ".npz": 16,
+    ".py": 161,
+    ".pyc": 1,
+    ".toml": 1,
+    ".txt": 4,
+    ".yaml": 26
+  },
+  "markers": {
+    "vendored": [
+      {
+        "line": "16",
+        "path": "README.md",
+        "text": "Raw third-party datasets, downloaded archives, local feature banks, model weights,"
+      },
+      {
+        "line": "78",
+        "path": "src/frontier/reporting.py",
+        "text": "\"This report is a permanent stage artifact. Numerical claims in the manuscript should be traced to the canonical CSV/JSON artifacts rather than copied from chat"
+      }
+    ]
+  },
+  "text_files_scanned": 292,
+  "tracked_files": 309
+}
