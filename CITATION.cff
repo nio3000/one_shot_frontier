@@ -35,8 +35,7 @@ license: MIT
 license-url: "https://github.com/nio3000/one_shot_frontier/blob/main/LICENSE"
 version: "v1.0-nature-submission"
 doi: PENDING
-date-released: PENDING
-commit: PENDING
+date-released: "2026-10-05"
 keywords:
   - one-shot federated learning
   - decision identifiability
