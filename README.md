@@ -40,11 +40,25 @@ replication.
 
 | Field | Value |
 | --- | --- |
-| Archival release tag | `v1.0-nature-submission` |
-| Release commit | recorded at release time; equivalent to `ARCHIVAL_RELEASE_COMMIT` |
-| Historical tag | `v1.0` at `aa04d80b4f9cb52f36c75a11a940595083f11cbe` (2026-09-19) — an **earlier project tag, not this manuscript release** |
+| **Archival release (cite this one)** | `v1.0.1-nature-submission` |
+| Release commit | the `Finalize Zenodo archival metadata` commit on `main`; resolve it with `git rev-list -n 1 v1.0.1-nature-submission` |
+| Initial archival candidate | `v1.0-nature-submission` at `2fde82c9fb1bb6567b0bdaf1d63080c11273796d` |
+| Historical project tag | `v1.0` at `aa04d80b4f9cb52f36c75a11a940595083f11cbe` (2026-09-19) — **not** a manuscript release |
 | CMR-V1 scientific closeout authority | `6239ec45e1175fdd268ce34b2e5e17fc053861d2` |
-| Persistent DOI | none yet; a deposit is prepared but no DOI has been assigned. Do not cite a DOI for this release until one appears here. |
+| Persistent DOI | none yet. A deposit is prepared but no DOI has been registered. Do not cite a DOI for this release until one appears here. |
+
+**Release lineage.** Three tags exist and they are not interchangeable:
+
+| Tag | Role | Scientific content |
+| --- | --- | --- |
+| `v1.0-nature-submission` | initial archival candidate | frozen |
+| `v1.0.1-nature-submission` | metadata-corrected archival release; **supersedes `v1.0-nature-submission` for citation** | **unchanged** |
+| `v1.0` | pre-existing project tag, unrelated to the manuscript | different, much earlier state |
+
+`v1.0.1-nature-submission` corrects archival *metadata* only — citation fields, release
+description and the release lineage statement. No source file, protocol, manifest, gate
+outcome, figure or numerical result differs between `v1.0-nature-submission` and
+`v1.0.1-nature-submission`. The earlier tags are retained and are not deleted or moved.
 
 **Environment.** `pyproject.toml` declares the base Python requirement and pinned scientific
 dependencies; `requirements.txt`, `requirements-phase1.txt` and `requirements-phase5.txt`

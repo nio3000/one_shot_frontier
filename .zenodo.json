@@ -33,9 +33,10 @@
   "license": "MIT",
   "access_right": "open",
   "upload_type": "software",
-  "version": "v1.0-nature-submission",
+  "version": "v1.0.1-nature-submission",
+  "publication_date": "2026-10-05",
   "language": "eng",
-  "notes": "Archival release metadata draft in the repository is ZENODO_METADATA_DRAFT.json; the authors should confirm that the DOI below is the one actually minted before citing it. An earlier unrelated tag v1.0 exists at aa04d80b4f9cb52f36c75a11a940595083f11cbe and is not the manuscript release.",
+  "notes": "No DOI is included in this metadata file. A DOI should be cited only after Zenodo has registered one for this release. Supersedes v1.0-nature-submission for archival citation; the scientific content is unchanged. An earlier unrelated project tag v1.0 exists at aa04d80b4f9cb52f36c75a11a940595083f11cbe and is not a manuscript release.",
   "related_identifiers": [
     {
       "relation": "isIdenticalTo",
@@ -44,6 +45,5 @@
       "scheme": "url"
     }
   ],
-  "communities": [],
-  "prereserve_doi": true
+  "communities": []
 }

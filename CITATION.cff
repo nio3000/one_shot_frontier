@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this code or the frozen reproducibility artifacts, please cite this repository. A persistent archival DOI is pending and will be added when the deposit is completed."
+message: "If you use this code or the frozen reproducibility artifacts, please cite this archival release. A persistent DOI will be added only after Zenodo registration."
 title: "Reconstruction is not decision identifiability: an exact collision for one-shot communication"
 abstract: >-
   Scientific software and frozen reproducibility artifacts accompanying a study of the
@@ -33,8 +33,7 @@ repository-code: "https://github.com/nio3000/one_shot_frontier"
 url: "https://github.com/nio3000/one_shot_frontier"
 license: MIT
 license-url: "https://github.com/nio3000/one_shot_frontier/blob/main/LICENSE"
-version: "v1.0-nature-submission"
-doi: PENDING
+version: "v1.0.1-nature-submission"
 date-released: "2026-10-05"
 keywords:
   - one-shot federated learning
@@ -46,8 +45,8 @@ keywords:
   - reproducibility
 identifiers:
   - type: other
-    value: "v1.0-nature-submission"
-    description: "Proposed archival release tag; the tag and its commit are recorded at release time. An earlier unrelated tag v1.0 exists at aa04d80b4f9cb52f36c75a11a940595083f11cbe and is not the manuscript release."
+    value: "v1.0.1-nature-submission"
+    description: "Metadata-corrected archival release tag. Supersedes v1.0-nature-submission for archival citation; the scientific content is unchanged. An earlier unrelated project tag v1.0 exists at aa04d80b4f9cb52f36c75a11a940595083f11cbe and is not a manuscript release."
 notes: >-
   CMR-V1 (the prospectively frozen cross-mechanism study) has an incomplete source-level
   reproducibility status that is confined to that study: artefact internal consistency,
@@ -56,6 +55,5 @@ notes: >-
   CMR-V1 is a supplementary negative replication (terminal decision CMR-D, protocol stop,
   X3-X5 never run) and is not used to broaden the manuscript's claim. The Phase 0-5
   evidence chain has its own protocol snapshots and artifact hashes and is unaffected.
-  Fields left out of this file (ORCIDs for authors other than the first, DOI, release date,
-  commit) were not known at the time of writing and are deliberately omitted rather than
-  guessed.
+  No DOI is recorded in this file, because no DOI has been registered. ORCIDs for authors
+  other than the first are omitted rather than guessed.
