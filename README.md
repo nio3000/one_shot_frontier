@@ -45,7 +45,11 @@ replication.
 | Initial archival candidate | `v1.0-nature-submission` at `2fde82c9fb1bb6567b0bdaf1d63080c11273796d` |
 | Historical project tag | `v1.0` at `aa04d80b4f9cb52f36c75a11a940595083f11cbe` (2026-09-19) — **not** a manuscript release |
 | CMR-V1 scientific closeout authority | `6239ec45e1175fdd268ce34b2e5e17fc053861d2` |
-| Persistent DOI | none yet. A deposit is prepared but no DOI has been registered. Do not cite a DOI for this release until one appears here. |
+| Persistent DOI | version DOI **`10.5281/zenodo.23174202`** for `v1.0.1-nature-submission`; concept DOI **`10.5281/zenodo.22842817`** for the software archive across versions |
+
+**How to cite.** Cite the version DOI `10.5281/zenodo.23174202` for this exact archival
+release. Cite the concept DOI `10.5281/zenodo.22842817` when referring to the software
+archive across versions. Both are registered Zenodo DOIs and both resolve.
 
 **Release lineage.** Three tags exist and they are not interchangeable:
 

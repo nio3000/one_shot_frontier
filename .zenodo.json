@@ -36,7 +36,7 @@
   "version": "v1.0.1-nature-submission",
   "publication_date": "2026-10-05",
   "language": "eng",
-  "notes": "No DOI is included in this metadata file. A DOI should be cited only after Zenodo has registered one for this release. Supersedes v1.0-nature-submission for archival citation; the scientific content is unchanged. An earlier unrelated project tag v1.0 exists at aa04d80b4f9cb52f36c75a11a940595083f11cbe and is not a manuscript release.",
+  "notes": "Registered DOI for this release: 10.5281/zenodo.23174202 (version DOI) and 10.5281/zenodo.22842817 (concept DOI). Supersedes v1.0-nature-submission for archival citation; the scientific content is unchanged. An earlier unrelated project tag v1.0 exists at aa04d80b4f9cb52f36c75a11a940595083f11cbe and is not a manuscript release.",
   "related_identifiers": [
     {
       "relation": "isIdenticalTo",

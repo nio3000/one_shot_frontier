@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this code or the frozen reproducibility artifacts, please cite this archival release. A persistent DOI will be added only after Zenodo registration."
+message: "If you use this code or the frozen reproducibility artifacts, please cite this archival release."
 title: "Reconstruction is not decision identifiability: an exact collision for one-shot communication"
 abstract: >-
   Scientific software and frozen reproducibility artifacts accompanying a study of the
@@ -34,7 +34,9 @@ url: "https://github.com/nio3000/one_shot_frontier"
 license: MIT
 license-url: "https://github.com/nio3000/one_shot_frontier/blob/main/LICENSE"
 version: "v1.0.1-nature-submission"
+doi: "10.5281/zenodo.23174202"
 date-released: "2026-10-05"
+commit: "abfc26f58e13cd17ce32ebd4bf8c366bbaa34613"
 keywords:
   - one-shot federated learning
   - decision identifiability
@@ -44,16 +46,18 @@ keywords:
   - minimax regret
   - reproducibility
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23174202"
+    description: "Version DOI for archival release v1.0.1-nature-submission, registered by Zenodo for this release. Cite this DOI for the exact release."
+  - type: doi
+    value: "10.5281/zenodo.22842817"
+    description: "Concept DOI for the one-shot frontier software archive; resolves to the latest version. Cite this DOI when referring to the software across versions."
   - type: other
     value: "v1.0.1-nature-submission"
     description: "Metadata-corrected archival release tag. Supersedes v1.0-nature-submission for archival citation; the scientific content is unchanged. An earlier unrelated project tag v1.0 exists at aa04d80b4f9cb52f36c75a11a940595083f11cbe and is not a manuscript release."
-notes: >-
-  CMR-V1 (the prospectively frozen cross-mechanism study) has an incomplete source-level
-  reproducibility status that is confined to that study: artefact internal consistency,
-  CPU-CUDA numerical parity and decision-level determinism all pass, but the two source
-  files that produced the frozen extraction run are not present at their recorded hashes.
-  CMR-V1 is a supplementary negative replication (terminal decision CMR-D, protocol stop,
-  X3-X5 never run) and is not used to broaden the manuscript's claim. The Phase 0-5
-  evidence chain has its own protocol snapshots and artifact hashes and is unaffected.
-  No DOI is recorded in this file, because no DOI has been registered. ORCIDs for authors
-  other than the first are omitted rather than guessed.
+  - type: other
+    value: "CMR-V1 source-level reproducibility: INCOMPLETE / DISCLOSED"
+    description: "The prospectively frozen cross-mechanism study CMR-V1 is a supplementary negative replication (terminal decision CMR-D, protocol stop, X3-X5 never run). Artefact internal consistency, CPU-CUDA numerical parity and decision-level determinism all pass; source-level reproducibility is INCOMPLETE / DISCLOSED because the two source files that produced the frozen extraction run are not present at their recorded hashes. This limitation is confined to CMR-V1 and does not apply to the Phase 0-5 evidence chain."
+  - type: other
+    value: "ORCID omitted for authors other than the first"
+    description: "ORCIDs for Li, Fei, Hao, Wenyan and Jin, Yejin are omitted rather than guessed."
